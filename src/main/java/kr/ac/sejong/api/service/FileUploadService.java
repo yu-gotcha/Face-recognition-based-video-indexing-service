@@ -65,6 +65,8 @@ public class FileUploadService {
         upload.setUpImg(upImg);
         upload.setUpVid(upVid);
         upload.setUser(user);
+        upload.setUploading(1);
+        upload.setProcessing(0);
 
         try{
             uploadRepository.save(upload);
