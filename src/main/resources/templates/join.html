@@ -4,29 +4,40 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
-<form action="join" method="post">
-    <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="userName" id="userName" placeholder="Name" size="25">
-        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+    <body>
+        <!--로그인이 되어있이면 로그아웃만 보임-->
+        {{#userdata}}
+        <a href="logout" class="btn btn-default btn-flat" style="text-decoration:none; color: #222222">로그아웃</a>
+        {{/userdata}}
 
-        <input type="text" class="form-control" name="loginId" id="loginId" placeholder="ID" size="25">
-        <span class="glyphicon glyphicon-user form-control-feedback"></span>
-    </div>
+        <!--로그인이 안되어있어야 가입 가능-->
+        {{^userdata}}
+            {{#error}}
+                <h3>회원가입이 불가합니다. 다른 ID를 입력해주세요</h3>
+                <h3>{{error}}</h3>
+            {{/error}}
 
-    <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="loginPw" id="loginPw" placeholder="PW" size="56">
-        <span class="glyphicon glyphicon-user form-control-feedback"></span>
-    </div>
+            <form action="join" method="post">
+                <div class="form-group has-feedback">
+                    <input type="text" class="form-control" name="userName" id="userName" placeholder="Name" size="56">
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                </div>
 
+                <div class="form-group has-feedback">
+                    <input type="text" class="form-control" name="loginId" id="loginId" placeholder="ID" size="25">
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    <input type="text" class="form-control" name="loginPw" id="loginPw" placeholder="PW" size="25">
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                </div>
 
-    <div class="row">
-        <!-- /.col -->
-        <div class="col-xs-4" style="padding-top: 10px;">
-            <button type="submit" class="btn btn-primary btn-block btn-flat">입력</button>
-        </div>
-        <!-- /.col -->
-    </div>
-</form>
-</body>
+                <div class="row">
+                    <!-- /.col -->
+                    <div class="col-xs-4" style="padding-top: 10px;">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">입력</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
+        {{/userdata}}
+    </body>
 </html>
