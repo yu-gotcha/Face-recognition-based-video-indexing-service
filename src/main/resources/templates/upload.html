@@ -12,8 +12,8 @@
 
     {{#userdata}}
     <form name="form" method="post" action="upload" enctype="multipart/form-data">
-        <input type="file" name="imgFile"/>
-        <input type="file" name="vidFile"/>
+        <input type="file" name="imgFile" accept="image/*"/>
+        <input type="file" name="vidFile" accept="video/*"/>
         <!--accept="image/png, image/jpeg" 이 속성으로 파일 제한 할 수 있음-->
         <input type="submit" id="submit" value="전송"/>
     </form>
