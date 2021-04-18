@@ -25,12 +25,12 @@ public class UserService {
     public String userJoin(String loginId, String loginPw, String userName){
         User newUser = new User();
 
+        //이미 등록된 ID면 가입을 제한함
+        if(userRepository.existsByLoginId(loginId)) return "already exist";
+
         newUser.setUserName(userName);
         newUser.setLoginId(loginId);
         newUser.setLoginPw(loginPw);
-
-        //이미 등록된 ID면 가입을 제한함
-        if(newUser.getLoginId().isEmpty()) return "already exist";
 
         try{
             userRepository.save(newUser);
