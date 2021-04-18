@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<tr valign="top" align="left">
+    <td style="padding-left:65px; padding-top:40px; padding-right:65px;">
+        {{#userdata}}
+        <a href="logout" class="btn btn-default btn-flat" style="text-decoration:none; color: #222222">로그아웃</a>
+        {{/userdata}}
+        {{^userdata}}
+        <div class="login-box" align="center">
+            <div class="login-logo">
+                <a href="index" style="text-decoration:none"><b>GVRLAB</b></a>
+            </div>
+            <!-- /.login-logo -->
+            <div class="login-box-body">
+                <p class="login-box-msg">서비스를 이용하시려면 로그인하여 주십시오.</p>
+
+                <form action="login" method="post">
+                    <div class="form-group has-feedback">
+                        <input type="text" class="form-control" name="loginId" id="loginId" placeholder="아이디">
+                        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <input type="password" class="form-control" name="loginPw" id="loginPw" placeholder="비밀번호">
+                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    </div>
+                    <div class="row">
+                        <!-- /.col -->
+                        <div class="col-xs-4" style="padding-top: 10px;">
+                            <button type="submit" class="btn btn-primary btn-block btn-flat">로그인</button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                </form>
+            </div>
+            <!-- /.login-box-body -->
+        </div>
+        {{/userdata}}
+    </td>
+</tr>
+</body>
+</html>
