@@ -40,4 +40,10 @@ public class Upload {
     @JoinColumn(foreignKey = @ForeignKey(name = "user"))
     private User user;
 
+    @Column(name = "uploading")
+    private int uploading;
+
+    @Column(name = "processing")
+    private int processing;
+
 }
