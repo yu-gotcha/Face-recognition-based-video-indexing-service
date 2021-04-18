@@ -94,7 +94,7 @@ public class FileUploadController {
             return "redirect:/";
         }
 
-        return "redirect:/upload";
+        return "redirect:/list";
     }
 
 
