@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        {{#userdata}}
+        <a href="logout" class="btn btn-default btn-flat" style="text-decoration:none; color: #222222">로그아웃</a>
+        {{/userdata}}
+
+        {{#userdata}}
+        <div>{{userName}}</div>
+
+        <!--리스트 관련된걸로 해시맵 만들어서 하면 될거같은디 반복 돌려서 테이블 만드는거-->
+        {{/userdata}}
+    </body>
+</html>
