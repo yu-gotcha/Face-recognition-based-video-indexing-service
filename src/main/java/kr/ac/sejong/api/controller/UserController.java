@@ -32,7 +32,7 @@ public class UserController {
         return "redirect:/login";
     }
 
-    @PostMapping(value = "/logout")
+    @GetMapping(value = "/logout")
     public String logoutProcess(HttpSession session){
         session.removeAttribute("userdata");
 
