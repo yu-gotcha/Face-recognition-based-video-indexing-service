@@ -54,6 +54,7 @@ public class FileUploadController {
         fileUploadService.saveImg(file.getOriginalFilename(), savedFileName, dest.toString(), user);
 
         return "redirect:/upload";
+
     }
     */
     public String upload(@RequestPart MultipartFile imgFile, MultipartFile vidFile, HttpSession session) throws Exception{
