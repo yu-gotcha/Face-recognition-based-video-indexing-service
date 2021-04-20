@@ -14,7 +14,7 @@ import javax.persistence.*;
 
 public class UploadImg {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "up_img_id")
     private long upImgId;
 
@@ -35,7 +35,7 @@ public class UploadImg {
     private String upImgPath;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(foreignKey = @ForeignKey(name = "user_id"))
+    @JoinColumn(name = "user_id")
     private User imgUpUser;
     //User 테이블의 user_id를 외래키로 갖음
 

@@ -15,7 +15,7 @@ import java.util.List;
 
 public class UploadVid {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "up_vid_id")
     private long upVidId;
 
@@ -32,7 +32,7 @@ public class UploadVid {
     private String upVidPath;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(foreignKey = @ForeignKey(name = "user_id"))
+    @JoinColumn(name = "user_id")
     private User vidUpUser;
     //User 테이블의 user_id를 외래키로 갖음
 

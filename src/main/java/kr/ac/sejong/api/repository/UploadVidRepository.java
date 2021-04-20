@@ -11,4 +11,5 @@ import java.util.List;
 public interface UploadVidRepository extends JpaRepository<UploadVid, Long> {
     List<UploadVid> findByVidUpUser(User user);
     UploadVid findTopByOrderByUpVidIdDesc();
+    UploadVid findByUpVidId(long id);
 }

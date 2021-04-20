@@ -11,12 +11,43 @@
     {{/userdata}}
 
     {{#userdata}}
-    <form name="form" method="post" action="upload" enctype="multipart/form-data">
-        <input type="file" name="imgFile" accept="image/*"/>
-        <input type="file" name="vidFile" accept="video/*"/>
+    <form method="post" action="upload" enctype="multipart/form-data" name="fileForm" id="fileForm">
+        <input type="file" name="imgFile" id="imgFile" accept="image/*"/>
+        <input type="file" name="vidFile" id="vidFile" accept="video/*"/>
+
+        <p id="imgError" display='block'>이미지 파일을 선택해주세요.</p>
+        <p id="vidError" display='block'>비디오 파일을 선택해주세요.</p>
         <!--accept="image/png, image/jpeg" 이 속성으로 파일 제한 할 수 있음-->
-        <input type="submit" id="submit" value="전송"/>
+        <input type="button" onclick="checkFile()" value="전송"/>
     </form>
     {{/userdata}}
 </body>
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    function checkFile(){
+        var imgFile = $("#imgFile").val()
+        var vidFile = $("#vidFile").val()
+
+        var error=0;
+
+        if(imgFile.length==0){
+            error++;
+            $("#imgError").show();
+            $("#imgError").css('color', 'red');
+        }else{
+            $("#imgError").hide();
+        }
+
+        if(vidFile.length==0){
+            error++;
+            $("#vidError").show();
+            $("#vidError").css('color', 'red');
+        }else{
+            $("#vidError").hide();
+        }
+
+        if(error==0) document.fileForm.submit();
+        else error=0;
+    }
+</script>
 </html>

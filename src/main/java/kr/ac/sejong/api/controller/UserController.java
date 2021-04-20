@@ -27,7 +27,7 @@ public class UserController {
             session.setAttribute("userdata", userService.getUser(loginId));
             System.out.println(session.getAttribute("userdata"));
 
-            return "redirect:/upload";
+            return "redirect:/list";
         }
         return "redirect:/login";
     }
