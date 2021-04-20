@@ -15,12 +15,12 @@ import java.util.List;
 
 public class VidFrame {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "frame_id")
     private long frameId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(foreignKey = @ForeignKey(name = "up_vid_id"))
+    @JoinColumn(name = "up_vid_id")
     private UploadVid upVid;
     //UploadVid 테이블의 up_vid_saved_name를 외래키로 갖음
 

@@ -19,7 +19,7 @@ import java.util.List;
 public class Upload {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "up_id")
     private long upId;
 
@@ -37,7 +37,7 @@ public class Upload {
     private List<ResultSection> sectionList = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(foreignKey = @ForeignKey(name = "user"))
+    @JoinColumn(name = "user")
     private User user;
 
     @Column(name = "uploading")

@@ -10,4 +10,5 @@ public interface UploadImgRepository extends JpaRepository <UploadImg, Long> {
     List<UploadImg> findAll();
     List<UploadImg> findByImgUpUser(User user);
     UploadImg findTopByOrderByUpImgIdDesc();
+    UploadImg findByUpImgId(long id);
 }

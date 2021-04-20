@@ -17,12 +17,12 @@ import javax.persistence.*;
 
 public class FaceRecognition {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "fr_img_id")
     private long frImgId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(foreignKey = @ForeignKey(name = "frame_name"))
+    @JoinColumn(name = "frame_name")
     private VidFrame vidFrame;
     //VidFrame 테이블의 frame_name를 외래키로 갖음
 
