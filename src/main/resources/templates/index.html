@@ -3,12 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <title>TimeAttack</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
 </head>
+
 <body>
     <h1>Time Attack</h1>
-    {{^userdata}}
-    <a href="login">로그인</a>
-    <a href="join">회원가입</a>
-    {{/userdata}}
+    <div class="section">
+        <input type="radio" name="slide" id="slide01" checked>
+        <input type="radio" name="slide" id="slide02">
+        <input type="radio" name="slide" id="slide03">
+        <div class="slidewrap">
+
+            <ul class="slidelist">
+                <!-- 슬라이드 영역 -->
+                <li class="slideitem">
+                    <a>
+                        <div class="textbox">
+                            <h3>사용법 이미지1</h3>
+                        </div>
+                        <img src="/img/slide.jpg">
+                    </a>
+                </li>
+                <li class="slideitem">
+                    <a>
+
+                        <div class="textbox">
+                            <h3>사용법 이미지2</h3>
+                        </div>
+                        <img src="/img/slide.jpg">
+                    </a>
+                </li>
+                <li class="slideitem">
+                    <a>
+
+                        <div class="textbox">
+                            <h3>사용법 이미지3</h3>
+                        </div>
+                        <img src="/img/slide.jpg">
+                    </a>
+                </li>
+
+                <!-- 좌,우 슬라이드 버튼 -->
+                <div class="slide-control">
+                    <div>
+                        <label for="slide03" class="left"></label>
+                        <label for="slide02" class="right"></label>
+                    </div>
+                    <div>
+                        <label for="slide01" class="left"></label>
+                        <label for="slide03" class="right"></label>
+                    </div>
+                    <div>
+                        <label for="slide02" class="left"></label>
+                        <label for="slide01" class="right"></label>
+                    </div>
+                </div>
+
+            </ul>
+            <!-- 페이징 -->
+            <ul class="slide-pagelist">
+                <li><label for="slide01"></label></li>
+                <li><label for="slide02"></label></li>
+                <li><label for="slide03"></label></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="index">
+        <input type="button" class="index-btn" value="로그인" onClick="location.href='login'" />
+        <input type="button" class="index-btn" value="회원가입" onClick="location.href='join'" />
+    </div>
 </body>
 </html>
