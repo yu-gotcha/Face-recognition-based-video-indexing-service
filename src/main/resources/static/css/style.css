@@ -1,6 +1,9 @@
 body {
     background-color:#34495e
 }
+.index-title{
+    color:yellow;
+}
 
 /*index : 로그인, 회원가입 div*/
 .index{
