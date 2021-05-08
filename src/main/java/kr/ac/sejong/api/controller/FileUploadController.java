@@ -56,10 +56,13 @@ public class FileUploadController {
         return "redirect:/upload";
     }
     */
-    public String upload(@RequestPart MultipartFile imgFile, MultipartFile vidFile, HttpSession session) throws Exception{
+
+    //transfer를 쓰지 않고 bytes로 소켓으로 던지는 것이 필요함함
+   public String upload(@RequestPart MultipartFile imgFile, MultipartFile vidFile, HttpSession session) throws Exception{
         String savedFileName;
         User user;
         long count;
+        byte vidBytes[], imgBytes[];
 
         user=(User)session.getAttribute("userdata");
 
@@ -71,6 +74,8 @@ public class FileUploadController {
         File dest = new File("C:/Image/"+savedFileName);
         imgFile.transferTo(dest);
 
+        imgBytes=imgFile.getBytes();
+
         fileUploadService.saveImg(imgFile.getOriginalFilename(), savedFileName, dest.toString(), user);
 
         //Video Upload
@@ -80,6 +85,8 @@ public class FileUploadController {
         savedFileName=Long.toString(user.getUserId())+"_"+Long.toString(count)+"_"+originalFileName;
         dest = new File("C:/Image/"+savedFileName);
         vidFile.transferTo(dest);
+
+        vidBytes=vidFile.getBytes();
 
         fileUploadService.saveVid(vidFile.getOriginalFilename(), savedFileName, dest.toString(), user);
 
