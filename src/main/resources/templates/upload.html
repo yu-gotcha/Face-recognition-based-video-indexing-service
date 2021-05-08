@@ -3,51 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <title>TimeAttack</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
 </head>
 <body>
-    {{^userdata}}
-    <h3>로그인 후에 이용 가능합니다.</h3>
-    <a href="login">로그인 하러 가기</a>
-    {{/userdata}}
+{{^userdata}}
+<h3>로그인 후에 이용 가능합니다.</h3>
+<a href="login">로그인 하러 가기</a>
+{{/userdata}}
 
-    {{#userdata}}
+{{#userdata}}
+<div class="upload-box-body">
     <form method="post" action="upload" enctype="multipart/form-data" name="fileForm" id="fileForm">
-        <input type="file" name="imgFile" id="imgFile" accept="image/*"/>
-        <input type="file" name="vidFile" id="vidFile" accept="video/*"/>
 
+        <p class="test1102">Test</p>
+        <div class="image-select-section">
+            <input type="file" name="imgFile" id="imgFile" accept="image/*" onchange="setThumbnail(this);"/><br>
+            <div id="image_container" class="image-tn-section">
+                <img id="image_container2" class="image-tn-section2" >
+            </div>
+        </div>
+        <div class="video-select-section">
+            <input type="file" name="vidFile" id="vidFile" accept="video/*"/><br>
+            <video controls><source type="video/mp4"></video>
+            <canvas></canvas><br/>
+            <img id="v-th" class="v-th-sec">
+        </div>
+
+        <!--
         <p id="imgError" display='block'>이미지 파일을 선택해주세요.</p>
         <p id="vidError" display='block'>비디오 파일을 선택해주세요.</p>
+        -->
         <!--accept="image/png, image/jpeg" 이 속성으로 파일 제한 할 수 있음-->
-        <input type="button" onclick="checkFile()" value="전송"/>
+        <input type="button" class="upload-btn" onclick="checkFile()" value="전송"/>
     </form>
-    {{/userdata}}
+</div>
+{{/userdata}}
 </body>
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
-    function checkFile(){
+    function checkFile() {
         var imgFile = $("#imgFile").val()
         var vidFile = $("#vidFile").val()
 
-        var error=0;
+        var error = 0;
 
-        if(imgFile.length==0){
+        if (imgFile.length == 0) {
             error++;
             $("#imgError").show();
             $("#imgError").css('color', 'red');
-        }else{
+        } else {
             $("#imgError").hide();
         }
 
-        if(vidFile.length==0){
+        if (vidFile.length == 0) {
             error++;
             $("#vidError").show();
             $("#vidError").css('color', 'red');
-        }else{
+        } else {
             $("#vidError").hide();
         }
 
-        if(error==0) document.fileForm.submit();
-        else error=0;
+        if (error == 0) document.fileForm.submit();
+        else error = 0;
     }
+    /*이미지 미리보기*/
+    function setThumbnail(f) {
+        var file1 = f.files;
+
+        /*확장자 제한시 if else 추가*/
+
+        // FileReader 객체 사용
+        var reader = new FileReader();
+        // 파일 읽기가 완료되었을때 실행
+        reader.onload = function(rst){
+            /*document.getElementById('image_container').innerHTML = '<img src="' + rst.target.result + '">';*/
+            document.getElementById('image_container2').src=rst.target.result;
+
+        }
+        // 파일을 읽는다
+        reader.readAsDataURL(file1[0]);
+    }
+    /*동영상 미리보기*/
+    $(function() {
+        var video = $("video");
+        var thumbnail = $("canvas");
+        var input = $("input[type=file]");
+        var ctx = thumbnail.get(0).getContext("2d");
+        var duration = 0;
+        var img = $("#v-th");
+
+        $('#vidFile').on("change", function(e) {
+            var file = e.target.files[0];
+            // Validate video file type
+            if (["video/mp4"].indexOf(file.type) === -1) {
+                alert("Only 'MP4' video format allowed.");
+                return;
+            }
+            // Set video source
+            video.find("source").attr("src", URL.createObjectURL(file));
+            // Load the video
+            video.get(0).load();
+            // Load metadata of the video to get video duration and dimensions
+            video.on("loadedmetadata", function(e) {
+                duration = video.get(0).duration;
+                // Set canvas dimensions same as video dimensions
+                thumbnail[0].width = video[0].videoWidth;
+                thumbnail[0].height = video[0].videoHeight;
+                // Set video current time to get some random image
+                video[0].currentTime = Math.ceil(duration / 2);
+                // Draw the base-64 encoded image data when the time updates
+                video.one("timeupdate", function() {
+                    ctx.drawImage(video[0], 0, 0, video[0].videoWidth, video[0].videoHeight);
+                    img.attr("src", thumbnail[0].toDataURL());
+                });
+            });
+        });
+    });
 </script>
 </html>

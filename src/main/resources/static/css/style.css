@@ -1,8 +1,10 @@
+/*css test*/
+.index-title{
+    color:orange;
+}
+
 body {
     background-color:#34495e
-}
-.index-title{
-    color:yellow;
 }
 
 /*index : 로그인, 회원가입 div*/
@@ -181,5 +183,72 @@ body {
     display:inline;
 }
 .join-btn:hover{
+    background-position: right;
+}
+
+/*업로드하기*/
+.test1102{
+    color:red;
+}
+.upload-box-body{
+    position:absolute;
+    width:1500px;
+    height:800px;
+    padding: 30px 20px;
+    background-color:#FFFFFF;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 15px;
+}
+.image-select-section{
+    background:gray;
+    position:absolute;
+    left:200px;
+    top:150px;
+    width:500px;
+    height:500px;
+}
+.video-select-section{
+    position:absolute;
+    left:1000px;
+    top:150px;
+}
+.image-tn-section2{
+    background:black;
+    object-fit:contain;
+    width:500px;
+    height:500px;
+
+}
+.v-th-sec{
+    background:black;
+    object-fit:contain;
+    width:500px;
+    height:500px;
+}
+video, canvas {
+    display: none;
+}
+.upload-btn{
+    position:absolute;
+    left:50%;
+    top:650px;
+    transform: translateX(-50%);
+    margin-top: 30px;
+    margin-bottom: 40px;
+    width:300px;
+    height:40px;
+    background: linear-gradient(125deg,#81ecec,#6c5ce7,#81ecec);
+    background-position: left;
+    background-size: 200%;
+    color:white;
+    font-weight: bold;
+    border:none;
+    cursor:pointer;
+    transition: 0.4s;
+    display:inline;
+}
+.upload-btn:hover{
     background-position: right;
 }
