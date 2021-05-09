@@ -1,6 +1,7 @@
 package kr.ac.sejong.api.service;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -61,5 +62,26 @@ public class SocketServiceImpl {
         try {
             this.socket.close();
         } catch (IOException ignored) { }
+    }
+
+
+    public boolean sendImgFile(byte imgBytes[]){
+        if(!this.socket.isConnected()) return false;
+
+        try {
+            this.outputStream.write(imgBytes);
+        } catch (IOException e) { return false; }
+
+        return true;
+    }
+
+    public boolean sendVidFile(byte vidBytes[]){
+        if(!this.socket.isConnected()) return false;
+
+        try {
+            this.outputStream.write(vidBytes);
+        } catch (IOException e) { return false; }
+
+        return true;
     }
 }
