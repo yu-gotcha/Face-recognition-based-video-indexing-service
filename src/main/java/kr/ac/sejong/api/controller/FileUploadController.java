@@ -7,7 +7,6 @@ import kr.ac.sejong.api.domain.User;
 import kr.ac.sejong.api.repository.UploadImgRepository;
 import kr.ac.sejong.api.repository.UploadVidRepository;
 import kr.ac.sejong.api.service.FileUploadService;
-import kr.ac.sejong.api.service.SocketServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -23,14 +22,12 @@ public class FileUploadController {
     private final FileUploadService fileUploadService;
     private final UploadImgRepository uploadImgRepository;
     private final UploadVidRepository uploadVidRepository;
-    private final SocketServiceImpl socketServiceImpl;
 
     @Autowired
-    FileUploadController(FileUploadService fileUploadService, UploadImgRepository uploadImgRepository, UploadVidRepository uploadVidRepository, SocketServiceImpl socketServiceImpl) {
+    FileUploadController(FileUploadService fileUploadService, UploadImgRepository uploadImgRepository, UploadVidRepository uploadVidRepository) {
         this.fileUploadService = fileUploadService;
         this.uploadImgRepository = uploadImgRepository;
         this.uploadVidRepository = uploadVidRepository;
-        this.socketServiceImpl = socketServiceImpl;
     }
 
     @GetMapping( value = "upload")
@@ -69,55 +66,29 @@ public class FileUploadController {
 
         user=(User)session.getAttribute("userdata");
 
-        //------------------------------이미지 업로드----------------------------------------------
-        String savePath = System.getProperty("user.dir") + "\\files\\image";
-        /* 파일이 저장되는 폴더가 없으면 폴더를 생성합니다. */
-        if (!new File(savePath).exists()) {
-            try{
-                new File(savePath).mkdir();
-            }
-            catch(Exception e){
-                e.getStackTrace();
-            }
-        }
-
         //Image Upload
         count=uploadImgRepository.findByImgUpUser(user).size();
 
         String originalFileName = imgFile.getOriginalFilename();
         savedFileName=Long.toString(user.getUserId())+"_"+Long.toString(count)+"_"+originalFileName;
-        //File dest = new File("C:/Image/"+savedFileName);
-        String filePath = savePath + "\\" + savedFileName;
-        imgFile.transferTo(new File(filePath));
+        File dest = new File("C:/Image/"+savedFileName);
+        imgFile.transferTo(dest);
 
-        //imgBytes=imgFile.getBytes();
+        imgBytes=imgFile.getBytes();
 
-        fileUploadService.saveImg(imgFile.getOriginalFilename(), savedFileName, filePath, user);
+        fileUploadService.saveImg(imgFile.getOriginalFilename(), savedFileName, dest.toString(), user);
 
-
-        //------------------------------비디오 업로드----------------------------------------------
-        savePath = System.getProperty("user.dir") + "\\files\\video";
-        /* 파일이 저장되는 폴더가 없으면 폴더를 생성합니다. */
-        if (!new File(savePath).exists()) {
-            try{
-                new File(savePath).mkdir();
-            }
-            catch(Exception e){
-                e.getStackTrace();
-            }
-        }
         //Video Upload
         count=uploadVidRepository.findByVidUpUser(user).size();
 
         originalFileName = vidFile.getOriginalFilename();
         savedFileName=Long.toString(user.getUserId())+"_"+Long.toString(count)+"_"+originalFileName;
-        //dest = new File("C:/Image/"+savedFileName);
-        filePath = savePath + "\\" + savedFileName;
-        vidFile.transferTo(new File(filePath));
+        dest = new File("C:/Image/"+savedFileName);
+        vidFile.transferTo(dest);
 
-        //vidBytes=vidFile.getBytes();
+        vidBytes=vidFile.getBytes();
 
-        fileUploadService.saveVid(vidFile.getOriginalFilename(), savedFileName, filePath, user);
+        fileUploadService.saveVid(vidFile.getOriginalFilename(), savedFileName, dest.toString(), user);
 
 
         try{
@@ -129,10 +100,6 @@ public class FileUploadController {
             System.out.println(e);
             return "redirect:/";
         }
-
-        System.out.println(session.getServletContext().getRealPath("/"));
-        System.out.println(savePath);
-        System.out.println(filePath);
 
         return "redirect:/list";
     }
