@@ -6,25 +6,28 @@
     <link rel="stylesheet" type="text/css" href="/css/style_upload.css"/>
 </head>
 <body>
-{{^userdata}}
-<h3>로그인 후에 이용 가능합니다.</h3>
-<a href="login">로그인 하러 가기</a>
-{{/userdata}}
+<div class="page-wrapper">
+    {{^userdata}}
+    <h3>로그인 후에 이용 가능합니다.</h3>
+    <a href="login">로그인 하러 가기</a>
+    {{/userdata}}
 
-{{#userdata}}
-<div class="upload-box-body">
+    {{#userdata}}
     <form method="post" action="upload" enctype="multipart/form-data" name="fileForm" id="fileForm">
-
-        <p class="test1102">Test</p>
-        <div class="upload-image-section">
-            <input type="file" name="imgFile" id="imgFile" accept="image/*" onchange="setThumbnail(this);"/><br>
-            <img id="image_container" class="image-tn" >
-        </div>
-        <div class="upload-video-section">
-            <input type="file" name="vidFile" id="vidFile" accept="video/*"/><br>
-            <img id="video_container" class="video-tn">
-            <video id="video_container2"controls><source type="video/mp4"></video> <!--webm도 일단 작동-->
-            <canvas id="video_container3"></canvas><br/>
+        <div class="upload-file-section">
+            <div class="upload-image-section">
+                <input type="file" name="imgFile" id="imgFile" accept="image/*" onchange="setThumbnail(this);"/><br>
+                <img id="image_container" class="image-tn">
+            </div>
+            <div class="upload-video-section">
+                <input type="file" name="vidFile" id="vidFile" accept="video/*"/><br>
+                <img id="video_container" class="video-tn">
+                <video id="video_container2" controls>
+                    <source type="video/mp4">
+                </video> <!--webm도 일단 작동-->
+                <canvas id="video_container3"></canvas>
+                <br/>
+            </div>
         </div>
 
         <!--
@@ -34,8 +37,8 @@
         <!--accept="image/png, image/jpeg" 이 속성으로 파일 제한 할 수 있음-->
         <input type="button" class="upload-btn" onclick="checkFile()" value="전송"/>
     </form>
+    {{/userdata}}
 </div>
-{{/userdata}}
 </body>
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -75,21 +78,22 @@
         // FileReader 객체 사용
         var reader = new FileReader();
         // 파일 읽기가 완료되었을때 실행
-        reader.onload = function(rst){
-            document.getElementById('image_container').src=rst.target.result;
+        reader.onload = function (rst) {
+            document.getElementById('image_container').src = rst.target.result;
         }
         // 파일을 읽는다
         reader.readAsDataURL(file1[0]);
     }
+
     /*동영상 미리보기*/
-    $(function() {
+    $(function () {
         var video = $("#video_container2");
         var thumbnail = $("#video_container3");
         var ctx = thumbnail.get(0).getContext("2d");
         var duration = 0;
         var img = $("#video_container");
 
-        $('#vidFile').on("change", function(e) {
+        $('#vidFile').on("change", function (e) {
             var file = e.target.files[0];
             /*// Validate video file type
             if (["video/mp4"].indexOf(file.type) === -1) {
@@ -101,7 +105,7 @@
             // Load the video
             video.get(0).load();
             // Load metadata of the video to get video duration and dimensions
-            video.on("loadedmetadata", function(e) {
+            video.on("loadedmetadata", function (e) {
                 duration = video.get(0).duration;
                 // Set canvas dimensions same as video dimensions
                 thumbnail[0].width = video[0].videoWidth;
@@ -109,7 +113,7 @@
                 // Set video current time to get some random image
                 video[0].currentTime = Math.ceil(duration / 2);
                 // Draw the base-64 encoded image data when the time updates
-                video.one("timeupdate", function() {
+                video.one("timeupdate", function () {
                     ctx.drawImage(video[0], 0, 0, video[0].videoWidth, video[0].videoHeight);
                     img.attr("src", thumbnail[0].toDataURL());
                 });
