@@ -4,11 +4,12 @@
 }
 
 body {
-    background-color:#34495e
+    background-color:#34495e;
+    overflow-x:scroll;
 }
 
 /*index : 로그인, 회원가입 div*/
-.index{
+.index-section{
     position: absolute;
     left:50%;
     transform: translate(-50%,-50%); /*기준점을 가운데로*/
@@ -87,14 +88,10 @@ body {
     text-align: center;
     margin: 30px;
 }
-.login-box-msg{
-    font-size:14px;
-}
 .login-form{
     border-bottom: 2px solid #adadad;
     margin: 30px;
     padding: 10px 10px;
-
 }
 .login-input{
     width: 100%;
@@ -147,7 +144,6 @@ body {
     margin-left: 30px;
     margin-right: 30px;
     padding: 10px 10px;
-
 }
 .join-input{
     width: 100%;
@@ -188,7 +184,7 @@ body {
 
 /*업로드하기*/
 .test1102{
-    color:red;
+    color:orange;
 }
 .upload-box-body{
     position:absolute;
@@ -201,34 +197,36 @@ body {
     transform: translate(-50%,-50%);
     border-radius: 15px;
 }
-.image-select-section{
+.upload-image-section{
     background:gray;
     position:absolute;
-    left:200px;
+    left:100px;
     top:150px;
-    width:500px;
-    height:500px;
+    width:700px;
+    height:700px;
 }
-.video-select-section{
+.upload-video-section{
+    background:gray;
     position:absolute;
-    left:1000px;
+    left:900px;
     top:150px;
+    width:700px;
+    height:700px;
 }
-.image-tn-section2{
-    background:black;
-    object-fit:contain;
-    width:500px;
-    height:500px;
-
-}
-.v-th-sec{
+.image-tn{
     background:black;
     object-fit:contain;
     width:500px;
     height:500px;
 }
-video, canvas {
-    display: none;
+.video-tn{
+    background:black;
+    object-fit:contain;
+    width:500px;
+    height:500px;
+}
+#video_container2, #video_container3{
+    display:none;
 }
 .upload-btn{
     position:absolute;

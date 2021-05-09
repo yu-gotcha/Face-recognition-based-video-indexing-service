@@ -16,17 +16,15 @@
     <form method="post" action="upload" enctype="multipart/form-data" name="fileForm" id="fileForm">
 
         <p class="test1102">Test</p>
-        <div class="image-select-section">
+        <div class="upload-image-section">
             <input type="file" name="imgFile" id="imgFile" accept="image/*" onchange="setThumbnail(this);"/><br>
-            <div id="image_container" class="image-tn-section">
-                <img id="image_container2" class="image-tn-section2" >
-            </div>
+            <img id="image_container" class="image-tn" >
         </div>
-        <div class="video-select-section">
+        <div class="upload-video-section">
             <input type="file" name="vidFile" id="vidFile" accept="video/*"/><br>
-            <video controls><source type="video/mp4"></video>
-            <canvas></canvas><br/>
-            <img id="v-th" class="v-th-sec">
+            <img id="video_container" class="video-tn">
+            <video id="video_container2"controls><source type="video/mp4"></video> <!--webm도 일단 작동-->
+            <canvas id="video_container3"></canvas><br/>
         </div>
 
         <!--
@@ -67,6 +65,7 @@
         if (error == 0) document.fileForm.submit();
         else error = 0;
     }
+
     /*이미지 미리보기*/
     function setThumbnail(f) {
         var file1 = f.files;
@@ -77,29 +76,26 @@
         var reader = new FileReader();
         // 파일 읽기가 완료되었을때 실행
         reader.onload = function(rst){
-            /*document.getElementById('image_container').innerHTML = '<img src="' + rst.target.result + '">';*/
-            document.getElementById('image_container2').src=rst.target.result;
-
+            document.getElementById('image_container').src=rst.target.result;
         }
         // 파일을 읽는다
         reader.readAsDataURL(file1[0]);
     }
     /*동영상 미리보기*/
     $(function() {
-        var video = $("video");
-        var thumbnail = $("canvas");
-        var input = $("input[type=file]");
+        var video = $("#video_container2");
+        var thumbnail = $("#video_container3");
         var ctx = thumbnail.get(0).getContext("2d");
         var duration = 0;
-        var img = $("#v-th");
+        var img = $("#video_container");
 
         $('#vidFile').on("change", function(e) {
             var file = e.target.files[0];
-            // Validate video file type
+            /*// Validate video file type
             if (["video/mp4"].indexOf(file.type) === -1) {
                 alert("Only 'MP4' video format allowed.");
                 return;
-            }
+            }*/
             // Set video source
             video.find("source").attr("src", URL.createObjectURL(file));
             // Load the video
