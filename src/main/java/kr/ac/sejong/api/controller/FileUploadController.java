@@ -66,10 +66,22 @@ public class FileUploadController {
 
         user=(User)session.getAttribute("userdata");
 
+        //Video Upload
+        count=uploadVidRepository.findByVidUpUser(user).size();
+
+        String originalFileName = vidFile.getOriginalFilename();
+        savedFileName=Long.toString(user.getUserId())+"_"+Long.toString(count)+"_"+originalFileName;
+        File vidDest = new File("/usr/local/tomcat/file/video/"+savedFileName);
+        vidFile.transferTo(vidDest);
+
+        vidBytes=vidFile.getBytes();
+
+        fileUploadService.saveVid(vidFile.getOriginalFilename(), savedFileName, vidDest.toString(), user);
+
         //Image Upload
         count=uploadImgRepository.findByImgUpUser(user).size();
 
-        String originalFileName = imgFile.getOriginalFilename();
+        originalFileName = imgFile.getOriginalFilename();
         savedFileName=Long.toString(user.getUserId())+"_"+Long.toString(count)+"_"+originalFileName;
         File imgDest = new File("/usr/local/tomcat/file/image/"+savedFileName);
         imgFile.transferTo(imgDest);
@@ -78,17 +90,7 @@ public class FileUploadController {
 
         fileUploadService.saveImg(imgFile.getOriginalFilename(), savedFileName, imgDest.toString(), user);
 
-        //Video Upload
-        count=uploadVidRepository.findByVidUpUser(user).size();
 
-        originalFileName = vidFile.getOriginalFilename();
-        savedFileName=Long.toString(user.getUserId())+"_"+Long.toString(count)+"_"+originalFileName;
-        File vidDest = new File("/usr/local/tomcat/file/video/"+savedFileName);
-        vidFile.transferTo(vidDest);
-
-        vidBytes=vidFile.getBytes();
-
-        fileUploadService.saveVid(vidFile.getOriginalFilename(), savedFileName, vidDest.toString(), user);
 
 
         try{
