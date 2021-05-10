@@ -62,8 +62,8 @@ public class FileUploadService {
     public Boolean saveUpload(UploadImg upImg, UploadVid upVid, User user){
         Upload upload = new Upload();
 
-        upload.setUpImg(upImg);
-        upload.setUpVid(upVid);
+        upload.setUploadImg(upImg);
+        upload.setUploadVid(upVid);
         upload.setUser(user);
         upload.setUploading(1);
         upload.setProcessing(0);
