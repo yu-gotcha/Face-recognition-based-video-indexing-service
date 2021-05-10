@@ -74,7 +74,7 @@ public class FileUploadController {
         File imgDest = new File("/usr/local/tomcat/file/image/"+savedFileName);
         imgFile.transferTo(imgDest);
 
-        imgBytes=imgFile.getBytes();
+        //imgBytes=imgFile.getBytes();
 
         fileUploadService.saveImg(imgFile.getOriginalFilename(), savedFileName, imgDest.toString(), user);
 
@@ -86,7 +86,7 @@ public class FileUploadController {
         File vidDest = new File("/usr/local/tomcat/file/video/"+savedFileName);
         vidFile.transferTo(vidDest);
 
-        vidBytes=vidFile.getBytes();
+        //vidBytes=vidFile.getBytes();
 
         fileUploadService.saveVid(vidFile.getOriginalFilename(), savedFileName, vidDest.toString(), user);
 
