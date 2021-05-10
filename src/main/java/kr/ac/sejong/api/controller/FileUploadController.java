@@ -71,24 +71,24 @@ public class FileUploadController {
 
         String originalFileName = imgFile.getOriginalFilename();
         savedFileName=Long.toString(user.getUserId())+"_"+Long.toString(count)+"_"+originalFileName;
-        File dest = new File("/usr/local/tomcat/file/image/"+savedFileName);
-        imgFile.transferTo(dest);
+        File imgDest = new File("/usr/local/tomcat/file/image/"+savedFileName);
+        imgFile.transferTo(imgDest);
 
         imgBytes=imgFile.getBytes();
 
-        fileUploadService.saveImg(imgFile.getOriginalFilename(), savedFileName, dest.toString(), user);
+        fileUploadService.saveImg(imgFile.getOriginalFilename(), savedFileName, imgDest.toString(), user);
 
         //Video Upload
         count=uploadVidRepository.findByVidUpUser(user).size();
 
         originalFileName = vidFile.getOriginalFilename();
         savedFileName=Long.toString(user.getUserId())+"_"+Long.toString(count)+"_"+originalFileName;
-        dest = new File("/usr/local/tomcat/file/video/"+savedFileName);
-        vidFile.transferTo(dest);
+        File vidDest = new File("/usr/local/tomcat/file/video/"+savedFileName);
+        vidFile.transferTo(vidDest);
 
         vidBytes=vidFile.getBytes();
 
-        fileUploadService.saveVid(vidFile.getOriginalFilename(), savedFileName, dest.toString(), user);
+        fileUploadService.saveVid(vidFile.getOriginalFilename(), savedFileName, vidDest.toString(), user);
 
 
         try{
@@ -98,7 +98,7 @@ public class FileUploadController {
             fileUploadService.saveUpload(upImg, upVid, user);
         }catch (Exception e){
             System.out.println(e);
-            return "redirect:/";
+            return "redirect:/upload";
         }
 
         return "redirect:/list";
