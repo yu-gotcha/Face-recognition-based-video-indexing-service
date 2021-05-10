@@ -34,12 +34,11 @@ public class UploadImg {
     // 여기에 @NotNull 을 넣어야 할지 모르겠음. 업로드를 진행해봐야 알 듯
     private String upImgPath;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User imgUpUser;
     //User 테이블의 user_id를 외래키로 갖음
 
-    @OneToOne
-    @JoinColumn(name = "upload")
-    private Upload uploadImg;
+    @OneToOne(mappedBy = "uploadImg")
+    private Upload upload;
 }

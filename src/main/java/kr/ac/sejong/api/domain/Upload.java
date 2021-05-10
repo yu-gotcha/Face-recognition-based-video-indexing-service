@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "UploadManage")
+@Table(name = "Upload")
 
 @Getter
 @Setter
@@ -23,11 +23,11 @@ public class Upload {
     @Column(name = "up_id")
     private long upId;
 
-    @OneToOne(mappedBy = "uploadImg")
-    public UploadImg upImg;
+    @OneToOne
+    public UploadImg uploadImg;
 
-    @OneToOne(mappedBy = "uploadVid")
-    public UploadVid upVid;
+    @OneToOne
+    public UploadVid uploadVid;
 
     @Column( name = "result_cluster_id")
     private long resultClusterId;

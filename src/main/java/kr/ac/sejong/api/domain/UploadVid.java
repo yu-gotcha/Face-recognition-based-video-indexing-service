@@ -36,9 +36,8 @@ public class UploadVid {
     private User vidUpUser;
     //User 테이블의 user_id를 외래키로 갖음
 
-    @OneToOne
-    @JoinColumn(name = "upload")
-    private Upload uploadVid;
+    @OneToOne(mappedBy = "uploadVid")
+    private Upload upload;
 
     @OneToMany(mappedBy = "upVid")
     @Column(name = "vid_frame")
