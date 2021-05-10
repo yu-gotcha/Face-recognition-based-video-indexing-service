@@ -4,28 +4,37 @@ body{
     margin:0 auto;
 }
 .page-wrapper{
-    background:white;
+    /*background:ivory;*/
     margin:100px;
     padding:10px;
+    display:flex;
+}
+.index-left-section{
+    margin:20px 150px 20px 20px;
+    width:40%;
+    height:600px;
+    /*border:3px solid orange;*/
+    /*background:white;*/
 }
 .index-title{
+    margin-top:100px;
     font-family: 'Itim', cursive;
-    text-align: center;
-    background:darkcyan;
+    padding:5px;
+    /*background:darkcyan;*/
     font-size:50pt;
 }
-.index-main-image{
-    display:block;
-    margin:0 auto;
-    background:yellow;
+.index-content{
+    line-height: 2.2;
+    padding:5px;
+    /*background:yellow;*/
 }
 /*index : 로그인, 회원가입 div*/
 .index-section{
-    background:rosybrown;
-    text-align:center;
+    margin-top:50px;
+    /*background:rosybrown;*/
 }
 .index-btn{
-
+    margin:5px;
     width:100px;
     height:40px;
     background: linear-gradient(125deg,#81ecec,#6c5ce7,#81ecec);
@@ -42,4 +51,14 @@ body{
 .index-btn:hover{
     background-position: right;
 }
-
+.index-right-section{
+    margin:20px;
+    width:60%;
+    height:600px;
+    /*border:3px solid red;*/
+}
+.index-image{
+    object-fit:fill;
+    width:100%;
+    height:100%;
+}
