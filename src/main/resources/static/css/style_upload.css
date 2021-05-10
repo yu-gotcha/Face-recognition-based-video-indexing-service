@@ -1,0 +1,62 @@
+/*업로드하기*/
+body{
+    background-color:#34495e;
+    width:1500px;
+    margin:0 auto;
+}
+.page-wrapper{
+    background:bisque;
+    margin:100px;
+    padding:10px;
+}
+.upload-file-section{
+    display:flex;
+    background:orange;
+}
+.upload-image-section{
+
+    margin:0px auto;
+    background:green;
+    width:550px;
+    height:550px;
+}
+.upload-video-section{
+
+    margin:0px auto;
+    background:gray;
+    width:550px;
+    height:550px;
+}
+.image-tn{
+    background:black;
+    object-fit:contain;
+    width:500px;
+    height:500px;
+}
+.video-tn{
+    background:black;
+    object-fit:contain;
+    width:500px;
+    height:500px;
+}
+#video_container2, #video_container3{
+    display:none;
+}
+.upload-btn{
+    margin:80px 590px;
+
+    width:100px;
+    height:40px;
+    background: linear-gradient(125deg,#81ecec,#6c5ce7,#81ecec);
+    background-position: left;
+    background-size: 200%;
+    color:white;
+    font-weight: bold;
+    border:none;
+    cursor:pointer;
+    transition: 0.4s;
+    display:inline;
+}
+.upload-btn:hover{
+    background-position: right;
+}
