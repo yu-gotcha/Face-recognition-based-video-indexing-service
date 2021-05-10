@@ -1,0 +1,45 @@
+body{
+    background-color:#FFDFCF;
+    width:1500px;
+    margin:0 auto;
+}
+.page-wrapper{
+    background:white;
+    margin:100px;
+    padding:10px;
+}
+.index-title{
+    font-family: 'Itim', cursive;
+    text-align: center;
+    background:darkcyan;
+    font-size:50pt;
+}
+.index-main-image{
+    display:block;
+    margin:0 auto;
+    background:yellow;
+}
+/*index : 로그인, 회원가입 div*/
+.index-section{
+    background:rosybrown;
+    text-align:center;
+}
+.index-btn{
+
+    width:100px;
+    height:40px;
+    background: linear-gradient(125deg,#81ecec,#6c5ce7,#81ecec);
+    background-position: left;
+    background-size: 200%;
+    border-radius: 15px;
+    color:white;
+    font-weight: bold;
+    border:none;
+    cursor:pointer;
+    transition: 0.4s;
+    display:inline;
+}
+.index-btn:hover{
+    background-position: right;
+}
+
