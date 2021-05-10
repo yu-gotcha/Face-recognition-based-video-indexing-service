@@ -15,6 +15,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
 import java.io.File;
+import java.io.OutputStream;
+import java.net.Socket;
 
 @Controller
 @RequestMapping(value = "")
@@ -35,7 +37,6 @@ public class FileUploadController {
 
 
     @PostMapping( value = "/upload" )
-    @ResponseStatus(HttpStatus.CREATED)
     /*
     public String upload(@RequestPart MultipartFile file, HttpSession session) throws Exception{
         String savedFileName;
@@ -103,6 +104,35 @@ public class FileUploadController {
 
         return "redirect:/list";
     }
+
+    /*
+    public String fileTransfer(@RequestPart MultipartFile imgFile,MultipartFile vidFile, HttpSession session) throws Exception{
+        User user;
+        byte[] vidBytes, imgBytes=imgFile.getBytes();
+
+        user=(User)session.getAttribute("userdata");
+
+        imgBytes=imgFile.getBytes();
+        long imgLength = imgFile.getSize();
+        long count=uploadImgRepository.findByImgUpUser(user).size();
+
+        String originalFileName = imgFile.getOriginalFilename();
+        String savedFileName=Long.toString(user.getUserId())+"_"+Long.toString(count)+"_"+originalFileName;
+
+        Socket socket=null;
+        OutputStream out;
+
+        try{
+            socket = new Socket("127.0.0.1", 11111);
+            System.out.println("Server Start!");
+
+            out=socket.getOutputStream();
+            out.write(imgBytes);
+            out.flush();
+
+        }
+    }
+    */
 
 
 }
