@@ -1,10 +1,31 @@
 body{
     background-color:#FFDFCF;
-    width:1500px;
+    width:1000px;
     margin:0 auto;
 }
 .page-wrapper{
+    min-height:1500px;
     background:ivory;
     margin:100px;
     padding:10px;
+}
+.list-user-section{
+    text-align:right;
+    border:3px solid red;
+}
+.list-go-upload{
+    text-align:center;
+    border:3px solid green;
+}
+.list-table-section{
+    border:3px solid purple;
+}
+.list-table-content{
+    border:3px solid orange;
+    margin:0px auto;
+}
+.list-table-thumbnail{
+    object-fit:contain;
+    width:150px;
+    height:100px;
 }

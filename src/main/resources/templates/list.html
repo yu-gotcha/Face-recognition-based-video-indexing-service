@@ -13,36 +13,46 @@
 
 
     {{#userdata}}
-    <a href="logout" class="btn btn-default btn-flat">로그아웃</a>
+    <div class="list-user-section">
+        {{userName}} 님
+<!--        <a href="logout">로그아웃</a>-->
+        <button type="button" onclick="location.href='logout'">로그아웃</button>
+    </div>
+    <div class="list-go-upload">
+<!--        <a href="upload">업로드 하러 가기</a>-->
+        <button type="button" onclick="location.href='upload'">업로드 하러 가기</button>
+    </div>
 
-    <a href="upload">업로드 하러 가기</a>
-
-    <div>{{userName}}</div>
 
     <!--리스트 관련된걸로 해시맵 만들어서 하면 될거같은디 반복 돌려서 테이블 만드는거-->
-    <table>
-        <th>No.</th>
-        <th>Image File Name</th>
-        <th>Video File Name</th>
-        <th>Upload</th>
-        <th>Process</th>
-        <th>result</th>
+    <div class="list-table-section">
+        <table class="list-table-content">
+            <th>No.</th>
+            <th>Image File Name</th>
+            <th>Video File Name</th>
+            <th>Upload</th>
+            <th>Process</th>
+            <th>Thumbnail</th> <!-- 영상 썸네일이어야  -->
+            <th>result</th>
 
-        {{#file}}
-        <tr>
-            <td>{{no}}</td>
-            <td>{{imageFileName}}</td>
-            <td>{{videoFileName}}</td>
-            <td>{{upload}}</td>
-            <td>{{process}}</td>
-
-            <td>
-                <button value="result" disabled="disabled">결과 보기</button>
-            </td>
-        </tr>
-        {{/file}}
-    </table>
+            {{#file}}
+            <tr>
+                <td>{{no}}</td>
+                <td>{{imageFileName}}</td>
+                <td>{{videoFileName}}</td>
+                <td>{{upload}}</td>
+                <td>{{process}}</td>
+                <td><img src="/file/image/{{imgSavedName}}"></td>
+<!--                <td><img class="list-table-thumbnail" src="/img/moni.png"/></td>-->
+                <td>
+                    <button value="result" disabled="disabled">결과 보기</button>
+                </td>
+            </tr>
+            {{/file}}
+        </table>
+    </div>
     {{/userdata}}
+
 </div>
 </body>
 </html>
