@@ -52,6 +52,8 @@ public class FileService {
             else processing = "processing...";
             map.put("process", processing);
 
+            map.put("imgSavedName", uploadImgRepository.findByUpImgId(i.getUpId()).getUpImgSavedName());
+
             fileList.add(map);
         }
 
