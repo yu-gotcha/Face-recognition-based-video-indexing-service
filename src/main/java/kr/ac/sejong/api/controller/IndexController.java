@@ -10,6 +10,4 @@ public class IndexController {
     @GetMapping(value = "index")
     public String index() { return "index"; }
 
-    @GetMapping(value = "show")
-    public String show() { return "show"; }
 }
