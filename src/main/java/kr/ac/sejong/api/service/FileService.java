@@ -53,6 +53,7 @@ public class FileService {
             map.put("process", processing);
 
             map.put("imgSavedName", uploadImgRepository.findByUpImgId(i.getUpId()).getUpImgSavedName());
+            map.put("vidSavedName", uploadVidRepository.findByUpVidId(i.getUpId()).getUpVidSavedName());
 
             fileList.add(map);
         }
