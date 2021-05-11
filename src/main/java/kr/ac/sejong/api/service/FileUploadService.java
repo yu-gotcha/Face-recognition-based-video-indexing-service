@@ -59,7 +59,11 @@ public class FileUploadService {
         return true;
     }
 
-    public Boolean saveUpload(UploadImg upImg, UploadVid upVid, User user){
+    public Boolean saveUpload(String imgFileName, String imgSavedName, String imgPath, String vidFileName, String vidSavedName, String vidPath, UploadImg upImg, UploadVid upVid, User user){
+        saveImg(imgFileName, imgSavedName, imgPath, user);
+        saveVid(vidFileName, vidSavedName, vidPath, user);
+
+
         Upload upload = new Upload();
 
         upload.setUploadImg(upImg);

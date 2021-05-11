@@ -60,7 +60,7 @@ public class FileUploadController {
 
     //transfer를 쓰지 않고 bytes로 소켓으로 던지는 것이 필요함함
    public String upload(@RequestPart MultipartFile imgFile,MultipartFile vidFile, HttpSession session) throws Exception{
-        String savedFileName;
+        String imgSavedFileName, vidSavedFileName;
         User user;
         long count;
         byte vidBytes[], imgBytes[];
@@ -70,33 +70,35 @@ public class FileUploadController {
         //Image Upload
         count=uploadImgRepository.findByImgUpUser(user).size();
 
-        String originalFileName = imgFile.getOriginalFilename();
-        savedFileName=Long.toString(user.getUserId())+"_"+Long.toString(count)+"_"+originalFileName;
-        File imgDest = new File("/usr/local/tomcat/file/image/"+savedFileName);
+        String imgOriginalFileName = imgFile.getOriginalFilename();
+        imgSavedFileName=Long.toString(user.getUserId())+"_"+Long.toString(count)+"_"+imgOriginalFileName;
+        File imgDest = new File("/usr/local/tomcat/file/image/"+imgSavedFileName);
         imgFile.transferTo(imgDest);
 
         //imgBytes=imgFile.getBytes();
 
-        fileUploadService.saveImg(imgFile.getOriginalFilename(), savedFileName, imgDest.toString(), user);
+
 
         //Video Upload
         count=uploadVidRepository.findByVidUpUser(user).size();
 
-        originalFileName = vidFile.getOriginalFilename();
-        savedFileName=Long.toString(user.getUserId())+"_"+Long.toString(count)+"_"+originalFileName;
-        File vidDest = new File("/usr/local/tomcat/file/video/"+savedFileName);
+        String vidOriginalFileName = vidFile.getOriginalFilename();
+        vidSavedFileName=Long.toString(user.getUserId())+"_"+Long.toString(count)+"_"+vidOriginalFileName;
+        File vidDest = new File("/usr/local/tomcat/file/video/"+vidSavedFileName);
         vidFile.transferTo(vidDest);
 
         //vidBytes=vidFile.getBytes();
 
-        fileUploadService.saveVid(vidFile.getOriginalFilename(), savedFileName, vidDest.toString(), user);
+
 
 
         try{
+            //fileUploadService.saveImg(imgFile.getOriginalFilename(), savedFileName, imgDest.toString(), user);
+            //fileUploadService.saveVid(vidFile.getOriginalFilename(), savedFileName, vidDest.toString(), user);
             UploadImg upImg = uploadImgRepository.findTopByOrderByUpImgIdDesc();
             UploadVid upVid = uploadVidRepository.findTopByOrderByUpVidIdDesc();
 
-            fileUploadService.saveUpload(upImg, upVid, user);
+            fileUploadService.saveUpload(imgOriginalFileName,imgSavedFileName, imgDest.toString(), vidOriginalFileName, vidSavedFileName, vidDest.toString(), upImg, upVid, user);
         }catch (Exception e){
             System.out.println(e);
             return "redirect:/upload";
