@@ -8,7 +8,8 @@
 <body>
 <!--로그인이 되어있이면 로그아웃만 보임-->
 {{#userdata}}
-<a href="logout" class="btn btn-default btn-flat" style="text-decoration:none; color: #222222">로그아웃</a>
+<!--<a href="logout" class="btn btn-default btn-flat" style="text-decoration:none; color: #222222">로그아웃</a>-->
+<meta http-equiv="refresh" content="0;url=list">
 {{/userdata}}
 
 <!--로그인이 안되어있어야 가입 가능-->

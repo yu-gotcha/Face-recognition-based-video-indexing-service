@@ -16,17 +16,26 @@ body{
     /*border:3px solid orange;*/
     /*background:white;*/
 }
+.index-content{
+    padding:5px;
+    /*background:yellow;*/
+    font-size:10pt;
+    margin-top:150px;
+    margin-bottom:0px;
+}
 .index-title{
-    margin-top:100px;
+    margin-top:0px;
     font-family: 'Itim', cursive;
     padding:5px;
     /*background:darkcyan;*/
     font-size:50pt;
 }
-.index-content{
-    line-height: 2.2;
+
+.index-more{
     padding:5px;
-    /*background:yellow;*/
+    text-decoration:none;
+    color: black;
+    /*background:mediumpurple;*/
 }
 /*index : 로그인, 회원가입 div*/
 .index-section{

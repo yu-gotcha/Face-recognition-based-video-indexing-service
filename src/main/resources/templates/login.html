@@ -9,9 +9,9 @@
 <body>
 <tr valign="top" align="left">
     <td style="padding-left:65px; padding-top:40px; padding-right:65px;">
-        {{#userdata}}
-        <img src="/img/moni.png"/>
-        <a href="logout" class="btn btn-default btn-flat" style="text-decoration:none; color: #222222">로그아웃</a>
+        {{#userdata}} <!--로그인 페이지인데 이미 로그인 되어있음-->
+<!--        <a href="logout" >로그아웃</a>-->
+        <meta http-equiv="refresh" content="0;url=list">
         {{/userdata}}
         {{^userdata}}
         <div class="login-box" align="center">
