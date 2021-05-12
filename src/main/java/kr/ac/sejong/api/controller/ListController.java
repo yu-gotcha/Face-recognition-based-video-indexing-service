@@ -34,17 +34,4 @@ public class ListController {
         return "list";
     }
 
-    @GetMapping(value = "show")
-    public String show(Model model, HttpSession session) {
-        User user = (User)session.getAttribute("userdata");
-        List<Map<String, Object>> fileList = fileService.getFileListByUser(user);
-
-        System.out.println(fileList);
-
-        model.addAttribute("file", fileList);
-
-        System.out.println(model);
-
-        return "show";
-    }
 }
