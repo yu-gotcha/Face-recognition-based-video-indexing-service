@@ -72,7 +72,7 @@ public class FileUploadController {
 
         String imgOriginalFileName = imgFile.getOriginalFilename();
         imgSavedFileName=Long.toString(user.getUserId())+"_"+Long.toString(count)+"_"+imgOriginalFileName;
-        File imgDest = new File("C://file/image/"+imgSavedFileName);
+        File imgDest = new File("/usr/local/tomcat/file/image/"+imgSavedFileName);
         imgFile.transferTo(imgDest);
 
         //imgBytes=imgFile.getBytes();
@@ -84,7 +84,7 @@ public class FileUploadController {
 
         String vidOriginalFileName = vidFile.getOriginalFilename();
         vidSavedFileName=Long.toString(user.getUserId())+"_"+Long.toString(count)+"_"+vidOriginalFileName;
-        File vidDest = new File("C://file/video/"+vidSavedFileName);
+        File vidDest = new File("/usr/local/tomcat/file/video/"+vidSavedFileName);
         vidFile.transferTo(vidDest);
 
         //vidBytes=vidFile.getBytes();
