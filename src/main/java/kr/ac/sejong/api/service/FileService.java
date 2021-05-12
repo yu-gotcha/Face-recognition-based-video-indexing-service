@@ -26,13 +26,13 @@ public class FileService {
 
         List<Upload> uploadList2=user.getUploadList();
 
-        System.out.println(uploadList.size());
+        //System.out.println(uploadList.size());
 
         List<Map<String, Object>> fileList = new ArrayList<Map<String, Object>>();
 
         String uploading, processing;
 
-        for(Upload i : uploadList){
+        for(Upload i : uploadList2){
             Map<String, Object> map = new HashMap<String, Object>();
 
             map.put("no", i.getUpId());
