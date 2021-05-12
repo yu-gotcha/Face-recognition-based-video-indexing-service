@@ -9,17 +9,25 @@ import kr.ac.sejong.api.repository.UploadRepository;
 import kr.ac.sejong.api.repository.UploadVidRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpSession;
+import java.io.OutputStream;
+import java.net.Socket;
 
 @Service
 public class FileUploadService {
-    private final UploadImgRepository UpImgRepository;
-    private final UploadVidRepository UpVidRepository;
+    private final UploadImgRepository uploadImgRepository;
+    private final UploadVidRepository uploadVidRepository;
     private final UploadRepository uploadRepository;
+    public UploadImg uploadImg = new UploadImg();
+    public UploadVid uploadVid = new UploadVid();
 
     @Autowired
-    public FileUploadService(UploadImgRepository UpImgRepository,UploadVidRepository UpVidRepository, UploadRepository uploadRepository) {
-        this.UpImgRepository = UpImgRepository;
-        this.UpVidRepository = UpVidRepository;
+    public FileUploadService(UploadImgRepository uploadImgRepository,UploadVidRepository uploadVidRepository, UploadRepository uploadRepository) {
+        this.uploadImgRepository = uploadImgRepository;
+        this.uploadVidRepository = uploadVidRepository;
         this.uploadRepository = uploadRepository;
     }
 
@@ -32,7 +40,7 @@ public class FileUploadService {
         img.setImgUpUser(user);
 
         try {
-            UpImgRepository.save(img);
+            uploadImgRepository.save(img);
         }catch (Exception e){
             System.out.println(e);
             return false;
@@ -50,7 +58,7 @@ public class FileUploadService {
         vid.setVidUpUser(user);
 
         try {
-            UpVidRepository.save(vid);
+            uploadVidRepository.save(vid);
         }catch (Exception e){
             System.out.println(e);
             return false;
@@ -60,14 +68,17 @@ public class FileUploadService {
     }
 
     public Boolean saveUpload(String imgFileName, String imgSavedName, String imgPath, String vidFileName, String vidSavedName, String vidPath, UploadImg upImg, UploadVid upVid, User user){
+        uploadImg=upImg;
+        uploadVid=upVid;
+
         saveImg(imgFileName, imgSavedName, imgPath, user);
         saveVid(vidFileName, vidSavedName, vidPath, user);
 
 
         Upload upload = new Upload();
 
-        upload.setUploadImg(upImg);
-        upload.setUploadVid(upVid);
+        upload.setUploadImg(uploadImg);
+        upload.setUploadVid(uploadVid);
         upload.setUser(user);
         upload.setUploading(1);
         upload.setProcessing(0);
@@ -81,4 +92,37 @@ public class FileUploadService {
 
         return true;
     }
+
+    /*
+    public String fileTransfer(@RequestPart MultipartFile imgFile, MultipartFile vidFile, HttpSession session) throws Exception{
+        User user;
+        byte[] vidBytes, imgBytes=imgFile.getBytes();
+
+        user=(User)session.getAttribute("userdata");
+
+        imgBytes=imgFile.getBytes();
+        long imgLength = imgFile.getSize();
+        long count=uploadImgRepository.findByImgUpUser(user).size();
+
+        String originalFileName = imgFile.getOriginalFilename();
+        String savedFileName=Long.toString(user.getUserId())+"_"+Long.toString(count)+"_"+originalFileName;
+
+        Socket socket=null;
+        OutputStream out;
+
+
+        try{
+            socket = new Socket("127.0.0.1", 9999);
+            System.out.println("Server Start!");
+
+            out=socket.getOutputStream();
+            out.write(imgBytes);
+            out.flush();
+
+        }
+
+
+        return "none";
+    }
+    */
 }
