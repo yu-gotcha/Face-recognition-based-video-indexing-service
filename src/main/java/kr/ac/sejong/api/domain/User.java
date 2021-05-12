@@ -42,7 +42,7 @@ public class User {
     */
 
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     @Column( name = "upload")
     private List<Upload> uploadList = new ArrayList<>();
 }

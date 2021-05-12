@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Transactional
 @Service
 public class FileService {
     private final UploadRepository uploadRepository;
@@ -22,7 +23,7 @@ public class FileService {
 
     @Transactional
     public List<Map<String, Object>> getFileListByUser(User user){
-        List<Upload> uploadList = uploadRepository.findByUser(user);
+        //List<Upload> uploadList = uploadRepository.findByUser(user);
 
         List<Upload> uploadList2=user.getUploadList();
 

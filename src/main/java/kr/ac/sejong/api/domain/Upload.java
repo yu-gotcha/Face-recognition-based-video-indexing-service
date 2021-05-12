@@ -36,7 +36,7 @@ public class Upload {
     @Column( name = "resule_section")
     private List<ResultSection> sectionList = new ArrayList<>();
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user")
     private User user;
 
