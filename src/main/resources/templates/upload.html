@@ -8,8 +8,8 @@
 <body>
 <div class="page-wrapper">
     {{^userdata}}
-<!--    <h3>로그인 후에 이용 가능합니다.</h3>-->
-<!--    <a href="login">로그인 하러 가기</a>-->
+    <!--    <h3>로그인 후에 이용 가능합니다.</h3>-->
+    <!--    <a href="login">로그인 하러 가기</a>-->
     <meta http-equiv="refresh" content="0;url=index">
     {{/userdata}}
 
@@ -17,26 +17,33 @@
     <form method="post" action="upload" enctype="multipart/form-data" name="fileForm" id="fileForm">
         <div class="upload-file-section">
             <div class="upload-image-section">
-                <input type="file" name="imgFile" id="imgFile" accept="image/*" onchange="setThumbnail(this);"/><br>
-                <img id="image_container" class="image-tn">
+                <p id="imgError">이미지 파일을 선택해주세요.</p>
+                <div class="upload-image-section-in">
+
+                    <img id="image_container" class="image-tn">
+                    <input type="file" name="imgFile" id="imgFile" accept="image/*" onchange="setThumbnail(this);"/><br>
+                </div>
+
             </div>
             <div class="upload-video-section">
-                <input type="file" name="vidFile" id="vidFile" accept="video/*"/><br>
-                <img id="video_container" class="video-tn">
-                <video id="video_container2" controls>
-                    <source type="video/mp4">
-                </video> <!--webm도 일단 작동-->
-                <canvas id="video_container3"></canvas>
-                <br/>
+                <p id="vidError">비디오 파일을 선택해주세요.</p>
+                <div class="upload-video-section-in">
+
+                    <img id="video_container" class="video-tn">
+                    <video id="video_container2" controls>
+                        <source type="video/mp4">
+                    </video> <!--webm도 일단 작동-->
+                    <canvas id="video_container3"></canvas>
+                    <input type="file" name="vidFile" id="vidFile" accept="video/*"/><br>
+                </div>
+
             </div>
         </div>
 
-
-        <p id="imgError" display='block'>이미지 파일을 선택해주세요.</p>
-        <p id="vidError" display='block'>비디오 파일을 선택해주세요.</p>
-
         <!--accept="image/png, image/jpeg" 이 속성으로 파일 제한 할 수 있음-->
-        <input type="button" class="upload-btn" onclick="checkFile()" value="전송"/>
+        <div class="submit-btn-section">
+            <input type="button" class="upload-btn" onclick="checkFile()" value="전송"/>
+        </div>
     </form>
     {{/userdata}}
 </div>

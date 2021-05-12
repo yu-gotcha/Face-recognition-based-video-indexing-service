@@ -5,46 +5,54 @@ body{
     margin:0 auto;
 }
 .page-wrapper{
-    background:bisque;
+    background:white;
     margin:100px;
     padding:10px;
 }
 .upload-file-section{
     display:flex;
-    background:orange;
+    /*border:3px solid red;*/
 }
 .upload-image-section{
-
+    text-align:center;
     margin:0px auto;
-    background:green;
-    width:550px;
-    height:550px;
+    width:40%;
+    height:100%;
+    border:3px solid blue;
+}
+.upload-image-section-in{
+    border:3px solid orange;
 }
 .upload-video-section{
-
     margin:0px auto;
-    background:gray;
-    width:550px;
-    height:550px;
+    width:40%;
+    height:100%;
+    border:3px solid blue;
+}
+.upload-video-section-in{
+    border:3px solid orange;
 }
 .image-tn{
-    background:black;
     object-fit:contain;
-    width:500px;
-    height:500px;
+    width:400px;
+    height:400px;
+    border:3px solid cyan;
 }
 .video-tn{
-    background:black;
     object-fit:contain;
-    width:500px;
-    height:500px;
+    width:400px;
+    height:400px;
+    border:3px solid cyan;
 }
 #video_container2, #video_container3{
     display:none;
 }
+.submit-btn-section{
+    margin:80px 0 80px 0;
+    text-align:center;
+    /*border:3px solid yellow;*/
+}
 .upload-btn{
-    margin:80px 590px;
-
     width:100px;
     height:40px;
     background: linear-gradient(125deg,#81ecec,#6c5ce7,#81ecec);
@@ -56,6 +64,7 @@ body{
     cursor:pointer;
     transition: 0.4s;
     display:inline;
+
 }
 .upload-btn:hover{
     background-position: right;
