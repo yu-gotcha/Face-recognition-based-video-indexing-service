@@ -24,6 +24,8 @@ public class FileService {
     public List<Map<String, Object>> getFileListByUser(User user){
         List<Upload> uploadList = uploadRepository.findByUser(user);
 
+        List<Upload> uploadList2=user.getUploadList();
+
         System.out.println(uploadList.size());
 
         List<Map<String, Object>> fileList = new ArrayList<Map<String, Object>>();
