@@ -12,9 +12,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.persistence.EntityManager;
 import javax.servlet.http.HttpSession;
 import java.io.OutputStream;
 import java.net.Socket;
+import java.util.List;
 
 @Service
 public class FileUploadService {
@@ -91,6 +93,11 @@ public class FileUploadService {
             return false;
         }
 
+        System.out.println("--------------------------------------------");
+        List<Upload> uploadList2=user.getUploadList();
+
+        System.out.println(uploadList2.size());
+        System.out.println("--------------------------------------------");
         return true;
     }
 

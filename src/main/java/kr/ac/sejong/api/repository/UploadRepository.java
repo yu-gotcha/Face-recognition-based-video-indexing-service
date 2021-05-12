@@ -10,4 +10,7 @@ import java.util.List;
 @Repository
 public interface UploadRepository extends JpaRepository<Upload, Long> {
     List<Upload> findByUser(User user);
+    Upload findByUpId(long i);
+    long countByUser(User user);
+    long count();
 }

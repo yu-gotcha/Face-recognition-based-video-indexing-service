@@ -25,7 +25,7 @@ public class ListController {
         User user = (User)session.getAttribute("userdata");
         List<Map<String, Object>> fileList = fileService.getFileListByUser(user);
 
-        System.out.println(fileList);
+        //System.out.println(fileList);
 
         model.addAttribute("file", fileList);
 

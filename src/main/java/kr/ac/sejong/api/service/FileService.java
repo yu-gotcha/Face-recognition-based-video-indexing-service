@@ -11,8 +11,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Transactional
+
 @Service
+@Transactional
 public class FileService {
     private final UploadRepository uploadRepository;
 
@@ -21,13 +22,14 @@ public class FileService {
     }
 
 
-    @Transactional
+
     public List<Map<String, Object>> getFileListByUser(User user){
-        //List<Upload> uploadList = uploadRepository.findByUser(user);
+        long no=1;
+        List<Upload> uploadList2 = uploadRepository.findByUser(user);
 
-        List<Upload> uploadList2=user.getUploadList();
+        //List<Upload> uploadList2=user.getUploadList();
 
-        //System.out.println(uploadList.size());
+        System.out.println(uploadList2.size());
 
         List<Map<String, Object>> fileList = new ArrayList<Map<String, Object>>();
 
@@ -36,7 +38,7 @@ public class FileService {
         for(Upload i : uploadList2){
             Map<String, Object> map = new HashMap<String, Object>();
 
-            map.put("no", i.getUpId());
+            map.put("no", no++);
             //이름 가져올 수 있어야함
             map.put("imageFileName", i.getUploadImg().getUpImgName());
             map.put("videoFileName", i.getUploadVid().getUpVidName());
@@ -55,7 +57,14 @@ public class FileService {
             fileList.add(map);
         }
 
+        /*
         System.out.println(fileList);
+        System.out.println("-----------------------------------------------------------");
+
+        System.out.println("count--"+ uploadRepository.count());
+        System.out.println("count by user--"+ uploadRepository.countByUser(user));
+        System.out.println("-----------------------------------------------------------");
+        */
 
         return fileList;
     }
