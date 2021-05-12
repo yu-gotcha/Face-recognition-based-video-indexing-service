@@ -1,6 +1,13 @@
+@font-face {
+    font-family: 'SLEIGothicTTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /*업로드하기*/
 body{
-    background-color:#34495e;
+    background-color:#363D47;
     width:1500px;
     margin:0 auto;
 }
@@ -21,7 +28,7 @@ body{
     /*border:3px solid green;*/
     font-family: 'Itim', cursive;
     font-size:50pt;
-    color:white;
+    color:#FFE268;
 
 }
 .upload-section{
@@ -39,8 +46,8 @@ body{
     object-fit:contain;
     width:400px;
     height:400px;
-    /*border:3px solid cyan;*/
-    background:white;
+    /*border:1px solid cyan;*/
+    background:#292929;
     border-radius: 15px;
 }
 .video-tn{
@@ -48,7 +55,7 @@ body{
     width:400px;
     height:400px;
     /*border:3px solid magenta;*/
-    background:white;
+    background:#292929;
     border-radius: 15px;
 }
 #video_container2, #video_container3{
@@ -118,14 +125,18 @@ body{
     /*border:3px solid yellow;*/
 }
 .upload-submit-btn{
-    width:100px;
-    height:40px;
-    background: white;
-    color:black;
-    font-weight: bold;
+    padding:10px 40px 10px 40px;
+    background: #FFE268;
+    color:#363D47;
     border:none;
     cursor:pointer;
     display:inline;
     border-radius: 15px;
-
+    font-size:14pt;
+    font-family: 'SLEIGothicTTF';
+    transition: 0.4s;
+}
+.upload-submit-btn:hover{
+    background:#D6B942;
+    color:white;
 }

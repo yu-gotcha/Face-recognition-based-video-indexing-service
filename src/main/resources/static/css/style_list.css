@@ -1,24 +1,72 @@
+@font-face {
+    font-family: 'SLEIGothicTTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body{
-    background-color:#FFDFCF;
+    background-color:#363D47;
     width:1000px;
     margin:0 auto;
 }
 .page-wrapper{
-    min-height:1500px;
-    background:ivory;
+    /*background:white;*/
     margin:100px;
     padding:10px;
 }
 .list-user-section{
     text-align:right;
-    border:3px solid red;
+    /*border:3px solid red;*/
+}
+.list-user-name{
+    border-radius: 15px;
+    background:white;
+    padding:5px 10px;
+    font-family: 'SLEIGothicTTF';
+    font-size:10pt;
+}
+.list-logout-btn{
+    padding:5px 10px;
+    background: #23a3a7;
+    color:#363D47;
+    border:none;
+    cursor:pointer;
+    display:inline;
+    border-radius: 15px;
+    font-family: 'SLEIGothicTTF';
+    transition: 0.4s;
+    font-size:10pt;
+}
+.list-logout-btn:hover{
+    background:#23a3a7;
+    color:white;
 }
 .list-go-upload{
+    margin:50px 0 50px 0;
     text-align:center;
-    border:3px solid green;
+    /*border:3px solid green;*/
+}
+.list-upload-btn{
+    padding:10px 15px;
+    background: #FFE268;
+    color:#363D47;
+    border:none;
+    cursor:pointer;
+    display:inline;
+    border-radius: 15px;
+    font-family: 'SLEIGothicTTF';
+    transition: 0.4s;
+    font-size:16pt;
+}
+.list-upload-btn:hover{
+    background:#D6B942;
+    color:white;
 }
 .list-table-section{
+    min-height:1500px;
     border:3px solid purple;
+    background:white;
 }
 .list-table-content{
     border:3px solid orange;
