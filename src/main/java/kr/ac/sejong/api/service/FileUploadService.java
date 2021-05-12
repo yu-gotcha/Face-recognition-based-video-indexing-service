@@ -21,6 +21,8 @@ public class FileUploadService {
     private final UploadImgRepository uploadImgRepository;
     private final UploadVidRepository uploadVidRepository;
     private final UploadRepository uploadRepository;
+    public UploadImg uploadImg =new UploadImg();
+    public UploadVid uploadVid = new UploadVid();
 
     @Autowired
     public FileUploadService(UploadImgRepository uploadImgRepository,UploadVidRepository uploadVidRepository, UploadRepository uploadRepository) {
@@ -38,6 +40,7 @@ public class FileUploadService {
         img.setImgUpUser(user);
 
         try {
+            uploadImg = img;
             uploadImgRepository.save(img);
         }catch (Exception e){
             System.out.println(e);
@@ -56,6 +59,7 @@ public class FileUploadService {
         vid.setVidUpUser(user);
 
         try {
+            uploadVid = vid;
             uploadVidRepository.save(vid);
         }catch (Exception e){
             System.out.println(e);
@@ -65,16 +69,16 @@ public class FileUploadService {
         return true;
     }
 
-    public Boolean saveUpload(String imgFileName, String imgSavedName, String imgPath, String vidFileName, String vidSavedName, String vidPath, UploadImg upImg, UploadVid upVid, User user){
+    public Boolean saveUpload(String imgFileName, String imgSavedName, String imgPath, String vidFileName, String vidSavedName, String vidPath, User user){
         saveImg(imgFileName, imgSavedName, imgPath, user);
         saveVid(vidFileName, vidSavedName, vidPath, user);
-        System.out.println("Img:"+upImg);
-        System.out.println("Vid:"+upVid);
+        System.out.println("Img:"+uploadImg);
+        System.out.println("Vid:"+uploadVid);
 
         Upload upload = new Upload();
 
-        upload.setUploadImg(upImg);
-        upload.setUploadVid(upVid);
+        upload.setUploadImg(uploadImg);
+        upload.setUploadVid(uploadVid);
         upload.setUser(user);
         upload.setUploading(1);
         upload.setProcessing(0);

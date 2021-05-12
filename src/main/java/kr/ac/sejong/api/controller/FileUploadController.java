@@ -95,10 +95,8 @@ public class FileUploadController {
         try{
             //fileUploadService.saveImg(imgFile.getOriginalFilename(), savedFileName, imgDest.toString(), user);
             //fileUploadService.saveVid(vidFile.getOriginalFilename(), savedFileName, vidDest.toString(), user);
-            UploadImg upImg = uploadImgRepository.findTopByOrderByUpImgIdDesc();
-            UploadVid upVid = uploadVidRepository.findTopByOrderByUpVidIdDesc();
 
-            fileUploadService.saveUpload(imgOriginalFileName,imgSavedFileName, imgDest.toString(), vidOriginalFileName, vidSavedFileName, vidDest.toString(), upImg, upVid, user);
+            fileUploadService.saveUpload(imgOriginalFileName,imgSavedFileName, imgDest.toString(), vidOriginalFileName, vidSavedFileName, vidDest.toString(), user);
         }catch (Exception e){
             System.out.println(e);
             return "redirect:/upload";
@@ -107,34 +105,7 @@ public class FileUploadController {
         return "redirect:/list";
     }
 
-    /*
-    public String fileTransfer(@RequestPart MultipartFile imgFile,MultipartFile vidFile, HttpSession session) throws Exception{
-        User user;
-        byte[] vidBytes, imgBytes=imgFile.getBytes();
 
-        user=(User)session.getAttribute("userdata");
-
-        imgBytes=imgFile.getBytes();
-        long imgLength = imgFile.getSize();
-        long count=uploadImgRepository.findByImgUpUser(user).size();
-
-        String originalFileName = imgFile.getOriginalFilename();
-        String savedFileName=Long.toString(user.getUserId())+"_"+Long.toString(count)+"_"+originalFileName;
-
-        Socket socket=null;
-        OutputStream out;
-
-        try{
-            socket = new Socket("127.0.0.1", 11111);
-            System.out.println("Server Start!");
-
-            out=socket.getOutputStream();
-            out.write(imgBytes);
-            out.flush();
-
-        }
-    }
-    */
 
 
 }
