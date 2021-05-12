@@ -5,7 +5,7 @@ body{
     margin:0 auto;
 }
 .page-wrapper{
-    background:white;
+    /*background:white;*/
     margin:100px;
     padding:10px;
 }
@@ -13,59 +13,119 @@ body{
     display:flex;
     /*border:3px solid red;*/
 }
-.upload-image-section{
+.upload-please{
     text-align:center;
     margin:0px auto;
-    width:40%;
-    height:100%;
-    border:3px solid blue;
+    /*width:300px;*/
+    /*background:white;*/
+    /*border:3px solid green;*/
+    font-family: 'Itim', cursive;
+    font-size:50pt;
+    color:white;
+
 }
-.upload-image-section-in{
-    border:3px solid orange;
-}
-.upload-video-section{
+.upload-section{
     margin:0px auto;
     width:40%;
     height:100%;
-    border:3px solid blue;
+    /*border:3px solid blue;*/
 }
-.upload-video-section-in{
-    border:3px solid orange;
+.upload-section-in{
+    /*border:3px solid orange;*/
+    width:406px;
+    margin:0 auto;
 }
 .image-tn{
     object-fit:contain;
     width:400px;
     height:400px;
-    border:3px solid cyan;
+    /*border:3px solid cyan;*/
+    background:white;
+    border-radius: 15px;
 }
 .video-tn{
     object-fit:contain;
     width:400px;
     height:400px;
-    border:3px solid cyan;
+    /*border:3px solid magenta;*/
+    background:white;
+    border-radius: 15px;
 }
 #video_container2, #video_container3{
     display:none;
 }
-.submit-btn-section{
+.image-file-container{
+    margin-top:5px;
+    /*border:3px solid pink;*/
+}
+.image-file-container label{
+    border-radius: 10px;
+    text-align:center;
+    /*border:3px solid yellow;*/
+    display:inline-block;
+    background:#23a3a7;
+    color:#fff;
+    cursor:pointer;
+    width:80px;
+    padding:5px 0 5px 0;
+}
+.image-file-container label:after{
+    content:"파일선택";
+}
+.image-file-container .image-file-input{
+    display:none;
+}
+.image-file-container .img-filename{
+    background:white;
+    border-radius: 10px;
+    /*border:3px solid purple;*/
+    display:inline-block;
+    padding:5px 5px 5px 10px;
+    width:290px;
+}
+.video-file-container{
+    margin-top:5px;
+    /*border:3px solid red;*/
+}
+.video-file-container label{
+    border-radius: 10px;
+    text-align:center;
+    /*border:3px solid greenyellow;*/
+    display:inline-block;
+    background:#23a3a7;
+    color:#fff;
+    cursor:pointer;
+    width:80px;
+    padding:5px 0 5px 0;
+}
+.video-file-container label:after{
+    content:"파일선택";
+}
+.video-file-container .video-file-input{
+    display:none;
+}
+.video-file-container .vid-filename{
+    background:white;
+    border-radius: 10px;
+    /*border:3px solid gray;*/
+    display:inline-block;
+    padding:5px 5px 5px 10px;
+    width:290px;
+}
+.upload-submit-btn-section{
     margin:80px 0 80px 0;
     text-align:center;
     /*border:3px solid yellow;*/
 }
-.upload-btn{
+.upload-submit-btn{
     width:100px;
     height:40px;
-    background: linear-gradient(125deg,#81ecec,#6c5ce7,#81ecec);
-    background-position: left;
-    background-size: 200%;
-    color:white;
+    background: white;
+    color:black;
     font-weight: bold;
     border:none;
     cursor:pointer;
-    transition: 0.4s;
     display:inline;
+    border-radius: 15px;
 
-}
-.upload-btn:hover{
-    background-position: right;
 }
