@@ -25,17 +25,11 @@ public class FileService {
 
     public List<Map<String, Object>> getFileListByUser(User user){
         long no=1;
-        List<Upload> uploadList2 = uploadRepository.findByUser(user);
-
-        //List<Upload> uploadList2=user.getUploadList();
-
-        System.out.println(uploadList2.size());
-
+        List<Upload> uploadList = uploadRepository.findByUser(user);
         List<Map<String, Object>> fileList = new ArrayList<Map<String, Object>>();
-
         String uploading, processing;
 
-        for(Upload i : uploadList2){
+        for(Upload i : uploadList){
             Map<String, Object> map = new HashMap<String, Object>();
 
             map.put("no", no++);
@@ -56,15 +50,6 @@ public class FileService {
 
             fileList.add(map);
         }
-
-        /*
-        System.out.println(fileList);
-        System.out.println("-----------------------------------------------------------");
-
-        System.out.println("count--"+ uploadRepository.count());
-        System.out.println("count by user--"+ uploadRepository.countByUser(user));
-        System.out.println("-----------------------------------------------------------");
-        */
 
         return fileList;
     }

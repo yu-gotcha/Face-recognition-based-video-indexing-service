@@ -63,7 +63,6 @@ public class FileUploadController {
         String imgSavedFileName, vidSavedFileName;
         User user;
         long count;
-        byte vidBytes[], imgBytes[];
 
         user=(User)session.getAttribute("userdata");
 
@@ -75,10 +74,6 @@ public class FileUploadController {
         File imgDest = new File("/usr/local/tomcat/file/image/"+imgSavedFileName);
         imgFile.transferTo(imgDest);
 
-        //imgBytes=imgFile.getBytes();
-
-
-
         //Video Upload
         count=uploadVidRepository.findByVidUpUser(user).size();
 
@@ -87,15 +82,8 @@ public class FileUploadController {
         File vidDest = new File("/usr/local/tomcat/file/video/"+vidSavedFileName);
         vidFile.transferTo(vidDest);
 
-        //vidBytes=vidFile.getBytes();
-
-
-
 
         try{
-            //fileUploadService.saveImg(imgFile.getOriginalFilename(), savedFileName, imgDest.toString(), user);
-            //fileUploadService.saveVid(vidFile.getOriginalFilename(), savedFileName, vidDest.toString(), user);
-
             fileUploadService.saveUpload(imgOriginalFileName,imgSavedFileName, imgDest.toString(), vidOriginalFileName, vidSavedFileName, vidDest.toString(), user);
         }catch (Exception e){
             System.out.println(e);
