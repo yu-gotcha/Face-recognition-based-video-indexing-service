@@ -15,8 +15,14 @@
         <h1 class="index-title">Time Attack</h1>
         <a href="manual" class="index-more">더 알아보기 -></a>
         <div class="index-section">
+            {{#userdata}}
+            <input type="button" class="index-btn" value="업로드 하기" onClick="location.href='upload'"/>
+            <input type="button" class="index-btn" value="목록 보기" onClick="location.href='list'"/>
+            {{/userdata}}
+            {{^userdata}}
             <input type="button" class="index-btn" value="로그인" onClick="location.href='login'"/>
             <input type="button" class="index-btn" value="회원가입" onClick="location.href='join'"/>
+            {{/userdata}}
         </div>
     </div>
     <div class="index-right-section">
