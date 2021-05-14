@@ -19,20 +19,20 @@
     <form method="post" action="upload" enctype="multipart/form-data" name="fileForm" id="fileForm">
         <div class="upload-file-section">
             <div class="upload-section">
-                <p id="imgError" class="upload-please">IMAGE</p>
+                <p class="upload-please">IMAGE</p>
 <!--                <p class="upload-please">이미지 파일을 선택해주세요.</p>-->
                 <div class="upload-section-in">
                     <img id="image_container" class="image-tn" src="/img/tn-back.png">
 <!--                    <input type="file" name="imgFile" id="imgFile" accept="image/*" onchange="setThumbnail(this);"/><br>-->
                     <div class="image-file-container">
                         <label><input type="file" name="imgFile" id="imgFile" class="image-file-input" accept="image/*" onchange="setThumbnail(this);"/></label>
-                        <span class="img-filename">파일을 선택해주세요.</span>
+                        <span id="imgError" class="img-filename">파일을 선택해주세요.</span>
                     </div>
                 </div>
 
             </div>
             <div class="upload-section">
-                <p id="vidError" class="upload-please">VIDEO</p>
+                <p class="upload-please">VIDEO</p>
 <!--                <p class="upload-please">비디오 파일을 선택해주세요.</p>-->
                 <div class="upload-section-in">
                     <img id="video_container" class="video-tn" src="/img/tn-back.png">
@@ -43,7 +43,7 @@
 <!--                    <input type="file" name="vidFile" id="vidFile" accept="video/*"/><br>-->
                     <div class="video-file-container">
                         <label><input type="file" name="vidFile" id="vidFile" class="video-file-input" accept="video/*"/></label>
-                        <span class="vid-filename">파일을 선택해주세요.</span>
+                        <span id="vidError" class="vid-filename">파일을 선택해주세요.</span>
                     </div>
                 </div>
 
@@ -73,7 +73,7 @@
             $("#imgError").css('color', 'red');
         } else {
             // $("#imgError").hide();
-            $("#imgError").css('color', '#FFE268');
+            $("#imgError").css('color', 'black');
         }
 
         if (vidFile.length == 0) {
@@ -82,7 +82,7 @@
             $("#vidError").css('color', 'red');
         } else {
             // $("#vidError").hide();
-            $("#vidError").css('color', '#FFE268');
+            $("#vidError").css('color', 'black');
         }
 
         if (error == 0) document.fileForm.submit();
@@ -115,6 +115,7 @@
 
         $('#vidFile').on("change", function (e) {
             var file = e.target.files[0];
+
             /*// Validate video file type
             if (["video/mp4"].indexOf(file.type) === -1) {
                 alert("Only 'MP4' video format allowed.");
@@ -146,8 +147,14 @@
         // $filename = $(this).val();
         $filename=$(this).val().split('/').pop().split('\\').pop();
 
-        if($filename == "")
+        if($filename == "") {
             $filename = "파일을 선택해주세요.";
+            $("#image_container").attr("src", '/img/tn-back.png');
+            $("#imgError").css('color', 'red');
+        }
+        else{
+            $("#imgError").css('color', 'black');
+        }
 
         $(".img-filename").text($filename);
 
@@ -157,8 +164,14 @@
         // $filename = $(this).val();
         $filename=$(this).val().split('/').pop().split('\\').pop();
 
-        if($filename == "")
+        if($filename == "") {
             $filename = "파일을 선택해주세요.";
+            $("#video_container").attr("src",'/img/tn-back.png');
+            $("#vidError").css('color', 'red');
+        }
+        else{
+            $("#vidError").css('color', 'black');
+        }
 
         $(".vid-filename").text($filename);
 

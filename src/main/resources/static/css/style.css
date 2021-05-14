@@ -1,5 +1,12 @@
+@font-face {
+    font-family: 'SLEIGothicTTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    background-color:#34495e;
+    background-color:#363D47;
 }
 
 /*로그인 화면*/
@@ -16,8 +23,10 @@ body {
     border-radius: 15px;
 }
 .login-box-title{
+    font-family: 'Itim', cursive;
     text-align: center;
     margin: 30px;
+    font-size:24pt;
 }
 .login-form{
     border-bottom: 2px solid #adadad;
@@ -37,21 +46,23 @@ body {
     position:relative;
     left:40%;
     transform: translateX(-50%);
+    margin-top:20px;
     margin-bottom: 40px;
     width:80%;
     height:40px;
-    background: linear-gradient(125deg,#81ecec,#6c5ce7,#81ecec);
-    background-position: left;
-    background-size: 200%;
-    color:white;
-    font-weight: bold;
+    background: #FFE268;
+    color:#363D47;
     border:none;
     cursor:pointer;
-    transition: 0.4s;
     display:inline;
+    border-radius: 15px;
+    font-size:14pt;
+    transition: 0.4s;
+    font-family: 'SLEIGothicTTF';
 }
 .login-btn:hover{
-    background-position: right;
+    background:#D6B942;
+    color:white;
 }
 
 /*회원가입 화면*/

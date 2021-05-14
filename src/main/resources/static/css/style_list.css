@@ -12,7 +12,7 @@ body{
 }
 .page-wrapper{
     /*background:white;*/
-    margin:100px;
+    margin:50px;
     padding:10px;
 }
 .list-user-section{
@@ -43,12 +43,13 @@ body{
     color:white;
 }
 .list-go-upload{
-    margin:50px 0 50px 0;
+    margin:50px 0 90px 0;
     text-align:center;
     /*border:3px solid green;*/
+
 }
 .list-upload-btn{
-    padding:10px 15px;
+    padding:20px 25px;
     background: #FFE268;
     color:#363D47;
     border:none;
@@ -57,22 +58,60 @@ body{
     border-radius: 15px;
     font-family: 'SLEIGothicTTF';
     transition: 0.4s;
-    font-size:16pt;
+    font-size:18pt;
 }
 .list-upload-btn:hover{
     background:#D6B942;
     color:white;
 }
 .list-table-section{
+    border-radius: 15px;
     min-height:1500px;
-    border:3px solid purple;
+    padding-bottom:15px;
+    /*border:3px solid purple;*/
     background:white;
 }
 .list-table-content{
-    border:3px solid orange;
-    margin:0px auto;
+    width:100%;
+    /*border:3px solid orange;*/
+    border-collapse: collapse;
+}
+/* top-left border-radius */
+table tr:first-child th:first-child {
+    border-top-left-radius: 15px;
+}
+
+/* top-right border-radius */
+table tr:first-child th:last-child {
+    border-top-right-radius: 15px;
+}
+
+/* bottom-left border-radius */
+table tr:last-child td:first-child {
+    border-bottom-left-radius: 15px;
+}
+
+/* bottom-right border-radius */
+table tr:last-child td:last-child {
+    border-bottom-right-radius: 15px;
+}
+th{
+    padding:5px 10px;
+    text-align:center;
+    background:pink;
+    font-family: 'SLEIGothicTTF';
+    color:#363D47;
+    font-weight: normal;
+}
+td{
+    background:#FFFFFF;
+    text-align:center;
+    border-bottom:1px solid #D6D6D6;
+    padding: 0px 10px;
+    font-family: 'Nunito', sans-serif;
 }
 .list-table-thumbnail{
+    margin:5px 0px;
     object-fit:contain;
     width:150px;
     height:100px;
