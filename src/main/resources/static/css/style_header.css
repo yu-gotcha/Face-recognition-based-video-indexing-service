@@ -1,0 +1,73 @@
+@font-face {
+    font-family: 'SLEIGothicTTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.header{
+    /*border:3px solid goldenrod;*/
+    margin:50px 50px;
+    overflow:auto;
+    font-family: 'Itim', cursive;
+    font-size:30pt;
+    font-weight:bold;
+    color:white;
+}
+.site-logo{
+    /*border:3px solid salmon;*/
+    margin:0;
+    float:left;
+    padding-top:10px;
+    padding-left:10px;
+}
+.navigation-section{
+    /*border:3px solid royalblue;*/
+    float:right;
+}
+.nav-btn{
+    padding:10px 20px;
+    color:#FFE268;
+    background:none;
+    border:none;
+    cursor:pointer;
+    display:inline;
+    border-radius: 15px;
+    font-size:14pt;
+    font-family: 'SLEIGothicTTF';
+    transition: 0.4s;
+    margin:0 10px;
+}
+.nav-btn:hover{
+    background:#D6B942;
+    color:white;
+}
+.nav-user-name{
+    padding:10px 0 10px 20px;
+    color:white;
+    background:none;
+    border:none;
+    display:inline;
+    border-radius: 15px;
+    font-size:14pt;
+    font-family: 'SLEIGothicTTF';
+    margin:0 0 0 10px;
+    font-weight:normal;
+}
+.nav-logout-btn{
+    padding:10px 20px;
+    background: none;
+    color:#23a3a7;
+    border:none;
+    cursor:pointer;
+    display:inline;
+    border-radius: 15px;
+    font-size:14pt;
+    font-family: 'SLEIGothicTTF';
+    transition: 0.4s;
+    margin:0 10px;
+}
+.nav-logout-btn:hover{
+    background:#23a3a7;
+    color:white;
+}

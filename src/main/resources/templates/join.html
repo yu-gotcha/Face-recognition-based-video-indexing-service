@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 </head>
 <body>
 <!--로그인이 되어있이면 로그아웃만 보임-->
@@ -27,7 +28,7 @@
                 <input type="text" class="join-input" name="userName" id="userName" placeholder="Name"><br>
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
-            <p id="nameError" class="join-explain" display='none'>*이름을 공백 없이 2~5자로 입력해주세요.</p>
+            <p id="nameError" class="join-explain" display='none'>*이름을 공백 없이 2~5자 입력해주세요.</p>
             <div class="join-form">
                 <input type="text" class="join-input" name="loginId" id="loginId" placeholder="ID"><br>
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -39,13 +40,10 @@
             </div>
             <p id="pwError" class="join-explain" display='none'>*비밀번호는 공백 없이 영어문자나 숫자를 이용해 6~20자 입력해주세요.</p>
         </div>
-
         <div class="row">
-            <!-- /.col -->
             <div class="col-xs-4" style="padding-top: 10px;">
                 <button type="button" class="join-btn" onclick="checkForm()">회원가입</button>
             </div>
-            <!-- /.col -->
         </div>
     </div>
 </form>
@@ -69,36 +67,71 @@
         if (toCheckName.test(userName)) {
             //console.log("name"+toCheckName.test(userName));
             //$("#nameError").hide();
-            $("#nameError").css('color', 'black');
+            // $("#nameError").css('color', 'black');
         } else {
             error++;
             //$("#nameError").show();
-            $("#nameError").css('color', 'red');
+            // $("#nameError").css('color', 'red');
         }
 
         if (toCheckId.test(userId)) {
             //console.log("id"+toCheckName.test(userId));
             //$("#idError").hide();
-            $("#idError").css('color', 'black');
+            // $("#idError").css('color', 'black');
         } else {
             error++;
             //$("#idError").show();
-            $("#idError").css('color', 'red');
+            // $("#idError").css('color', 'red');
 
         }
 
         if (toCheckPw.test(userPw) == true) {
             //console.log("pw"+toCheckName.test(userPw));
             //$("#pwError").hide();
-            $("#pwError").css('color', 'black');
+            // $("#pwError").css('color', 'black');
         } else {
             error++;
             //$("#pwError").show();
-            $("#pwError").css('color', 'red');
+            // $("#pwError").css('color', 'red');
         }
 
         if (error == 0) document.loginForm.submit();
         else error = 0;
     }
+
+
+
+    $(document).on("change", "#userName", function(){
+        var userName = $("#userName").val();
+        var toCheckName = /^[가-힣a-zA-Z0-9]{2,5}$/;
+
+        if (toCheckName.test(userName)) {
+            $("#nameError").css('color', 'green');
+        } else {
+            $("#nameError").css('color', 'red');
+        }
+    })
+    $(document).on("change", "#loginId", function(){
+        var userId = $("#loginId").val();
+        var toCheckId = /^[a-zA-Z0-9]{6,12}$/;
+
+        if (toCheckId.test(userId)) {
+            $("#idError").css('color', 'green');
+        } else {
+            $("#idError").css('color', 'red');
+        }
+    })
+    $(document).on("change", "#loginPw", function(){
+        var userPw = $("#loginPw").val();
+        var toCheckPw = /^[a-zA-Z0-9]{6,20}$/;
+
+        if (toCheckPw.test(userPw) == true) {
+            $("#pwError").css('color', 'green');
+        } else {
+            $("#pwError").css('color', 'red');
+        }
+    })
+
+
 </script>
 </html>

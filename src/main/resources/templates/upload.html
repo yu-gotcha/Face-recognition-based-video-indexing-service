@@ -4,18 +4,29 @@
     <meta charset="UTF-8">
     <title>TimeAttack</title>
     <link rel="stylesheet" type="text/css" href="/css/style_upload.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/style_header.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="page-wrapper">
-    {{^userdata}}
-    <!--    <h3>로그인 후에 이용 가능합니다.</h3>-->
-    <!--    <a href="login">로그인 하러 가기</a>-->
-    <meta http-equiv="refresh" content="0;url=index">
-    {{/userdata}}
+{{^userdata}}
+<!--    <h3>로그인 후에 이용 가능합니다.</h3>-->
+<!--    <a href="login">로그인 하러 가기</a>-->
+<meta http-equiv="refresh" content="0;url=login">
+{{/userdata}}
 
-    {{#userdata}}
+{{#userdata}}
+<div class="header">
+    <div class="site-logo">T.A.</div>
+    <div class="navigation-section">
+        <input type="button" class="nav-btn" value="홈" onClick="location.href='index'"/>
+        <input type="button" class="nav-btn" value="소개" onClick="location.href='manual'"/>
+        <input type="button" class="nav-btn" value="리스트" onClick="location.href='list'"/>
+        <span class="nav-user-name">{{userName}} 님</span>
+        <input type="button" class="nav-logout-btn" value="로그아웃" onClick="location.href='logout'"/>
+    </div>
+</div>
+<div class="page-wrapper">
     <form method="post" action="upload" enctype="multipart/form-data" name="fileForm" id="fileForm">
         <div class="upload-file-section">
             <div class="upload-section">
@@ -55,8 +66,8 @@
             <input type="button" class="upload-submit-btn" onclick="checkFile()" value="전송"/>
         </div>
     </form>
-    {{/userdata}}
 </div>
+{{/userdata}}
 </body>
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

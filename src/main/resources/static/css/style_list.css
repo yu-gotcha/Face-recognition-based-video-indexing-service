@@ -7,17 +7,17 @@
 
 body{
     background-color:#363D47;
-    width:1000px;
+    width:1300px;
     margin:0 auto;
 }
 .page-wrapper{
-    /*background:white;*/
-    margin:50px;
+    width:1000px;
+    margin:50px auto;
     padding:10px;
 }
-.list-user-section{
+/*.list-user-section{
     text-align:right;
-    /*border:3px solid red;*/
+    !*border:3px solid red;*!
 }
 .list-user-name{
     border-radius: 15px;
@@ -41,7 +41,7 @@ body{
 .list-logout-btn:hover{
     background:#23a3a7;
     color:white;
-}
+}*/
 .list-go-upload{
     margin:50px 0 90px 0;
     text-align:center;

@@ -16,17 +16,17 @@ body {
     height:400px;
     padding: 30px 20px;
     background-color:#FFFFFF;
-    text-align:center;
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
     border-radius: 15px;
+    text-align:center;
 }
 .login-box-title{
     font-family: 'Itim', cursive;
     text-align: center;
-    margin: 30px;
-    font-size:24pt;
+    margin: 10px 0 40px 0;
+    font-size:30pt;
 }
 .login-form{
     border-bottom: 2px solid #adadad;
@@ -43,12 +43,9 @@ body {
     background: none;
 }
 .login-btn{
-    position:relative;
-    left:40%;
-    transform: translateX(-50%);
-    margin-top:20px;
-    margin-bottom: 40px;
-    width:80%;
+    margin-top:30px;
+    margin-bottom:50px;
+    width:200px;
     height:40px;
     background: #FFE268;
     color:#363D47;
@@ -64,12 +61,26 @@ body {
     background:#D6B942;
     color:white;
 }
-
+.login-no-account{
+    font-weight:normal;
+    color:gray;
+    font-family: 'SLEIGothicTTF';
+    font-size:10pt;
+}
+.login-join-href{
+    padding:5px;
+    border:none;
+    background:none;
+    color:#363D47;
+    cursor:pointer;
+    font-family: 'SLEIGothicTTF';
+    font-size:10pt;
+}
 /*회원가입 화면*/
 .join-box-body{
     position:absolute;
-    width:500px;
-    height:700px;
+    width:450px;
+    height:600px;
     padding: 30px 20px;
     background-color:#FFFFFF;
     top:50%;
@@ -78,8 +89,10 @@ body {
     border-radius: 15px;
 }
 .join-box-title{
+    font-family: 'Itim', cursive;
     text-align: center;
-    margin: 30px;
+    margin: 10px 0 40px 0;
+    font-size:35pt;
 }
 .join-form{
     border-bottom: 2px solid #adadad;
@@ -103,24 +116,25 @@ body {
     font-size:12px;
 }
 .join-btn{
-    position:relative;
+    position:absolute;
     left:50%;
     transform: translateX(-50%);
-    margin-top: 30px;
+    margin-top:20px;
     margin-bottom: 40px;
-    width:50%;
+    width:200px;
     height:40px;
-    background: linear-gradient(125deg,#81ecec,#6c5ce7,#81ecec);
-    background-position: left;
-    background-size: 200%;
-    color:white;
-    font-weight: bold;
+    background: #FFE268;
+    color:#363D47;
     border:none;
     cursor:pointer;
-    transition: 0.4s;
     display:inline;
+    border-radius: 15px;
+    font-size:14pt;
+    transition: 0.4s;
+    font-family: 'SLEIGothicTTF';
 }
 .join-btn:hover{
-    background-position: right;
+    background:#D6B942;
+    color:white;
 }
 

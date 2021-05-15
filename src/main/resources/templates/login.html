@@ -8,44 +8,31 @@
 </head>
 
 <body>
-<tr valign="top" align="left">
-    <td style="padding-left:65px; padding-top:40px; padding-right:65px;">
-        {{#userdata}} <!--로그인 페이지인데 이미 로그인 되어있음-->
+{{#userdata}} <!--로그인 페이지인데 이미 로그인 되어있음-->
 <!--        <a href="logout" >로그아웃</a>-->
-        <meta http-equiv="refresh" content="0;url=list">
-        {{/userdata}}
-        {{^userdata}}
-        <div class="login-box" align="center">
-            <div class="login-logo">
-                <a href="index" style="text-decoration:none"><b>Time Attack</b></a>
-            </div>
-            <!-- /.login-logo -->
-            <div class="login-box-body">
-                <h2 class="login-box-title">Login</h2>
-                <!-- <p class="login-box-msg">서비스를 이용하시려면 로그인하여 주십시오.</p>-->
-
-                <form action="login" method="post">
-                    <div class="login-form">
-                        <input type="text" class="login-input" name="loginId" id="loginId" placeholder="ID">
-                        <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                    </div>
-                    <div class="login-form">
-                        <input type="password" class="login-input" name="loginPw" id="loginPw" placeholder="PW">
-                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                    </div>
-                    <div class="row">
-                        <!-- /.col -->
-                        <div class="col-xs-4" style="padding-top: 10px;">
-                            <button type="submit" class="login-btn">로그인</button>
-                        </div>
-                        <!-- /.col -->
-                    </div>
-                </form>
-            </div>
-            <!-- /.login-box-body -->
+<meta http-equiv="refresh" content="0;url=list">
+{{/userdata}}
+<!--            <div class="login-logo">-->
+<!--                <a href="index" style="text-decoration:none"><b>Time Attack</b></a>-->
+<!--            </div>-->
+{{^userdata}}
+<form action="login" method="post">
+    <div class="login-box-body">
+        <h2 class="login-box-title">Login</h2>
+        <!-- <p class="login-box-msg">서비스를 이용하시려면 로그인하여 주십시오.</p>-->
+        <div class="login-form">
+            <input type="text" class="login-input" name="loginId" id="loginId" placeholder="ID">
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
         </div>
-        {{/userdata}}
-    </td>
-</tr>
+        <div class="login-form">
+            <input type="password" class="login-input" name="loginPw" id="loginPw" placeholder="PW">
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        </div>
+        <button type="submit" class="login-btn">로그인</button><br>
+        <span class="login-no-account">계정이 없으신가요?</span>
+        <input type="button" class="login-join-href" value="회원가입" onClick="location.href='join'"/>
+    </div>
+</form>
+{{/userdata}}
 </body>
 </html>

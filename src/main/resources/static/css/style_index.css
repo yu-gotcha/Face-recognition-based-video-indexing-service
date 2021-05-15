@@ -1,70 +1,109 @@
+@font-face {
+    font-family: 'SLEIGothicTTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body{
-    background-color:#FFDFCF;
-    width:1500px;
+    background-color:#363D47;
+    /*background-color:#FFE268;*/
+    width:1300px;
     margin:0 auto;
 }
+
 .page-wrapper{
-    /*background:ivory;*/
-    margin:100px;
-    padding:10px;
+    /*border:3px solid ivory;*/
+    margin:100px 50px;
     display:flex;
 }
 .index-left-section{
-    margin:20px 150px 20px 20px;
-    width:40%;
-    height:600px;
     /*border:3px solid orange;*/
+    margin:200px 100px 20px 20px; /*margin-top으로 왼쪽구역 높이조절*/
+    width:40%;
+    height:390px;
+    /*padding:20px;*/
     /*background:white;*/
+    /*border-radius:15px;*/
 }
 .index-content{
+    /*border:3px solid yellow;*/
     padding:5px;
-    /*background:yellow;*/
     font-size:10pt;
-    margin-top:150px;
-    margin-bottom:0px;
+    margin-top:0;
+    margin-bottom:0;
+    font-family: 'SLEIGothicTTF';
+    color:white;
+    /*color:#363D47;*/
 }
 .index-title{
+    /*border:3px solid darkcyan;*/
     margin-top:0px;
     font-family: 'Itim', cursive;
     padding:5px;
-    /*background:darkcyan;*/
-    font-size:50pt;
-}
-
-.index-more{
-    padding:5px;
-    text-decoration:none;
-    color: black;
-    /*background:mediumpurple;*/
-}
-/*index : 로그인, 회원가입 div*/
-.index-section{
-    margin-top:50px;
-    /*background:rosybrown;*/
-}
-.index-btn{
-    margin:5px;
-    width:100px;
-    height:40px;
-    background: linear-gradient(125deg,#81ecec,#6c5ce7,#81ecec);
-    background-position: left;
-    background-size: 200%;
-    border-radius: 15px;
+    font-size:55pt;
     color:white;
-    font-weight: bold;
+    /*color:#363D47;*/
+}
+.index-start-btn{
+    padding:10px 20px 10px 20px;
+    background: #23a3a7;
+    color:#363D47;
     border:none;
     cursor:pointer;
-    transition: 0.4s;
     display:inline;
+    border-radius: 15px;
+    font-size:14pt;
+    font-family: 'SLEIGothicTTF';
+    transition: 0.4s;
+    margin-right:20px;
+}
+.index-start-btn:hover{
+    background:#23a3a7;
+    color:white;
+}
+/*
+.index-more{
+    !*border:3px solid mediumpurple;*!
+    padding:5px;
+    text-decoration:none;
+    color:#2CC3C8;
+    font-family: 'SLEIGothicTTF';
+    transition: 0.4s;
+}
+.index-more:hover{
+    color:#23a3a7;
+}
+!*index : 로그인, 회원가입 div*!
+.index-section{
+    !*border:3px solid rosybrown;*!
+    margin-top:50px;
+}
+.index-btn{
+    padding:10px 20px 10px 20px;
+    background: #FFE268;
+    color:#363D47;
+    border:none;
+    cursor:pointer;
+    display:inline;
+    border-radius: 15px;
+    font-size:14pt;
+    font-family: 'SLEIGothicTTF';
+    transition: 0.4s;
+    margin-right:20px;
 }
 .index-btn:hover{
-    background-position: right;
+    background:#D6B942;
+    color:white;
 }
+*/
+
 .index-right-section{
+    /*border:3px solid olive;*/
     margin:20px;
     width:60%;
     height:600px;
-    /*border:3px solid red;*/
+    /*padding:20px;*/
 }
 .index-image{
     object-fit:fill;

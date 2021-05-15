@@ -4,22 +4,33 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="/css/style_list.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/style_header.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="page-wrapper">
-    {{^userdata}}
+{{^userdata}}
 <!--    <a href="login">로그인 하러 가기</a>-->
-    <meta http-equiv="refresh" content="0;url=index">
-    {{/userdata}}
+<meta http-equiv="refresh" content="0;url=login">
+{{/userdata}}
 
-
-    {{#userdata}}
-    <div class="list-user-section">
-        <span class="list-user-name">{{userName}} 님</span>
-<!--        <a href="logout">로그아웃</a>-->
-        <button type="button" class="list-logout-btn" onclick="location.href='logout'">로그아웃</button>
+{{#userdata}}
+<div class="header">
+    <div class="site-logo">T.A.</div>
+    <div class="navigation-section">
+        <input type="button" class="nav-btn" value="홈" onClick="location.href='index'"/>
+        <input type="button" class="nav-btn" value="소개" onClick="location.href='manual'"/>
+        <input type="button" class="nav-btn" value="리스트" onClick="location.href='list'"/>
+        <span class="nav-user-name">{{userName}} 님</span>
+        <input type="button" class="nav-logout-btn" value="로그아웃" onClick="location.href='logout'"/>
     </div>
+</div>
+<div class="page-wrapper">
+    <!--<div class="list-user-section">
+        <span class="list-user-name">{{userName}} 님</span>
+&lt;!&ndash;        <a href="logout">로그아웃</a>&ndash;&gt;
+        <button type="button" class="list-logout-btn" onclick="location.href='logout'">로그아웃</button>
+    </div>-->
     <div class="list-go-upload">
 <!--        <a href="upload">업로드 하러 가기</a>-->
         <button type="button" class="list-upload-btn" onclick="location.href='upload'">업로드 하러 가기</button>
@@ -53,8 +64,7 @@
             {{/file}}
         </table>
     </div>
-    {{/userdata}}
-
 </div>
+{{/userdata}}
 </body>
 </html>
