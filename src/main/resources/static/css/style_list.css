@@ -11,7 +11,7 @@ body{
     margin:0 auto;
 }
 .page-wrapper{
-    width:1000px;
+    width:900px;
     margin:50px auto;
     padding:10px;
 }
@@ -42,10 +42,10 @@ body{
     background:#23a3a7;
     color:white;
 }*/
-.list-go-upload{
+/*.list-go-upload{
     margin:50px 0 90px 0;
     text-align:center;
-    /*border:3px solid green;*/
+    !*border:3px solid green;*!
 
 }
 .list-upload-btn{
@@ -63,10 +63,11 @@ body{
 .list-upload-btn:hover{
     background:#D6B942;
     color:white;
-}
+}*/
 .list-table-section{
     border-radius: 15px;
     min-height:1500px;
+    margin-top:100px;
     padding-bottom:15px;
     /*border:3px solid purple;*/
     background:white;

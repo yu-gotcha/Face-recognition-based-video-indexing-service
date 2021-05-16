@@ -27,8 +27,9 @@ public class UserController {
             session.setAttribute("userdata", userService.getUser(loginId));
             System.out.println(session.getAttribute("userdata"));
 
-            return "redirect:/list";
+            return "redirect:/index";
         }
+        session.setAttribute("error","login error");
         return "redirect:/login";
     }
 
@@ -57,5 +58,19 @@ public class UserController {
             session.setAttribute("error", result);
             return "redirect:/join";
         }
+    }
+
+
+    @GetMapping(value = "/remove_login_error")
+    public String remove_login_error_Process(HttpSession session){
+        session.removeAttribute("error");
+
+        return "redirect:/login";
+    }
+    @GetMapping(value = "/remove_join_error")
+    public String remove_join_error_Process(HttpSession session){
+        session.removeAttribute("error");
+
+        return "redirect:/join";
     }
 }

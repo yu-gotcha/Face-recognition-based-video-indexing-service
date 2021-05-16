@@ -8,14 +8,21 @@
 </head>
 
 <body>
-{{#userdata}} <!--로그인 페이지인데 이미 로그인 되어있음-->
-<!--        <a href="logout" >로그아웃</a>-->
-<meta http-equiv="refresh" content="0;url=list">
+<!--이미 로그인함-->
+{{#userdata}}
+<meta http-equiv="refresh" content="0;url=index">
 {{/userdata}}
-<!--            <div class="login-logo">-->
-<!--                <a href="index" style="text-decoration:none"><b>Time Attack</b></a>-->
-<!--            </div>-->
+<!--<div class="login-logo"><a href="index" style="text-decoration:none"><b>Time Attack</b></a></div>-->
+
+<!--로그인 안되어있음-->
 {{^userdata}}
+{{#error}}
+<script>
+    alert('존재하지 않는 아이디이거나, 잘못된 비밀번호입니다.');
+    document.location.href="remove_login_error";
+</script>
+{{/error}}
+
 <form action="login" method="post">
     <div class="login-box-body">
         <h2 class="login-box-title">Login</h2>

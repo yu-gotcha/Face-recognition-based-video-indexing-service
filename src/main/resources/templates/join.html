@@ -7,17 +7,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 </head>
 <body>
-<!--로그인이 되어있이면 로그아웃만 보임-->
+<!--이미 로그인함-->
 {{#userdata}}
-<!--<a href="logout" class="btn btn-default btn-flat" style="text-decoration:none; color: #222222">로그아웃</a>-->
-<meta http-equiv="refresh" content="0;url=list">
+<meta http-equiv="refresh" content="0;url=index">
 {{/userdata}}
 
-<!--로그인이 안되어있어야 가입 가능-->
+<!--로그인 안되어있음-->
 {{^userdata}}
 {{#error}}
-<h3>회원가입이 불가합니다. 다른 ID를 입력해주세요</h3>
-<h3>{{error}}</h3>
+<script>
+    alert('이미 존재하는 아이디 입니다. 다른 아이디를 입력해주세요');
+    document.location.href="remove_join_error";
+</script>
 {{/error}}
 
 <form action="/join" method="post" name="loginForm" , id="loginForm">
@@ -51,7 +52,6 @@
 </body>
 
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-
 <script>
     //난해하군...난 여기서 유효성 검사하고 넘기고싶은데, 유효성 검사하고 페이지 전환이 일어남-->reload되는건 해결. 그래서 빨간글씨 다시 검게 됨
     function checkForm() {
@@ -71,7 +71,7 @@
         } else {
             error++;
             //$("#nameError").show();
-            // $("#nameError").css('color', 'red');
+            $("#nameError").css('color', 'red');
         }
 
         if (toCheckId.test(userId)) {
@@ -81,7 +81,7 @@
         } else {
             error++;
             //$("#idError").show();
-            // $("#idError").css('color', 'red');
+            $("#idError").css('color', 'red');
 
         }
 
@@ -92,7 +92,7 @@
         } else {
             error++;
             //$("#pwError").show();
-            // $("#pwError").css('color', 'red');
+            $("#pwError").css('color', 'red');
         }
 
         if (error == 0) document.loginForm.submit();
