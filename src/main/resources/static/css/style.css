@@ -22,11 +22,18 @@ body {
     border-radius: 15px;
     text-align:center;
 }
-.login-box-title{
-    font-family: 'Itim', cursive;
+.login-logo-section{
     text-align: center;
     margin: 10px 0 40px 0;
+}
+.login-logo{
+    font-family: 'Itim', cursive;
+    text-decoration:none;
     font-size:30pt;
+    color:#363D47;
+    font-weight:bold;
+    text-align: center;
+    margin: 10px 0 40px 0;
 }
 .login-form{
     border-bottom: 2px solid #adadad;
@@ -88,11 +95,16 @@ body {
     transform: translate(-50%,-50%);
     border-radius: 15px;
 }
-.join-box-title{
-    font-family: 'Itim', cursive;
+.join-logo-section{
     text-align: center;
     margin: 10px 0 40px 0;
-    font-size:35pt;
+}
+.join-logo{
+    font-family: 'Itim', cursive;
+    text-decoration:none;
+    font-size:30pt;
+    color:#363D47;
+    font-weight:bold;
 }
 .join-form{
     border-bottom: 2px solid #adadad;

@@ -11,59 +11,10 @@ body{
     margin:0 auto;
 }
 .page-wrapper{
-    width:900px;
+    width:1000px;
     margin:50px auto;
     padding:10px;
 }
-/*.list-user-section{
-    text-align:right;
-    !*border:3px solid red;*!
-}
-.list-user-name{
-    border-radius: 15px;
-    background:white;
-    padding:5px 10px;
-    font-family: 'SLEIGothicTTF';
-    font-size:10pt;
-}
-.list-logout-btn{
-    padding:5px 10px;
-    background: #23a3a7;
-    color:#363D47;
-    border:none;
-    cursor:pointer;
-    display:inline;
-    border-radius: 15px;
-    font-family: 'SLEIGothicTTF';
-    transition: 0.4s;
-    font-size:10pt;
-}
-.list-logout-btn:hover{
-    background:#23a3a7;
-    color:white;
-}*/
-/*.list-go-upload{
-    margin:50px 0 90px 0;
-    text-align:center;
-    !*border:3px solid green;*!
-
-}
-.list-upload-btn{
-    padding:20px 25px;
-    background: #FFE268;
-    color:#363D47;
-    border:none;
-    cursor:pointer;
-    display:inline;
-    border-radius: 15px;
-    font-family: 'SLEIGothicTTF';
-    transition: 0.4s;
-    font-size:18pt;
-}
-.list-upload-btn:hover{
-    background:#D6B942;
-    color:white;
-}*/
 .list-table-section{
     border-radius: 15px;
     min-height:1500px;

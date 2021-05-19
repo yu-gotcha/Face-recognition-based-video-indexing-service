@@ -12,7 +12,6 @@
 {{#userdata}}
 <meta http-equiv="refresh" content="0;url=index">
 {{/userdata}}
-<!--<div class="login-logo"><a href="index" style="text-decoration:none"><b>Time Attack</b></a></div>-->
 
 <!--로그인 안되어있음-->
 {{^userdata}}
@@ -25,7 +24,9 @@
 
 <form action="login" method="post">
     <div class="login-box-body">
-        <h2 class="login-box-title">Login</h2>
+        <div class="login-logo-section">
+            <a href="index" class="login-logo">Time Attack</a>
+        </div>
         <!-- <p class="login-box-msg">서비스를 이용하시려면 로그인하여 주십시오.</p>-->
         <div class="login-form">
             <input type="text" class="login-input" name="loginId" id="loginId" placeholder="ID">

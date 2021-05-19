@@ -6,8 +6,9 @@
 }
 
 body{
-    background-color:#363D47;
-    /*background-color:#FFE268;*/
+    background:#363D47;
+    /*background: linear-gradient( 135deg, #6C8CF4, #5FCCFF );*/
+    /*background:#F4E5CC;*/
     width:1300px;
     margin:0 auto;
 }
@@ -19,12 +20,9 @@ body{
 }
 .index-left-section{
     /*border:3px solid orange;*/
-    margin:200px 100px 20px 20px; /*margin-top으로 왼쪽구역 높이조절*/
-    width:40%;
+    margin:200px 0 20px 20px; /*margin-top으로 왼쪽구역 높이조절*/
+    width:35%;
     height:390px;
-    /*padding:20px;*/
-    /*background:white;*/
-    /*border-radius:15px;*/
 }
 .index-content{
     /*border:3px solid yellow;*/
@@ -33,23 +31,21 @@ body{
     margin-top:0;
     margin-bottom:0;
     font-family: 'SLEIGothicTTF';
-    color:white;
-    /*color:#363D47;*/
+    color:#FFE268;
 }
 .index-title{
     /*border:3px solid darkcyan;*/
     margin-top:0px;
     font-family: 'Itim', cursive;
     padding:5px;
-    font-size:55pt;
-    color:white;
-    /*color:#363D47;*/
+    font-size:53pt;
+    color:#FFE268;
 }
 .index-start-btn{
-    padding:10px 20px 10px 20px;
     background: #23a3a7;
     color:#363D47;
     border:none;
+    padding:10px 20px 10px 20px;
     cursor:pointer;
     display:inline;
     border-radius: 15px;
@@ -62,51 +58,14 @@ body{
     background:#23a3a7;
     color:white;
 }
-/*
-.index-more{
-    !*border:3px solid mediumpurple;*!
-    padding:5px;
-    text-decoration:none;
-    color:#2CC3C8;
-    font-family: 'SLEIGothicTTF';
-    transition: 0.4s;
-}
-.index-more:hover{
-    color:#23a3a7;
-}
-!*index : 로그인, 회원가입 div*!
-.index-section{
-    !*border:3px solid rosybrown;*!
-    margin-top:50px;
-}
-.index-btn{
-    padding:10px 20px 10px 20px;
-    background: #FFE268;
-    color:#363D47;
-    border:none;
-    cursor:pointer;
-    display:inline;
-    border-radius: 15px;
-    font-size:14pt;
-    font-family: 'SLEIGothicTTF';
-    transition: 0.4s;
-    margin-right:20px;
-}
-.index-btn:hover{
-    background:#D6B942;
-    color:white;
-}
-*/
-
 .index-right-section{
     /*border:3px solid olive;*/
     margin:20px;
-    width:60%;
+    width:65%;
     height:600px;
-    /*padding:20px;*/
 }
 .index-image{
-    object-fit:fill;
+    object-fit:contain;
     width:100%;
     height:100%;
 }

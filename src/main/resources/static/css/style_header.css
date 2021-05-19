@@ -12,14 +12,17 @@
     font-family: 'Itim', cursive;
     font-size:30pt;
     font-weight:bold;
-    color:white;
 }
-.site-logo{
+.logo-section{
     /*border:3px solid salmon;*/
     margin:0;
     float:left;
     padding-top:10px;
     padding-left:10px;
+}
+.nav-logo{
+    color:white;
+    text-decoration:none;
 }
 .navigation-section{
     /*border:3px solid royalblue;*/
