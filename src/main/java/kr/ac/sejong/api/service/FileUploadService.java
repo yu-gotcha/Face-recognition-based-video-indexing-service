@@ -8,6 +8,7 @@ import kr.ac.sejong.api.repository.UploadImgRepository;
 import kr.ac.sejong.api.repository.UploadRepository;
 import kr.ac.sejong.api.repository.UploadVidRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
@@ -101,6 +102,7 @@ public class FileUploadService {
         return true;
     }
 
+    @Async
     public void runCMD(){
         Runtime runtime = Runtime.getRuntime();
         Process p;
