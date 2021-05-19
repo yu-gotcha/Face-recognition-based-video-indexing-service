@@ -14,7 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.EntityManager;
 import javax.servlet.http.HttpSession;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.Socket;
 import java.util.List;
 
@@ -99,6 +99,25 @@ public class FileUploadService {
         System.out.println(uploadList2.size());
         System.out.println("--------------------------------------------");
         return true;
+    }
+
+    public void runCMD(){
+        Runtime runtime = Runtime.getRuntime();
+        Process p;
+        try{
+            p=runtime.exec("cmd /c cd C:/Users/MunsuYu/2021_Timeattack_Video-Processing && py main.py");
+            InputStream inputStream = p.getInputStream();
+            InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+            System.out.println(inputStreamReader.getEncoding());
+            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+            String line;
+            while((line = bufferedReader.readLine())!= null){
+                System.out.println(line);
+            }
+            inputStream.close();
+        }catch(IOException e){
+            e.printStackTrace();
+        }
     }
 
     /*
