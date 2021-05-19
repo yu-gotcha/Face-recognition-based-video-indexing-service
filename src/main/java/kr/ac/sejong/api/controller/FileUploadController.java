@@ -71,7 +71,8 @@ public class FileUploadController {
 
         String imgOriginalFileName = imgFile.getOriginalFilename();
         imgSavedFileName=Long.toString(user.getUserId())+"_"+Long.toString(count)+"_"+imgOriginalFileName;
-        File imgDest = new File("/usr/local/tomcat/file/image/"+imgSavedFileName);
+        //File imgDest = new File("/usr/local/tomcat/file/image/"+imgSavedFileName);
+        File imgDest = new File("C:/Users/MunsuYu/TimeAttack/src/main/resources/static/file/image/"+imgSavedFileName);
         imgFile.transferTo(imgDest);
 
         //Video Upload
@@ -79,12 +80,14 @@ public class FileUploadController {
 
         String vidOriginalFileName = vidFile.getOriginalFilename();
         vidSavedFileName=Long.toString(user.getUserId())+"_"+Long.toString(count)+"_"+vidOriginalFileName;
-        File vidDest = new File("/usr/local/tomcat/file/video/"+vidSavedFileName);
+        //File vidDest = new File("/usr/local/tomcat/file/video/"+vidSavedFileName);
+        File vidDest = new File("C:/Users/MunsuYu/TimeAttack/src/main/resources/static/file/video/"+imgSavedFileName);
         vidFile.transferTo(vidDest);
 
 
         try{
             fileUploadService.saveUpload(imgOriginalFileName,imgSavedFileName, imgDest.toString(), vidOriginalFileName, vidSavedFileName, vidDest.toString(), user);
+            //fileUploadService.runCMD();
         }catch (Exception e){
             System.out.println(e);
             return "redirect:/upload";
