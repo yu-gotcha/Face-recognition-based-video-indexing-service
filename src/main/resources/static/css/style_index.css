@@ -20,8 +20,8 @@ body{
 }
 .index-left-section{
     /*border:3px solid orange;*/
-    margin:200px 0 20px 20px; /*margin-top으로 왼쪽구역 높이조절*/
-    width:35%;
+    margin:180px 0 20px 20px; /*margin-top으로 왼쪽구역 높이조절*/
+    width:40%;
     height:390px;
 }
 .index-content{
@@ -41,6 +41,11 @@ body{
     font-size:53pt;
     color:#FFE268;
 }
+/*@media (max-width:800px){*/
+/*    .index-title{*/
+/*        color:red;*/
+/*    }*/
+/*}*/
 .index-start-btn{
     background: #23a3a7;
     color:#363D47;
@@ -61,7 +66,7 @@ body{
 .index-right-section{
     /*border:3px solid olive;*/
     margin:20px;
-    width:65%;
+    width:60%;
     height:600px;
 }
 .index-image{

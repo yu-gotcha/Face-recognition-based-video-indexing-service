@@ -1,0 +1,144 @@
+@font-face {
+    font-family: 'SLEIGothicTTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.header-wrapper{
+    border:3px solid goldenrod;
+    /*margin:50px 50px;*/
+    padding:5% 10% 0 10%;
+
+}
+.header{
+    border:3px solid purple;
+    overflow:auto;
+    margin:0 auto;
+}
+.logo-section{
+    font-family: 'Itim', cursive;
+    font-size:30pt;
+    font-weight:bold;
+    border:3px solid salmon;
+    margin:0;
+    float:left;
+    padding-left:10px;
+}
+.nav-logo{
+    color:white;
+    text-decoration:none;
+}
+.navigation-section{
+    border:3px solid royalblue;
+    float:right;
+}
+.nav-btn{
+    padding:10px 20px;
+    color:#FFE268;
+    background:none;
+    border:none;
+    cursor:pointer;
+    display:inline;
+    border-radius: 15px;
+    font-size:14pt;
+    font-family: 'SLEIGothicTTF';
+    transition: 0.4s;
+    margin:0 10px;
+}
+.nav-btn:hover{
+    background:#D6B942;
+    color:white;
+}
+.nav-user-name{
+    padding:10px 0 10px 20px;
+    color:white;
+    background:none;
+    border:none;
+    display:inline;
+    border-radius: 15px;
+    font-size:14pt;
+    font-family: 'SLEIGothicTTF';
+    margin:0 0 0 10px;
+    font-weight:normal;
+}
+.nav-logout-btn{
+    padding:10px 20px;
+    background: none;
+    color:#23a3a7;
+    border:none;
+    cursor:pointer;
+    display:inline;
+    border-radius: 15px;
+    font-size:14pt;
+    font-family: 'SLEIGothicTTF';
+    transition: 0.4s;
+    margin:0 10px;
+}
+.nav-logout-btn:hover{
+    background:#23a3a7;
+    color:white;
+}
+/* --------------------------------------------------------------------------------*/
+
+body{
+    background:#363D47;
+}
+
+.banner-wrapper{
+    border:3px solid ivory;
+    /*margin:100px 50px;*/
+    padding:5% 10% 0 10%;
+    display:flex;
+}
+.index-left-section{
+    border:3px solid orange;
+    margin:140px 0 0 0; /*margin-top으로 왼쪽구역 높이조절*/
+    width:40%;
+    height:390px;
+}
+.index-content{
+    border:3px solid yellow;
+    padding:5px;
+    font-size:10pt;
+    margin-top:0;
+    margin-bottom:0;
+    font-family: 'SLEIGothicTTF';
+    color:#FFE268;
+}
+.index-title{
+    border:3px solid darkcyan;
+    margin-top:0px;
+    font-family: 'Itim', cursive;
+    padding:5px;
+    font-size:53pt;
+    color:#FFE268;
+}
+.index-start-btn{
+    background: #23a3a7;
+    color:#363D47;
+    border:none;
+    padding:10px 20px 10px 20px;
+    cursor:pointer;
+    display:inline;
+    border-radius: 15px;
+    font-size:14pt;
+    font-family: 'SLEIGothicTTF';
+    transition: 0.4s;
+    margin-right:20px;
+}
+.index-start-btn:hover{
+    background:#23a3a7;
+    color:white;
+}
+.index-right-section{
+    border:3px solid olive;
+    /*margin:20px;*/
+    width:60%;
+    height:600px;
+}
+.index-image{
+    object-fit:contain;
+    width:100%;
+    height:100%;
+}

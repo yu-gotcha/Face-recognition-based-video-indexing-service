@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>TimeAttack</title>
-    <link rel="stylesheet" type="text/css" href="/css/style_index.css"/>
-    <link rel="stylesheet" type="text/css" href="/css/style_header.css"/>
+    <!--    <link rel="stylesheet" type="text/css" href="/css/style_index.css"/>-->
+    <!--    <link rel="stylesheet" type="text/css" href="/css/style_header.css"/>-->
+    <link rel="stylesheet" type="text/css" href="/css/test_index.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
-<div class="header">
+<!--<div class="header">
     <div class="logo-section">
         <a href="index" class="nav-logo">T.A.</a>
     </div>
@@ -28,15 +29,38 @@
         <input type="button" class="nav-logout-btn" value="로그아웃" onClick="location.href='logout'"/>
         {{/userdata}}
     </div>
-</div>
+</div>-->
 <div class="page-wrapper">
-    <div class="index-left-section">
-        <p class="index-content"> 얼굴인식 기반 동영상 인덱싱 시스템</p>
-        <h1 class="index-title">Time Attack</h1>
-        <input type="button" class="index-start-btn" value="시작하기" onClick="location.href='upload'"/>
+    <div class="header-wrapper">
+        <header class="header">
+            <div class="logo-section">
+                <a href="index" class="nav-logo">T.A.</a>
+            </div>
+            <nav class="navigation-section"> <!--ul li로 바꾸-->
+                <input type="button" class="nav-btn" value="홈" onClick="location.href='index'"/>
+                <input type="button" class="nav-btn" value="소개" onClick="location.href='manual'"/>
+                <input type="button" class="nav-btn" value="업로드" onClick="location.href='upload'"/>
+                <input type="button" class="nav-btn" value="리스트" onClick="location.href='list'"/>
+                {{^userdata}}
+                <input type="button" class="nav-btn" value="로그인" onClick="location.href='login'"/>
+                <input type="button" class="nav-btn" value="회원가입" onClick="location.href='join'"/>
+                {{/userdata}}
+                {{#userdata}}
+                <span class="nav-user-name">{{userName}} 님</span>
+                <input type="button" class="nav-logout-btn" value="로그아웃" onClick="location.href='logout'"/>
+                {{/userdata}}
+            </nav>
+        </header>
     </div>
-    <div class="index-right-section">
-        <img class="index-image" src="/img/main1.png"/>
+    <div class="banner-wrapper">
+        <div class="index-left-section">
+            <p class="index-content"> 얼굴인식 기반 동영상 인덱싱 시스템</p>
+            <h1 class="index-title">Time Attack</h1>
+            <input type="button" class="index-start-btn" value="시작하기" onClick="location.href='upload'"/>
+        </div>
+        <div class="index-right-section">
+            <img class="index-image" src="/img/main2.png"/>
+        </div>
     </div>
 </div>
 </body>
