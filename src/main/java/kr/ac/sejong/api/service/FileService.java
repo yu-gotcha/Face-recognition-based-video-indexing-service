@@ -32,6 +32,7 @@ public class FileService {
         for(Upload i : uploadList){
             Map<String, Object> map = new HashMap<String, Object>();
 
+            map.put("uploadId", i.getUpId());
             map.put("no", no++);
             //이름 가져올 수 있어야함
             map.put("imageFileName", i.getUploadImg().getUpImgName());
@@ -47,6 +48,8 @@ public class FileService {
 
             map.put("imgSavedName", i.getUploadImg().getUpImgSavedName());
             map.put("vidSavedName", i.getUploadVid().getUpVidSavedName());
+
+            if(i.getProcessing()==1) map.put("result", i.getProcessing());
 
             fileList.add(map);
         }
