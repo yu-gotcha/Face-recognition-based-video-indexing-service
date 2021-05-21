@@ -29,7 +29,7 @@ public class ResultSection {
     @NotNull
     private String end;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "uploadId")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "upload_id")
     private Upload upload;
 }
