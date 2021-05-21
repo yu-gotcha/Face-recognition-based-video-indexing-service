@@ -50,7 +50,13 @@
                 <td><img class="list-table-thumbnail" src="/TimeAttackFile/file/image/{{imgSavedName}}"></td>
 <!--                <td><img class="list-table-thumbnail" src="/img/moni.png"/></td>-->
                 <td>
+                    {{#result}}
+                    <button value="result" onclick="window.location.href = '/result?id={{uploadId}}&no={{{no}}'">결과 보기</button>
+                    {{/result}}
+
+                    {{^result}}
                     <button value="result" disabled="disabled">결과 보기</button>
+                    {{/result}}
                 </td>
             </tr>
             {{/file}}
