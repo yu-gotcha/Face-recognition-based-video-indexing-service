@@ -11,16 +11,21 @@ import java.util.*;
 @Service
 public class ResultService {
     private final ResultSectionRepository resultSectionRepository;
+    private final UploadRepository uploadRepository;
     int count=0;
 
-    public ResultService(ResultSectionRepository resultSectionRepository) {
+    public ResultService(ResultSectionRepository resultSectionRepository, UploadRepository uploadRepository) {
         this.resultSectionRepository = resultSectionRepository;
+        this.uploadRepository = uploadRepository;
     }
 
     public List<Map<String, Object>> getResultByUploadId(String uploadId){
         long id = Long.parseLong(uploadId);
+        Upload upload = uploadRepository.findByUpId(id);
+
         List<Map<String, Object>> resultList = new ArrayList<Map<String, Object>>();
-        List<ResultSection> result = resultSectionRepository.findAllByUpload(id);
+        //List<ResultSection> result = resultSectionRepository.findByUpload(id);
+        List<ResultSection> result = resultSectionRepository.findByUpload(upload);
 
         count=result.size();
 
@@ -35,9 +40,12 @@ public class ResultService {
 
     public Map<String, Object> getFileByUploadId(String uploadId){
         long id = Long.parseLong(uploadId);
+        Upload upload = uploadRepository.findByUpId(id);
         Map<String, Object> map = new HashMap<String, Object>();
 
-        Upload upload = resultSectionRepository.findByUpload(id);
+        //List<ResultSection> resultList = resultSectionRepository.findByUpload(id);
+        //List<ResultSection> resultList = resultSectionRepository.findByUpload(upload);
+        //Upload upload = resultList.get(0).getUpload();
         map.put("imgName", upload.getUploadImg().getUpImgName());
         map.put("imgSavedName", upload.getUploadImg().getUpImgSavedName());
         map.put("vidName", upload.getUploadVid().getUpVidName());
