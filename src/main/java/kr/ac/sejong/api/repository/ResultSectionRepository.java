@@ -9,7 +9,8 @@ import java.util.List;
 
 @Repository
 public interface ResultSectionRepository extends JpaRepository<ResultSection, Long> {
-    List<ResultSection> findAllByUpload(long uploadId);
-    List<ResultSection> findByUploadOOrderByStartAsc(long uploadId);
-    Upload findByUpload(long uploadId);
+    //List<ResultSection> findByUpload(long uploadId);
+    List<ResultSection> findByUpload(Upload upload);
+    //List<ResultSection> findByUploadOOrderByStartAsc(long uploadId);
+    //Upload findByUpload(long uploadId);
 }
