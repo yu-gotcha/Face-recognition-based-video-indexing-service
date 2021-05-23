@@ -4,20 +4,45 @@
     font-weight: normal;
     font-style: normal;
 }
+body{
+    background:#363D47;
+    margin:0; /*마진xxx*/
+}
+.header-wrapper{
+    border:3px solid goldenrod;
+    padding:50px 15% 50px 15%;
 
+}
+.banner-wrapper{
+    border:3px solid ivory;
+    padding:50px 15% 50px 15%;
+    display:flex;
+}
+.content-wrapper{
+    border:3px solid yellow;
+    padding:10px;
+}
+
+@media screen and (max-width: 1400px) {
+    .banner-wrapper{
+        padding:50px 10% 50px 10%;
+    }
+    .header-wrapper{
+        padding:50px 10% 50px 10%;
+    }
+}
 .header{
-    /*border:3px solid goldenrod;*/
-    margin:50px 50px;
+    border:3px solid purple;
     overflow:auto;
+    margin:0 auto;
+}
+.logo-section{
     font-family: 'Itim', cursive;
     font-size:30pt;
     font-weight:bold;
-}
-.logo-section{
-    /*border:3px solid salmon;*/
+    border:3px solid salmon;
     margin:0;
     float:left;
-    padding-top:10px;
     padding-left:10px;
 }
 .nav-logo{
@@ -25,7 +50,7 @@
     text-decoration:none;
 }
 .navigation-section{
-    /*border:3px solid royalblue;*/
+    border:3px solid royalblue;
     float:right;
 }
 .nav-btn{

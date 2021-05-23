@@ -4,71 +4,69 @@
     <meta charset="UTF-8">
     <title>TimeAttack</title>
     <link rel="stylesheet" type="text/css" href="/css/style_upload.css"/>
-    <link rel="stylesheet" type="text/css" href="/css/style_header.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/style_common.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 </head>
 <body>
 {{^userdata}}
-<!--    <h3>로그인 후에 이용 가능합니다.</h3>-->
-<!--    <a href="login">로그인 하러 가기</a>-->
 <meta http-equiv="refresh" content="0;url=login">
 {{/userdata}}
 
 {{#userdata}}
-<div class="header">
-    <div class="logo-section">
-        <a href="index" class="nav-logo">T.A.</a>
-    </div>
-    <div class="navigation-section">
-        <input type="button" class="nav-btn" value="홈" onClick="location.href='index'"/>
-        <input type="button" class="nav-btn" value="소개" onClick="location.href='manual'"/>
-        <input type="button" class="nav-btn" value="업로드" onClick="location.href='upload'"/>
-        <input type="button" class="nav-btn" value="리스트" onClick="location.href='list'"/>
-        <span class="nav-user-name">{{userName}} 님</span>
-        <input type="button" class="nav-logout-btn" value="로그아웃" onClick="location.href='logout'"/>
-    </div>
-</div>
 <div class="page-wrapper">
-    <form method="post" action="upload" enctype="multipart/form-data" name="fileForm" id="fileForm">
-        <div class="upload-file-section">
-            <div class="upload-section">
-                <p class="upload-please">IMAGE</p>
-<!--                <p class="upload-please">이미지 파일을 선택해주세요.</p>-->
-                <div class="upload-section-in">
-                    <img id="image_container" class="image-tn" src="/img/tn-back.png">
-<!--                    <input type="file" name="imgFile" id="imgFile" accept="image/*" onchange="setThumbnail(this);"/><br>-->
-                    <div class="image-file-container">
-                        <label><input type="file" name="imgFile" id="imgFile" class="image-file-input" accept="image/*" onchange="setThumbnail(this);"/></label>
-                        <span id="imgError" class="img-filename">파일을 선택해주세요.</span>
+    <div class="header-wrapper">
+        <header class="header">
+            <div class="logo-section">
+                <a href="index" class="nav-logo">T.A.</a>
+            </div>
+            <nav class="navigation-section"> <!--ul li로 바꾸-->
+                <input type="button" class="nav-btn" value="홈" onClick="location.href='index'"/>
+                <input type="button" class="nav-btn" value="소개" onClick="location.href='manual'"/>
+                <input type="button" class="nav-btn" value="업로드" onClick="location.href='upload'"/>
+                <input type="button" class="nav-btn" value="리스트" onClick="location.href='list'"/>
+                <span class="nav-user-name">{{userName}} 님</span>
+                <input type="button" class="nav-logout-btn" value="로그아웃" onClick="location.href='logout'"/>
+            </nav>
+        </header>
+    </div>
+    <div class="content-wrapper">
+        <form method="post" action="upload" enctype="multipart/form-data" name="fileForm" id="fileForm">
+            <div class="upload-file-section">
+                <div class="upload-section">
+                    <p class="upload-please">IMAGE</p>
+                    <div class="upload-section-in">
+                        <img id="image_container" class="image-tn" src="/img/tn-back.png">
+                        <div class="image-file-container">
+                            <label><input type="file" name="imgFile" id="imgFile" class="image-file-input"
+                                          accept="image/*" onchange="setThumbnail(this);"/></label>
+                            <span id="imgError" class="img-filename">파일을 선택해주세요.</span>
+                        </div>
                     </div>
                 </div>
-
-            </div>
-            <div class="upload-section">
-                <p class="upload-please">VIDEO</p>
-<!--                <p class="upload-please">비디오 파일을 선택해주세요.</p>-->
-                <div class="upload-section-in">
-                    <img id="video_container" class="video-tn" src="/img/tn-back.png">
-                    <video id="video_container2" controls>
-                        <source type="video/mp4">
-                    </video> <!--webm도 일단 작동-->
-                    <canvas id="video_container3"></canvas>
-<!--                    <input type="file" name="vidFile" id="vidFile" accept="video/*"/><br>-->
-                    <div class="video-file-container">
-                        <label><input type="file" name="vidFile" id="vidFile" class="video-file-input" accept="video/*"/></label>
-                        <span id="vidError" class="vid-filename">파일을 선택해주세요.</span>
+                <div class="upload-section">
+                    <p class="upload-please">VIDEO</p>
+                    <div class="upload-section-in">
+                        <img id="video_container" class="video-tn" src="/img/tn-back.png">
+                        <video id="video_container2" controls>
+                            <source type="video/mp4">
+                        </video> <!--webm도 일단 작동-->
+                        <canvas id="video_container3"></canvas>
+                        <div class="video-file-container">
+                            <label><input type="file" name="vidFile" id="vidFile" class="video-file-input"
+                                          accept="video/*"/></label>
+                            <span id="vidError" class="vid-filename">파일을 선택해주세요.</span>
+                        </div>
                     </div>
                 </div>
-
             </div>
-        </div>
 
-        <!--accept="image/png, image/jpeg" 이 속성으로 파일 제한 할 수 있음-->
-        <div class="upload-submit-btn-section">
-            <input type="button" class="upload-submit-btn" onclick="checkFile()" value="전송"/>
-        </div>
-    </form>
+            <!--accept="image/png, image/jpeg" 이 속성으로 파일 제한 할 수 있음-->
+            <div class="upload-submit-btn-section">
+                <input type="button" class="upload-submit-btn" onclick="checkFile()" value="전송"/>
+            </div>
+        </form>
+    </div>
 </div>
 {{/userdata}}
 </body>
@@ -156,34 +154,32 @@
         });
     });
 
-    $(document).on("change", ".image-file-input", function(){
+    $(document).on("change", ".image-file-input", function () {
 
         // $filename = $(this).val();
-        $filename=$(this).val().split('/').pop().split('\\').pop();
+        $filename = $(this).val().split('/').pop().split('\\').pop();
 
-        if($filename == "") {
+        if ($filename == "") {
             $filename = "파일을 선택해주세요.";
             $("#image_container").attr("src", '/img/tn-back.png');
             $("#imgError").css('color', 'red');
-        }
-        else{
+        } else {
             $("#imgError").css('color', 'black');
         }
 
         $(".img-filename").text($filename);
 
     })
-    $(document).on("change", ".video-file-input", function(){
+    $(document).on("change", ".video-file-input", function () {
 
         // $filename = $(this).val();
-        $filename=$(this).val().split('/').pop().split('\\').pop();
+        $filename = $(this).val().split('/').pop().split('\\').pop();
 
-        if($filename == "") {
+        if ($filename == "") {
             $filename = "파일을 선택해주세요.";
-            $("#video_container").attr("src",'/img/tn-back.png');
+            $("#video_container").attr("src", '/img/tn-back.png');
             $("#vidError").css('color', 'red');
-        }
-        else{
+        } else {
             $("#vidError").css('color', 'black');
         }
 

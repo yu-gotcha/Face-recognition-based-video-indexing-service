@@ -1,31 +1,11 @@
-@font-face {
-    font-family: 'SLEIGothicTTF';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-body{
-    background:#363D47;
-    /*background: linear-gradient( 135deg, #6C8CF4, #5FCCFF );*/
-    /*background:#F4E5CC;*/
-    width:1300px;
-    margin:0 auto;
-}
-
-.page-wrapper{
-    /*border:3px solid ivory;*/
-    margin:100px 50px;
-    display:flex;
-}
 .index-left-section{
-    /*border:3px solid orange;*/
-    margin:180px 0 20px 20px; /*margin-top으로 왼쪽구역 높이조절*/
+    border:3px solid orange;
+    margin:140px 0 0 0; /*margin-top으로 왼쪽구역 높이조절*/
     width:40%;
     height:390px;
 }
 .index-content{
-    /*border:3px solid yellow;*/
+    border:3px solid yellow;
     padding:5px;
     font-size:10pt;
     margin-top:0;
@@ -34,18 +14,13 @@ body{
     color:#FFE268;
 }
 .index-title{
-    /*border:3px solid darkcyan;*/
+    border:3px solid darkcyan;
     margin-top:0px;
     font-family: 'Itim', cursive;
     padding:5px;
     font-size:53pt;
     color:#FFE268;
 }
-/*@media (max-width:800px){*/
-/*    .index-title{*/
-/*        color:red;*/
-/*    }*/
-/*}*/
 .index-start-btn{
     background: #23a3a7;
     color:#363D47;
@@ -64,8 +39,8 @@ body{
     color:white;
 }
 .index-right-section{
-    /*border:3px solid olive;*/
-    margin:20px;
+    border:3px solid olive;
+    /*margin:20px;*/
     width:60%;
     height:600px;
 }

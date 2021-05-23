@@ -4,36 +4,61 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="/css/style_manual.css"/>
-    <link rel="stylesheet" type="text/css" href="/css/style_header.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/style_common.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="header">
-    <div class="logo-section">
-        <a href="index" class="nav-logo">T.A.</a>
-    </div>
-    <div class="navigation-section">
-        <input type="button" class="nav-btn" value="홈" onClick="location.href='index'"/>
-        <input type="button" class="nav-btn" value="소개" onClick="location.href='manual'"/>
-        <input type="button" class="nav-btn" value="업로드" onClick="location.href='upload'"/>
-        <input type="button" class="nav-btn" value="리스트" onClick="location.href='list'"/>
-        {{^userdata}}
-        <input type="button" class="nav-btn" value="로그인" onClick="location.href='login'"/>
-        <input type="button" class="nav-btn" value="회원가입" onClick="location.href='join'"/>
-        {{/userdata}}
-        {{#userdata}}
-        <span class="nav-user-name">{{userName}} 님</span>
-        <input type="button" class="nav-logout-btn" value="로그아웃" onClick="location.href='logout'"/>
-        {{/userdata}}
-    </div>
-</div>
 <div class="page-wrapper">
-  <p>시스템이 제공하는 것들....
-  1. 업로드 화면은 이렇고...
-  2. 결과 화면은 이렇고...
-  3. 리스트 화면은 이렇고...
-    마지막에 추가...
-  </p>
+    <div class="header-wrapper">
+        <header class="header">
+            <div class="logo-section">
+                <a href="index" class="nav-logo">T.A.</a>
+            </div>
+            <nav class="navigation-section"> <!--ul li로 바꾸-->
+                <input type="button" class="nav-btn" value="홈" onClick="location.href='index'"/>
+                <input type="button" class="nav-btn" value="소개" onClick="location.href='manual'"/>
+                <input type="button" class="nav-btn" value="업로드" onClick="location.href='upload'"/>
+                <input type="button" class="nav-btn" value="리스트" onClick="location.href='list'"/>
+                {{^userdata}}
+                <input type="button" class="nav-btn" value="로그인" onClick="location.href='login'"/>
+                <input type="button" class="nav-btn" value="회원가입" onClick="location.href='join'"/>
+                {{/userdata}}
+                {{#userdata}}
+                <span class="nav-user-name">{{userName}} 님</span>
+                <input type="button" class="nav-logout-btn" value="로그아웃" onClick="location.href='logout'"/>
+                {{/userdata}}
+            </nav>
+        </header>
+    </div>
+    <div class="content-wrapper">
+        <div class="manual-section">
+            <div>
+                <h1>설명설명설명설명</h1>
+                <h2>설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명</h2>
+            </div>
+            <div>
+                <img src="http://placehold.it/500x500" />
+            </div>
+        </div>
+        <div class="manual-section">
+            <div>
+                <img src="http://placehold.it/500x500" />
+            </div>
+            <div>
+                <h1>설명설명설명설명</h1>
+                <h2>설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명</h2>
+            </div>
+        </div>
+        <div class="manual-section">
+            <div>
+                <h1>설명설명설명설명</h1>
+                <h2>설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명</h2>
+            </div>
+            <div>
+                <img src="http://placehold.it/500x500" />
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>

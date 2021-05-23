@@ -4,63 +4,65 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="/css/style_list.css"/>
-    <link rel="stylesheet" type="text/css" href="/css/style_header.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/style_common.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
 </head>
 <body>
 {{^userdata}}
-<!--    <a href="login">로그인 하러 가기</a>-->
 <meta http-equiv="refresh" content="0;url=login">
 {{/userdata}}
 
 {{#userdata}}
-<div class="header">
-    <div class="logo-section">
-        <a href="index" class="nav-logo">T.A.</a>
-    </div>
-    <div class="navigation-section">
-        <input type="button" class="nav-btn" value="홈" onClick="location.href='index'"/>
-        <input type="button" class="nav-btn" value="소개" onClick="location.href='manual'"/>
-        <input type="button" class="nav-btn" value="업로드" onClick="location.href='upload'"/>
-        <input type="button" class="nav-btn" value="리스트" onClick="location.href='list'"/>
-        <span class="nav-user-name">{{userName}} 님</span>
-        <input type="button" class="nav-logout-btn" value="로그아웃" onClick="location.href='logout'"/>
-    </div>
-</div>
 <div class="page-wrapper">
-    <!--리스트 관련된걸로 해시맵 만들어서 하면 될거같은디 반복 돌려서 테이블 만드는거-->
-    <div class="list-table-section">
-        <table class="list-table-content">
-            <th>No.</th>
-            <th>이미지 파일</th>
-            <th>동영상 파일</th>
-            <th>업로드</th>
-            <th>프로세스</th>
-            <th>썸네일</th> <!-- 이미지 or 영상의 썸네일??  -->
-            <th>결과</th>
+    <div class="header-wrapper">
+        <header class="header">
+            <div class="logo-section">
+                <a href="index" class="nav-logo">T.A.</a>
+            </div>
+            <nav class="navigation-section"> <!--ul li로 바꾸-->
+                <input type="button" class="nav-btn" value="홈" onClick="location.href='index'"/>
+                <input type="button" class="nav-btn" value="소개" onClick="location.href='manual'"/>
+                <input type="button" class="nav-btn" value="업로드" onClick="location.href='upload'"/>
+                <input type="button" class="nav-btn" value="리스트" onClick="location.href='list'"/>
+                <span class="nav-user-name">{{userName}} 님</span>
+                <input type="button" class="nav-logout-btn" value="로그아웃" onClick="location.href='logout'"/>
+            </nav>
+        </header>
+    </div>
+    <div class="content-wrapper">
+        <!--리스트 관련된걸로 해시맵 만들어서 하면 될거같은디 반복 돌려서 테이블 만드는거-->
+        <div class="list-table-section">
+            <table class="list-table-content">
+                <th>No.</th>
+                <th>이미지 파일</th>
+                <th>동영상 파일</th>
+                <th>업로드</th>
+                <th>프로세스</th>
+                <th>썸네일</th> <!-- 이미지 or 영상의 썸네일??  -->
+                <th>결과</th>
 
-            {{#file}}
-            <tr>
-                <td>{{no}}</td>
-                <td>{{imageFileName}}</td>
-                <td>{{videoFileName}}</td>
-                <td>{{upload}}</td>
-                <td>{{process}}</td>
-                <td><img class="list-table-thumbnail" src="/TimeAttackFile/file/image/{{imgSavedName}}"></td>
-<!--                <td><img class="list-table-thumbnail" src="/img/moni.png"/></td>-->
-                <td>
-                    {{#result}}
-                    <button value="result" onclick="window.location.href = '/result?id={{uploadId}}&no={{no}}'">결과 보기</button>
-                    {{/result}}
+                {{#file}}
+                <tr>
+                    <td>{{no}}</td>
+                    <td>{{imageFileName}}</td>
+                    <td>{{videoFileName}}</td>
+                    <td>{{upload}}</td>
+                    <td>{{process}}</td>
+                    <td><img class="list-table-thumbnail" src="/TimeAttackFile/file/image/{{imgSavedName}}"></td>
+                    <td>
+                        {{#result}}
+                        <button value="result" onclick="window.location.href = '/result?id={{uploadId}}&no={{no}}'">결과 보기</button>
+                        {{/result}}
 
-                    {{^result}}
-                    <button value="result" disabled="disabled">결과 보기</button>
-                    {{/result}}
-                </td>
-            </tr>
-            {{/file}}
-        </table>
+                        {{^result}}
+                        <button value="result" disabled="disabled">결과 보기</button>
+                        {{/result}}
+                    </td>
+                </tr>
+                {{/file}}
+            </table>
+        </div>
     </div>
 </div>
 {{/userdata}}

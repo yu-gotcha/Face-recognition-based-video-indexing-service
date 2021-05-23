@@ -1,19 +1,5 @@
-@font-face {
-    font-family: 'SLEIGothicTTF';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SLEIGothicTTF.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/*업로드하기*/
-body{
-    background-color:#363D47;
-    width:1300px;
-    margin:0 auto;
-}
-.page-wrapper{
-    width:1000px;
-    height:1000px;
-    background:white;
-    margin:50px auto;
+.manual-section{
+    border:3px solid skyblue;
+    display:flex;
+    margin:50px 15%;
 }
