@@ -67,9 +67,20 @@
             </div>
         </form>
     </div>
+    <div style="position:fixed;left:0;top:95%;">
+        색깔
+        <button class="theme-1">1번</button>
+        <button class="theme-2">2번</button>
+        <button class="theme-3">3번</button>
+        <input type="button" onclick="get_storage();" value="겟"/>
+        <input type="button" onclick="clear_storage();" value="클리어"/>
+        테두리
+        <button class="line-check">on/off</button>
+    </div>
 </div>
 {{/userdata}}
 </body>
+<script type="text/javascript" src="/js/script_theme.js"></script>
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>

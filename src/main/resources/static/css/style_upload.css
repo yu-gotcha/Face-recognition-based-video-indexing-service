@@ -1,9 +1,9 @@
 .upload-file-section{
-    /*border:3px solid red;*/
+    border:3px solid var(--line-color-3);
     display:flex;
 }
 .upload-please{
-    /*border:3px solid green;*/
+    border:3px solid var(--line-color-4);
     text-align:center;
     margin:0px auto;
     font-family: 'Itim', cursive;
@@ -12,29 +12,29 @@
 
 }
 .upload-section{
-    /*border:3px solid blue;*/
+    border:3px solid var(--line-color-5);
     margin:0px auto;
     width:45%;
     height:100%;
 }
 .upload-section-in{
-    /*border:3px solid orange;*/
+    border:3px solid var(--line-color-6);
     width:406px;
     margin:0 auto;
 }
 .image-tn{
+    border:1px solid var(--line-color-7);
     object-fit:contain;
     width:400px;
     height:400px;
-    /*border:1px solid cyan;*/
     background:#292929;
     border-radius: 15px;
 }
 .video-tn{
+    border:1px solid var(--line-color-8);
     object-fit:contain;
     width:400px;
     height:400px;
-    /*border:3px solid magenta;*/
     background:#292929;
     border-radius: 15px;
 }
@@ -42,13 +42,13 @@
     display:none;
 }
 .image-file-container{
+    border:1px solid var(--line-color-9);
     margin-top:5px;
-    /*border:3px solid pink;*/
 }
 .image-file-container label{
+    border:1px solid var(--line-color-0);
     border-radius: 10px;
     text-align:center;
-    /*border:3px solid yellow;*/
     display:inline-block;
     background:#23a3a7;
     color:#fff;
@@ -63,21 +63,21 @@
     display:none;
 }
 .image-file-container .img-filename{
+    border:1px solid var(--line-color-1);
     background:white;
     border-radius: 10px;
-    /*border:3px solid purple;*/
     display:inline-block;
     padding:5px 5px 5px 10px;
     width:292px;
 }
 .video-file-container{
+    border:1px solid var(--line-color-2);
     margin-top:5px;
-    /*border:3px solid red;*/
 }
 .video-file-container label {
+    border:1px solid var(--line-color-3);
     border-radius: 10px;
     text-align: center;
-    /*border:3px solid greenyellow;*/
     display: inline-block;
     background: #23a3a7;
     color: #fff;
@@ -92,17 +92,17 @@
     display:none;
 }
 .video-file-container .vid-filename{
+    border:1px solid var(--line-color-4);
     background:white;
     border-radius: 10px;
-    /*border:3px solid gray;*/
     display:inline-block;
     padding:5px 5px 5px 10px;
     width:292px;
 }
 .upload-submit-btn-section{
+    border:1px solid var(--line-color-5);
     margin:80px 0 80px 0;
     text-align:center;
-    /*border:3px solid yellow;*/
 }
 .upload-submit-btn{
     padding:10px 40px 10px 40px;

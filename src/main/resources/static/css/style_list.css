@@ -1,33 +1,30 @@
 .list-table-section{
+    border:3px solid var(--line-color-0);
     margin:0 auto;
     max-width:1000px;
     border-radius: 15px;
     min-height:1500px;
     margin-top:100px;
     padding-bottom:15px;
-    /*border:3px solid purple;*/
     background:white;
 }
 .list-table-content{
+    border:3px solid var(--line-color-1);
     width:100%;
-    /*border:3px solid orange;*/
     border-collapse: collapse;
 }
 /* top-left border-radius */
 table tr:first-child th:first-child {
     border-top-left-radius: 15px;
 }
-
 /* top-right border-radius */
 table tr:first-child th:last-child {
     border-top-right-radius: 15px;
 }
-
 /* bottom-left border-radius */
 table tr:last-child td:first-child {
     border-bottom-left-radius: 15px;
 }
-
 /* bottom-right border-radius */
 table tr:last-child td:last-child {
     border-bottom-right-radius: 15px;

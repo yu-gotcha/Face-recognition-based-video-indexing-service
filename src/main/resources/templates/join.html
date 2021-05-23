@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/style_common.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -17,7 +18,7 @@
 {{#error}}
 <script>
     alert('이미 존재하는 아이디 입니다. 다른 아이디를 입력해주세요');
-    document.location.href="remove_join_error";
+    document.location.href = "remove_join_error";
 </script>
 {{/error}}
 
@@ -50,9 +51,19 @@
         </div>
     </div>
 </form>
+<div style="position:fixed;left:0;top:95%;">
+    색깔
+    <button class="theme-1">1번</button>
+    <button class="theme-2">2번</button>
+    <button class="theme-3">3번</button>
+    <input type="button" onclick="get_storage();" value="겟"/>
+    <input type="button" onclick="clear_storage();" value="클리어"/>
+    테두리
+    <button class="line-check">on/off</button>
+</div>
 {{/userdata}}
 </body>
-
+<script type="text/javascript" src="/js/script_theme.js"></script>
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
     //난해하군...난 여기서 유효성 검사하고 넘기고싶은데, 유효성 검사하고 페이지 전환이 일어남-->reload되는건 해결. 그래서 빨간글씨 다시 검게 됨
@@ -102,8 +113,7 @@
     }
 
 
-
-    $(document).on("change", "#userName", function(){
+    $(document).on("change", "#userName", function () {
         var userName = $("#userName").val();
         var toCheckName = /^[가-힣a-zA-Z0-9]{2,5}$/;
 
@@ -113,7 +123,7 @@
             $("#nameError").css('color', 'red');
         }
     })
-    $(document).on("change", "#loginId", function(){
+    $(document).on("change", "#loginId", function () {
         var userId = $("#loginId").val();
         var toCheckId = /^[a-zA-Z0-9]{6,12}$/;
 
@@ -123,7 +133,7 @@
             $("#idError").css('color', 'red');
         }
     })
-    $(document).on("change", "#loginPw", function(){
+    $(document).on("change", "#loginPw", function () {
         var userPw = $("#loginPw").val();
         var toCheckPw = /^[a-zA-Z0-9]{6,20}$/;
 

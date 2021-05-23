@@ -1,5 +1,5 @@
 .manual-section{
-    border:3px solid skyblue;
+    border:3px solid var(--line-color-2);
     display:flex;
     margin:50px 15%;
 }

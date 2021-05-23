@@ -1,11 +1,11 @@
 .index-left-section{
-    border:3px solid orange;
+    border:3px solid var(--line-color-6);
     margin:140px 0 0 0; /*margin-top으로 왼쪽구역 높이조절*/
     width:40%;
     height:390px;
 }
 .index-content{
-    border:3px solid yellow;
+    border:3px solid var(--line-color-7);
     padding:5px;
     font-size:10pt;
     margin-top:0;
@@ -14,7 +14,7 @@
     color:#FFE268;
 }
 .index-title{
-    border:3px solid darkcyan;
+    border:3px solid var(--line-color-8);
     margin-top:0px;
     font-family: 'Itim', cursive;
     padding:5px;
@@ -39,8 +39,7 @@
     color:white;
 }
 .index-right-section{
-    border:3px solid olive;
-    /*margin:20px;*/
+    border:3px solid var(--line-color-9);
     width:60%;
     height:600px;
 }

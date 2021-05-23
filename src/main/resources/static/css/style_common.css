@@ -4,22 +4,56 @@
     font-weight: normal;
     font-style: normal;
 }
+body.theme1 {
+    --bkg-color: #363D47;
+}
+body.theme2 {
+    --bkg-color: pink;
+}
+body.theme3{
+    --bkg-color: skyblue;
+}
 body{
-    background:#363D47;
+    --line-color-0:none;
+    --line-color-1:none;
+    --line-color-2:none;
+    --line-color-3:none;
+    --line-color-4:none;
+    --line-color-5:none;
+    --line-color-6:none;
+    --line-color-7:none;
+    --line-color-8:none;
+    --line-color-9:none;
+}
+body.line1{
+    --line-color-0:red;
+    --line-color-1:orange;
+    --line-color-2:yellow;
+    --line-color-3:yellowgreen;
+    --line-color-4:green;
+    --line-color-5:skyblue;
+    --line-color-6:blue;
+    --line-color-7:purple;
+    --line-color-8:pink;
+    --line-color-9:saddlebrown;
+}
+/*-------------------------------------------------------------*/
+body{
+    background: var(--bkg-color);
     margin:0; /*마진xxx*/
 }
 .header-wrapper{
-    border:3px solid goldenrod;
+    border:3px solid var(--line-color-0);
     padding:50px 15% 50px 15%;
 
 }
 .banner-wrapper{
-    border:3px solid ivory;
-    padding:50px 15% 50px 15%;
+    border:3px solid var(--line-color-1);
+    padding:100px 15% 0 15%;
     display:flex;
 }
 .content-wrapper{
-    border:3px solid yellow;
+    border:3px solid var(--line-color-2);
     padding:10px;
 }
 
@@ -32,7 +66,7 @@ body{
     }
 }
 .header{
-    border:3px solid purple;
+    border:3px solid var(--line-color-3);
     overflow:auto;
     margin:0 auto;
 }
@@ -40,7 +74,7 @@ body{
     font-family: 'Itim', cursive;
     font-size:30pt;
     font-weight:bold;
-    border:3px solid salmon;
+    border:3px solid var(--line-color-4);
     margin:0;
     float:left;
     padding-left:10px;
@@ -50,7 +84,7 @@ body{
     text-decoration:none;
 }
 .navigation-section{
-    border:3px solid royalblue;
+    border:3px solid var(--line-color-5);
     float:right;
 }
 .nav-btn{
