@@ -1,5 +1,25 @@
 .manual-section{
-    border:3px solid var(--line-color-2);
+    border:3px solid var(--line-color-5);
     display:flex;
-    margin:50px 15%;
+    margin:150px auto;
+    font-family: 'BBTreeGB';
+    color:var(--4-color);
+    width:70%;
+}
+.manual-img{
+    /*border:3px solid var(--line-color-3);*/
+    border:2px solid white;
+    margin:0 auto;
+}
+.manual-text{
+    border:3px solid var(--line-color-4);
+    margin:0 auto;
+}
+.manual-text-title{
+    border:3px solid var(--line-color-6);
+    font-size:40pt;
+}
+.manual-text-content{
+    border:3px solid var(--line-color-7);
+    font-size:16pt;
 }

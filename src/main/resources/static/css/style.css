@@ -43,7 +43,7 @@
     margin-bottom:50px;
     width:200px;
     height:40px;
-    background: #FFE268;
+    background: var(--1-color);
     color:#363D47;
     border:none;
     cursor:pointer;
@@ -54,7 +54,7 @@
     font-family: 'SLEIGothicTTF';
 }
 .login-btn:hover{
-    background:#D6B942;
+    background:var(--6-color);
     color:white;
 }
 .login-no-account{
@@ -124,7 +124,7 @@
     margin-bottom: 40px;
     width:200px;
     height:40px;
-    background: #FFE268;
+    background: var(--1-color);
     color:#363D47;
     border:none;
     cursor:pointer;
@@ -135,7 +135,7 @@
     font-family: 'SLEIGothicTTF';
 }
 .join-btn:hover{
-    background:#D6B942;
+    background:var(--6-color);
     color:white;
 }
 

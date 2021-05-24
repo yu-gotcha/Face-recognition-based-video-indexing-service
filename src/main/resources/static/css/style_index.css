@@ -1,49 +1,48 @@
 .index-left-section{
     border:3px solid var(--line-color-6);
-    margin:140px 0 0 0; /*margin-top으로 왼쪽구역 높이조절*/
+    margin:100px 0 0 0; /*margin-top으로 왼쪽구역 높이조절*/
     width:40%;
-    height:390px;
 }
 .index-content{
     border:3px solid var(--line-color-7);
     padding:5px;
-    font-size:10pt;
     margin-top:0;
-    margin-bottom:0;
-    font-family: 'SLEIGothicTTF';
-    color:#FFE268;
+    margin-bottom:20px;
+    font-family: 'BBTreeGB';
+    color:var(--1-color);
+    font-size:50pt;
 }
 .index-title{
     border:3px solid var(--line-color-8);
-    margin-top:0px;
-    font-family: 'Itim', cursive;
+    margin-top:0;
+    font-family: 'BBTreeGB';
     padding:5px;
-    font-size:53pt;
-    color:#FFE268;
+    color:var(--1-color);
+    font-size:20pt;
 }
 .index-start-btn{
-    background: #23a3a7;
-    color:#363D47;
+    background: var(--2-color);
+    color:var(--7-color);
     border:none;
     padding:10px 20px 10px 20px;
     cursor:pointer;
-    display:inline;
     border-radius: 15px;
     font-size:14pt;
     font-family: 'SLEIGothicTTF';
     transition: 0.4s;
-    margin-right:20px;
 }
 .index-start-btn:hover{
-    background:#23a3a7;
+    background:var(--2-color);
     color:white;
 }
 .index-right-section{
     border:3px solid var(--line-color-9);
-    width:60%;
-    height:600px;
+    width:55%;
+    padding-left:50px;
+    height:550px;
 }
 .index-image{
+    filter: drop-shadow(5px 5px 5px #000);
     object-fit:contain;
     width:100%;
     height:100%;
