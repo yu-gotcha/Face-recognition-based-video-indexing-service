@@ -17,40 +17,105 @@
     font-style: normal;
 }
 body.theme1 {
-    --body-color:#363D47;
-    --1-color:#FFE268;
-    --2-color:#23a3a7;
-    --3-color:#FFC0CB;
-    --4-color:white;
-    --5-color:black;
-    --6-color:#D6B942;
-    --7-color:#292929;
-    --8-color:#363D47;
-    --9-color:none;
+    --body-color-1:#363D47;
+    --body-color-2:none;
+    --nav-logo-color:white;
+    --nav-btn-color-1-text:#FFE268;
+    --nav-btn-color-1-text-hover:white;
+    --nav-btn-color-1-back-hover:#D6B942;
+    --nav-btn-color-2:white;
+    --nav-btn-color-3-text:#23a3a7;
+    --nav-btn-color-3-text-hover:white;
+    --nav-btn-color-3-back-hover:#23a3a7;
+    --index-text-color:#FFE268;
+    --index-start-btn-color-text:#363D47;
+    --index-start-btn-color-back:#23a3a7;
+    --index-start-btn-color-text-hover:white;
+    --manual-text-color:white;
+    --upload-title-color:#FFE268;
+    --upload-select-btn-color-text:white;
+    --upload-select-btn-color-back:#23a3a7;
+    --upload-name-color-text:black;
+    --upload-name-color-back:white;
+    --upload-submit-btn-color-text:#363D47;
+    --upload-submit-btn-color-back:#FFE268;
+    --upload-submit-btn-color-text-hover:white;
+    --upload-submit-btn-color-back-hover:#D6B942;
+    --list-th-color-text:#363D47;
+    --list-th-color-back:pink;
+    --login-and-join-title-color:black;
+    --login-and-join-btn-color-text:#363D47;
+    --login-and-joint-btn-color-back:#FFE268;
+    --login-and-join-btn-color-text-hover:white;
+    --login-and-join-btn-color-back-hover:#D6B942;
 }
 body.theme2 {
-    --body-color:#F8F8F8;
-    --1-color:black;
-    --2-color:#FF7800;
-    --3-color:#FFC0CB;
-    --4-color:black;
-    --5-color:black;
-    --6-color:#D6B942;
-    --7-color:#292929;
-    --8-color:#363D47;
-    --9-color:white;
+    --body-color-1:#326EBD;
+    --body-color-2:white;
+    --nav-logo-color:white;
+    --nav-btn-color-1-text:white;
+    --nav-btn-color-1-text-hover:#326EBD;
+    --nav-btn-color-1-back-hover:white;
+    --nav-btn-color-2:white;
+    --nav-btn-color-3-text:white;
+    --nav-btn-color-3-text-hover:#326EBD;
+    --nav-btn-color-3-back-hover:white;
+    --index-text-color:white;
+    --index-start-btn-color-text:#326EBD;
+    --index-start-btn-color-back:white;
+    --index-start-btn-color-text-hover:black;
+    --manual-text-color:#326EBD;
+    --upload-title-color:#326EBD;
+    --upload-select-btn-color-text:white;
+    --upload-select-btn-color-back:#326EBD;
+    --upload-name-color-text:black;
+    --upload-name-color-back:#E7EAED;
+    --upload-submit-btn-color-text:#326EBD;
+    --upload-submit-btn-color-back:white;
+    --upload-submit-btn-color-text-hover:#2E64AB;
+    --upload-submit-btn-color-back-hover:white;
+    --list-th-color-text:white;
+    --list-th-color-back:#326EBD;
+    --login-and-join-title-color:black;
+    --login-and-join-btn-color-text:white;
+    --login-and-joint-btn-color-back:#326EBD;
+    --login-and-join-btn-color-text-hover:white;
+    --login-and-join-btn-color-back-hover:#2E64AB;
+
+
 }
 body.theme3{
-    --body-color:#326EBD;
-    --1-color:white;
-    --2-color:white;
-    --3-color:#326EBD;
-    --4-color:#326EBD;
-    --5-color:black;
-    --6-color:#D6B942;
-    --7-color:#292929;
-    --8-color:#363D47;
-    --9-color:white;
+    --body-color-1:#F8F8F8;
+    --body-color-2:white;
+    --nav-logo-color:black;
+    --nav-btn-color-1-text:black;
+    --nav-btn-color-1-text-hover:white;
+    --nav-btn-color-1-back-hover:darkgray;
+    --nav-btn-color-2:white;
+    --nav-btn-color-3-text:#FF7800;
+    --nav-btn-color-3-text-hover:white;
+    --nav-btn-color-3-back-hover:#FF7800;
+    --index-text-color:black;
+    --index-start-btn-color-text:white;
+    --index-start-btn-color-back:#FF7800;
+    --index-start-btn-color-text-hover:black;
+    --manual-text-color:black;
+    --upload-title-color:black;
+    --upload-select-btn-color-text:white;
+    --upload-select-btn-color-back:#FF7800;
+    --upload-name-color-text:black;
+    --upload-name-color-back:white;
+    --upload-submit-btn-color-text:white;
+    --upload-submit-btn-color-back:#FF7800;
+    --upload-submit-btn-color-text-hover:black;
+    --upload-submit-btn-color-back-hover:#FF7800;
+    --list-th-color-text:black;
+    --list-th-color-back:white;
+    --login-and-join-title-color:black;
+    --login-and-join-btn-color-text:white;
+    --login-and-joint-btn-color-back:#FF7800;
+    --login-and-join-btn-color-text-hover:black;
+    --login-and-join-btn-color-back-hover:#FF7800;
 }
 body{
     --line-color-0:none;
@@ -81,7 +146,7 @@ html {
 
 }
 body{
-    background: var(--body-color);
+    background: var(--body-color-1);
     margin:0; /*마진xxx*/
 }
 .page-wrapper{
@@ -100,7 +165,7 @@ body{
 .content-wrapper{
     border:3px solid var(--line-color-2);
     padding:50px 0;
-    background:var(--9-color);
+    background:var(--body-color-2);
 }
 
 /*@media screen and (max-width: 1400px) {*/
@@ -126,7 +191,7 @@ body{
     padding-left:10px;
 }
 .nav-logo{
-    color:var(--4-color);
+    color:var(--nav-logo-color);
     text-decoration:none;
 }
 .navigation-section{
@@ -135,7 +200,7 @@ body{
 }
 .nav-btn{
     padding:10px 20px;
-    color:var(--1-color);
+    color:var(--nav-btn-color-1-text);
     background:none;
     border:none;
     cursor:pointer;
@@ -147,12 +212,12 @@ body{
     margin:0 10px;
 }
 .nav-btn:hover{
-    background:var(--6-color);
-    color:var(--4-color);
+    background:var(--nav-btn-color-1-back-hover);
+    color:var(--nav-btn-color-1-text-hover);
 }
 .nav-user-name{
     padding:10px 0 10px 20px;
-    color:var(--4-color);
+    color:var(--nav-btn-color-2);
     background:none;
     border:none;
     display:inline;
@@ -165,7 +230,7 @@ body{
 .nav-logout-btn{
     padding:10px 20px;
     background: none;
-    color:var(--2-color);
+    color:var(--nav-btn-color-3-text);
     border:none;
     cursor:pointer;
     display:inline;
@@ -176,6 +241,6 @@ body{
     margin:0 10px;
 }
 .nav-logout-btn:hover{
-    background:var(--2-color);
-    color:var(--4-color);
+    background:var(--nav-btn-color-3-back-hover);
+    color:var(--nav-btn-color-3-text-hover);
 }

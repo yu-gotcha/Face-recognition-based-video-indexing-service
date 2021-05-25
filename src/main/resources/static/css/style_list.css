@@ -31,9 +31,9 @@ table tr:last-child td:last-child {
 th{
     padding:5px 10px;
     text-align:center;
-    background:var(--3-color);
+    background:var(--list-th-color-back);
     font-family: 'SLEIGothicTTF';
-    color:#363D47;
+    color:var(--list-th-color-text);
     font-weight: normal;
 }
 td{

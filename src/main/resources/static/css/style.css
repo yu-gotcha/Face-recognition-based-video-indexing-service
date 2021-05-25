@@ -19,7 +19,7 @@
     font-family: 'Itim', cursive;
     text-decoration:none;
     font-size:30pt;
-    color:#363D47;
+    color:var(--login-and-join-title-color);
     font-weight:bold;
     text-align: center;
     margin: 10px 0 40px 0;
@@ -43,8 +43,8 @@
     margin-bottom:50px;
     width:200px;
     height:40px;
-    background: var(--1-color);
-    color:#363D47;
+    background: var(--login-and-joint-btn-color-back);
+    color:var(--login-and-join-btn-color-text);
     border:none;
     cursor:pointer;
     display:inline;
@@ -54,8 +54,8 @@
     font-family: 'SLEIGothicTTF';
 }
 .login-btn:hover{
-    background:var(--6-color);
-    color:white;
+    background:var(--login-and-join-btn-color-back-hover);
+    color:var(--login-and-join-btn-color-text-hover);
 }
 .login-no-account{
     font-weight:normal;
@@ -92,7 +92,7 @@
     font-family: 'Itim', cursive;
     text-decoration:none;
     font-size:30pt;
-    color:#363D47;
+    color:var(--login-and-join-title-color);
     font-weight:bold;
 }
 .join-form{
@@ -124,8 +124,8 @@
     margin-bottom: 40px;
     width:200px;
     height:40px;
-    background: var(--1-color);
-    color:#363D47;
+    background: var(--login-and-joint-btn-color-back);
+    color:var(--login-and-join-btn-color-text);
     border:none;
     cursor:pointer;
     display:inline;
@@ -135,7 +135,7 @@
     font-family: 'SLEIGothicTTF';
 }
 .join-btn:hover{
-    background:var(--6-color);
-    color:white;
+    background:var(--login-and-join-btn-color-back-hover);
+    color:var(--login-and-join-btn-color-text-hover);
 }
 

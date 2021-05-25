@@ -3,11 +3,10 @@
     display:flex;
     margin:150px auto;
     font-family: 'BBTreeGB';
-    color:var(--4-color);
+    color:var(--manual-text-color);
     width:70%;
 }
 .manual-img{
-    /*border:3px solid var(--line-color-3);*/
     border:2px solid white;
     margin:0 auto;
 }

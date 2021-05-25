@@ -10,7 +10,7 @@
     margin:0px auto;
     font-family: 'Itim', cursive;
     font-size:60pt;
-    color:var(--1-color);
+    color:var(--upload-title-color);
 
 }
 .upload-section{
@@ -26,7 +26,7 @@
     object-fit:contain;
     width:500px;
     height:500px;
-    background:var(--7-color);
+    background:#292929;
     border-radius: 15px;
 }
 .video-tn{
@@ -34,7 +34,7 @@
     object-fit:contain;
     width:500px;
     height:500px;
-    background:var(--7-color);
+    background:#292929;
     border-radius: 15px;
 }
 #video_container2, #video_container3{
@@ -49,8 +49,8 @@
     border-radius: 10px;
     text-align:center;
     display:inline-block;
-    background:var(--2-color);
-    color:var(--4-color);
+    background:var(--upload-select-btn-color-back);
+    color:var(--upload-select-btn-color-text);
     cursor:pointer;
     width:17%;
     padding:5px 0 5px 0;
@@ -63,7 +63,8 @@
 }
 .image-file-container .img-filename{
     border:2px solid var(--line-color-1);
-    background:white;
+    color:var(--upload-name-color-text);
+    background:var(--upload-name-color-back);
     border-radius: 10px;
     display:inline-block;
     padding:5px 5px 5px 10px;
@@ -78,8 +79,8 @@
     border-radius: 10px;
     text-align: center;
     display: inline-block;
-    background: var(--2-color);
-    color: var(--4-color);
+    background: var(--upload-select-btn-color-back);
+    color: var(--upload-select-btn-color-text);
     cursor: pointer;
     width: 17%;
     padding: 5px 0 5px 0;
@@ -92,7 +93,8 @@
 }
 .video-file-container .vid-filename{
     border:2px solid var(--line-color-4);
-    background:white;
+    color:var(--upload-name-color-text);
+    background:var(--upload-name-color-back);
     border-radius: 10px;
     display:inline-block;
     padding:5px 5px 5px 10px;
@@ -104,8 +106,8 @@
 }
 .upload-submit-btn{
     padding:10px 40px 10px 40px;
-    background: var(--1-color);
-    color:var(--8-color);
+    background: var(--upload-submit-btn-color-back);
+    color:var(--upload-submit-btn-color-text);
     border:none;
     cursor:pointer;
     display:inline;
@@ -115,6 +117,6 @@
     transition: 0.4s;
 }
 .upload-submit-btn:hover{
-    background:var(--6-color);
-    color:white;
+    background:var(--upload-submit-btn-color-back-hover);
+    color:var(--upload-submit-btn-color-text-hover);
 }

@@ -9,7 +9,7 @@
     margin-top:0;
     margin-bottom:20px;
     font-family: 'BBTreeGB';
-    color:var(--1-color);
+    color:var(--index-text-color);
     font-size:50pt;
 }
 .index-title{
@@ -17,12 +17,12 @@
     margin-top:0;
     font-family: 'BBTreeGB';
     padding:5px;
-    color:var(--1-color);
+    color:var(--index-text-color);
     font-size:20pt;
 }
 .index-start-btn{
-    background: var(--2-color);
-    color:var(--7-color);
+    background: var(--index-start-btn-color-back);
+    color:var(--index-start-btn-color-text);
     border:none;
     padding:10px 20px 10px 20px;
     cursor:pointer;
@@ -32,8 +32,8 @@
     transition: 0.4s;
 }
 .index-start-btn:hover{
-    background:var(--2-color);
-    color:white;
+    background:var(--index-start-btn-color-back);
+    color:var(--index-start-btn-color-text-hover);
 }
 .index-right-section{
     border:3px solid var(--line-color-9);
