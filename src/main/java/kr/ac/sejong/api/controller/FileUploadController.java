@@ -59,7 +59,7 @@ public class FileUploadController {
     */
 
     //transfer를 쓰지 않고 bytes로 소켓으로 던지는 것이 필요함함
-   public String upload(@RequestPart MultipartFile imgFile,MultipartFile vidFile, HttpSession session) throws Exception{
+   public String upload(@RequestPart MultipartFile imgFile,MultipartFile vidFile, int faceCount, HttpSession session) throws Exception{
         String imgSavedFileName, vidSavedFileName;
         User user;
         long count;
@@ -86,7 +86,7 @@ public class FileUploadController {
 
 
         try{
-            fileUploadService.saveUpload(imgOriginalFileName,imgSavedFileName, imgDest.toString(), vidOriginalFileName, vidSavedFileName, vidDest.toString(), user);
+            fileUploadService.saveUpload(imgOriginalFileName,imgSavedFileName, imgDest.toString(), vidOriginalFileName, vidSavedFileName, vidDest.toString(), faceCount, user);
             //fileUploadService.runCMD();
         }catch (Exception e){
             System.out.println(e);

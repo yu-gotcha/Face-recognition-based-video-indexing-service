@@ -72,7 +72,7 @@ public class FileUploadService {
         return true;
     }
 
-    public Boolean saveUpload(String imgFileName, String imgSavedName, String imgPath, String vidFileName, String vidSavedName, String vidPath, User user){
+    public Boolean saveUpload(String imgFileName, String imgSavedName, String imgPath, String vidFileName, String vidSavedName, String vidPath, int faceCount, User user){
         saveImg(imgFileName, imgSavedName, imgPath, user);
         saveVid(vidFileName, vidSavedName, vidPath, user);
         System.out.println("Img:"+uploadImg);
@@ -82,6 +82,7 @@ public class FileUploadService {
 
         upload.setUploadImg(uploadImg);
         upload.setUploadVid(uploadVid);
+        upload.setFaceCount(faceCount);
         upload.setUser(user);
         upload.setUploading(1);
         upload.setProcessing(0);
