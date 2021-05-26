@@ -46,4 +46,6 @@ public class Upload {
     @Column(name = "processing")
     private int processing;
 
+    @Column(name = "face_count")
+    private int faceCount;
 }
