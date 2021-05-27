@@ -32,38 +32,28 @@
     </div>
     <div class="content-wrapper">
         <!--리스트 관련된걸로 해시맵 만들어서 하면 될거같은디 반복 돌려서 테이블 만드는거-->
-        <div>
-            <div>
-                <p>NO.{{no}}</p>
-            </div>
+        <div class="content-wrapper-2">
             {{#file}}
-            <div>
-            <span>
-                <div>
-                    <img src="/TimeAttackFile/file/image/{{imgSavedName}}">
+            <div class="result-left-section">
+                <video class="result-video" id="uploaded-video" src="/TimeAttackFile/file/video/{{vidSavedName}}" controls type="video/quicktime"></video>
+<!--                <video class="result-video" id="uploaded-video" src="/img/샘플비디오.mp4" controls type="video/quicktime"></video>-->
+            </div>
+            <div class="result-right-section">
+                <div class="result-right-top-section">
+                    <img class="result-image" src="/TimeAttackFile/file/image/{{imgSavedName}}">
+<!--                    <img class="result-image" src="/img/샘플이미지.jpg">-->
                 </div>
-                <div>
-                    <p>{{imgName}}</p>
+                <div class="result-right-bottom-section">
+                    {{#resultList}}
+                    <div class="result-table">
+                        <p class="result-table-time">{{start}}-{{end}}</p>
+                        <img class="result-table-tn" src="http://placehold.it/150x100"onclick="Change_CurrentTime('{{start}}')">
+<!--                        <button class="result-table-btn" onclick="Change_CurrentTime('{{start}}')">이동</button>-->
+                    </div>
+                    {{/resultList}}
                 </div>
-            </span>
-                <span>
-                <div>
-                    <video id="uploaded-video" src="/TimeAttackFile/file/video/{{vidSavedName}}" controls type="video/quicktime"></video>
-<!--                    <video id="uploaded-video" src="/img/샘플비디오.mp4" controls type="video/quicktime"></video>-->
-                </div>
-                <div>
-                    <p>{{vidName}}</p>
-                </div>
-            </span>
             </div>
             {{/file}}
-        </div>
-
-        <div class="ddd">
-            {{#resultList}}
-            <p>{{start}}-{{end}}</p>
-            <button onclick="Change_CurrentTime('{{start}}')">이동</button>
-            {{/resultList}}
         </div>
     </div>
     <div style="position:fixed;left:0;top:95%;">
