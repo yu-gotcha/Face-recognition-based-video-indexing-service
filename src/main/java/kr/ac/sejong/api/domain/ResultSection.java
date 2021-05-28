@@ -32,4 +32,7 @@ public class ResultSection {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "upload_id")
     private Upload upload;
+
+    @Column(name = "img_path")
+    private String imgPath;
 }
