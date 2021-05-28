@@ -86,7 +86,7 @@ body.theme2 {
 }
 body.theme3{
     --body-color-1:#F8F8F8;
-    --body-color-2:white;
+    --body-color-2:#F8F8F8;
     --nav-logo-color:black;
     --nav-btn-color-1-text:black;
     --nav-btn-color-1-text-hover:white;
@@ -148,6 +148,7 @@ html {
 body{
     background: var(--body-color-1);
     margin:0; /*마진xxx*/
+    min-width:1024px;
 }
 .page-wrapper{
     border:3px solid var(--line-color-7);
@@ -158,9 +159,8 @@ body{
 }
 .banner-wrapper{
     border:3px solid var(--line-color-1);
-    padding:130px 10% 0 15%;
+    padding:130px 15% 0 15%;
     display:flex;
-    flex-wrap:wrap;
 }
 .content-wrapper{
     border:3px solid var(--line-color-2);
@@ -168,14 +168,47 @@ body{
     background:var(--body-color-2);
 }
 
-/*@media screen and (max-width: 1400px) {*/
-/*    .banner-wrapper{*/
-/*        padding:50px 10% 50px 10%;*/
-/*    }*/
-/*    .header-wrapper{*/
-/*        padding:50px 10% 50px 10%;*/
-/*    }*/
-/*}*/
+@media screen and (max-width: 1500px) {
+    .banner-wrapper{
+        padding:0 15% 0 15%;
+        flex-direction: column-reverse;
+    }
+    .index-left-section{
+        margin:0 0 50px 0;
+        width:100%;
+        text-align:center;
+    }
+    .index-right-section{
+        width:85%;
+        margin:25px auto;
+    }
+}
+@media screen and (max-width: 500px) {
+    body{
+        min-width:320px;
+    }
+    .header-wrapper{
+        padding:40px 8% 40px 8%;
+    }
+    .banner-wrapper{
+        padding:0 8% 0 8%;
+    }
+
+    /*.logo-section{*/
+    /*    display:block;*/
+    /*    text-align:center;*/
+    /*}*/
+    /*.navigation-section{*/
+    /*    display:block;*/
+    /*}*/
+
+    .index-content{
+        font-size:25pt;
+    }
+    .index-title{
+        font-size:18pt;
+    }
+}
 .header{
     border:3px solid var(--line-color-3);
     overflow:auto;
@@ -196,6 +229,7 @@ body{
 }
 .navigation-section{
     border:3px solid var(--line-color-5);
+    margin-top:5px;
     float:right;
 }
 .nav-btn{

@@ -19,6 +19,7 @@
     font-size:40pt;
 }
 .manual-text-content{
+    line-height:1.5;
     border:3px solid var(--line-color-7);
     font-size:16pt;
 }

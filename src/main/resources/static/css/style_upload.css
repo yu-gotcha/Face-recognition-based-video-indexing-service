@@ -104,6 +104,15 @@
     border:2px solid var(--line-color-5);
     text-align:center;
 }
+.upload-submit-people{
+    text-align:center;
+    padding:10px 5px 10px 5px;
+    border:none;
+    display:inline;
+    font-size:14pt;
+    font-family: 'SLEIGothicTTF';
+    margin:0;
+}
 .upload-submit-btn{
     padding:10px 40px 10px 40px;
     background: var(--upload-submit-btn-color-back);
@@ -111,10 +120,11 @@
     border:none;
     cursor:pointer;
     display:inline;
-    border-radius: 15px;
+    /*border-radius: 15px;*/
     font-size:14pt;
     font-family: 'SLEIGothicTTF';
     transition: 0.4s;
+    margin:0;
 }
 .upload-submit-btn:hover{
     background:var(--upload-submit-btn-color-back-hover);

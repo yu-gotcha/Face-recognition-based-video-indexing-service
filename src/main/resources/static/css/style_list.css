@@ -1,7 +1,7 @@
 .list-table-section{
     border:3px solid var(--line-color-0);
     margin:50px auto;
-    max-width:1000px;
+    max-width:1200px;
     border-radius: 15px;
     min-height:1500px;
     padding-bottom:15px;
@@ -11,6 +11,8 @@
     border:3px solid var(--line-color-1);
     width:100%;
     border-collapse: collapse;
+    table-layout:fixed;
+    word-break:break-all;
 }
 /* top-left border-radius */
 table tr:first-child th:first-child {
@@ -44,8 +46,19 @@ td{
     font-family: 'Nunito', sans-serif;
 }
 .list-table-thumbnail{
-    margin:5px 0px;
+    margin:10px 0 5px 0;
     object-fit:contain;
-    width:150px;
-    height:100px;
+    width:120px;
+    height:120px;
+}
+.list-result-btn{
+    border:1px solid #363D47;
+    width:85px;
+    height:35px;
+    background:#F1F3F4;
+    border-radius:5px;
+    cursor:pointer;
+}
+.list-result-btn:hover{
+    background:#E0E0E0;
 }

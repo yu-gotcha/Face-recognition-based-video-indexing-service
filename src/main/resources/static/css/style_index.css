@@ -1,6 +1,6 @@
 .index-left-section{
     border:3px solid var(--line-color-6);
-    margin:100px 0 0 0; /*margin-top으로 왼쪽구역 높이조절*/
+    margin:100px 0 100px 0; /*margin-top으로 왼쪽구역 높이조절*/
     width:40%;
 }
 .index-content{
@@ -38,8 +38,7 @@
 .index-right-section{
     border:3px solid var(--line-color-9);
     width:55%;
-    padding-left:50px;
-    height:550px;
+    margin-left:50px;
 }
 .index-image{
     filter: drop-shadow(5px 5px 5px #000);
