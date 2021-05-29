@@ -1,7 +1,6 @@
 .list-table-section{
     border:3px solid var(--line-color-0);
-    margin:50px auto;
-    max-width:1200px;
+    margin:50px 20%;
     border-radius: 15px;
     min-height:1500px;
     padding-bottom:15px;
@@ -41,6 +40,7 @@ th{
 td{
     background:#FFFFFF;
     text-align:center;
+    /*border-right:1px solid #D6D6D6;*/
     border-bottom:1px solid #D6D6D6;
     padding: 0px 10px;
     font-family: 'Nunito', sans-serif;
@@ -53,7 +53,7 @@ td{
 }
 .list-result-btn{
     border:1px solid #363D47;
-    width:85px;
+    width:55px;
     height:35px;
     background:#F1F3F4;
     border-radius:5px;

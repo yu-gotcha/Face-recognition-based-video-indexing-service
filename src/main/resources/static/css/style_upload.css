@@ -1,8 +1,7 @@
 .upload-file-section{
     border:3px solid var(--line-color-3);
     display:flex;
-    flex-wrap:wrap;
-    padding:0 15% 50px 15%;
+    padding:0 15% 30px 15%;
 }
 .upload-please{
     border:3px solid var(--line-color-4);
@@ -11,11 +10,11 @@
     font-family: 'Itim', cursive;
     font-size:60pt;
     color:var(--upload-title-color);
-
 }
 .upload-section{
     border:3px solid var(--line-color-5);
-    margin:0px auto;
+    margin:0 auto;
+    width:500px;
 }
 .upload-section-in{
     border:3px solid var(--line-color-6);
@@ -52,8 +51,8 @@
     background:var(--upload-select-btn-color-back);
     color:var(--upload-select-btn-color-text);
     cursor:pointer;
-    width:17%;
-    padding:5px 0 5px 0;
+    width:85px;
+    padding:5px 0;
 }
 .image-file-container label:after{
     content:"파일선택";
@@ -67,8 +66,8 @@
     background:var(--upload-name-color-back);
     border-radius: 10px;
     display:inline-block;
-    padding:5px 5px 5px 10px;
-    width:78%;
+    padding:5px 0 5px 10px;
+    width:395px;
 }
 .video-file-container{
     border:2px solid var(--line-color-2);
@@ -82,8 +81,8 @@
     background: var(--upload-select-btn-color-back);
     color: var(--upload-select-btn-color-text);
     cursor: pointer;
-    width: 17%;
-    padding: 5px 0 5px 0;
+    width:85px;
+    padding:5px 0;
 }
 .video-file-container label:after{
     content:"파일선택";
@@ -97,8 +96,8 @@
     background:var(--upload-name-color-back);
     border-radius: 10px;
     display:inline-block;
-    padding:5px 5px 5px 10px;
-    width:78%;
+    padding:5px 0 5px 10px;
+    width:395px;
 }
 .upload-submit-btn-section{
     border:2px solid var(--line-color-5);

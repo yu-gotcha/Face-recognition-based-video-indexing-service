@@ -75,8 +75,8 @@
 /*회원가입 화면*/
 .join-box-body{
     position:absolute;
-    width:450px;
-    height:600px;
+    width:380px;
+    height:550px;
     padding: 30px 20px;
     background-color:#FFFFFF;
     top:50%;

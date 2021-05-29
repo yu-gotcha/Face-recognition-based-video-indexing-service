@@ -167,48 +167,6 @@ body{
     padding:50px 0;
     background:var(--body-color-2);
 }
-
-@media screen and (max-width: 1500px) {
-    .banner-wrapper{
-        padding:0 15% 0 15%;
-        flex-direction: column-reverse;
-    }
-    .index-left-section{
-        margin:0 0 50px 0;
-        width:100%;
-        text-align:center;
-    }
-    .index-right-section{
-        width:85%;
-        margin:25px auto;
-    }
-}
-@media screen and (max-width: 500px) {
-    body{
-        min-width:320px;
-    }
-    .header-wrapper{
-        padding:40px 8% 40px 8%;
-    }
-    .banner-wrapper{
-        padding:0 8% 0 8%;
-    }
-
-    /*.logo-section{*/
-    /*    display:block;*/
-    /*    text-align:center;*/
-    /*}*/
-    /*.navigation-section{*/
-    /*    display:block;*/
-    /*}*/
-
-    .index-content{
-        font-size:25pt;
-    }
-    .index-title{
-        font-size:18pt;
-    }
-}
 .header{
     border:3px solid var(--line-color-3);
     overflow:auto;
@@ -277,4 +235,157 @@ body{
 .nav-logout-btn:hover{
     background:var(--nav-btn-color-3-back-hover);
     color:var(--nav-btn-color-3-text-hover);
+}
+
+/********************************************************************************/
+
+@media screen and (max-width: 1500px) {
+    body{
+        min-width:850px;
+    }
+    .header-wrapper{
+        padding:40px 8% 40px 8%;
+    }
+    .banner-wrapper{
+        padding:0 8% 0 8%;
+        flex-direction: column-reverse;
+    }
+    .index-left-section{
+        margin:0 0 50px 0;
+        width:100%;
+        text-align:center;
+    }
+    .index-right-section{
+        width:85%;
+        margin:25px auto;
+    }
+    .upload-file-section{
+        display:block;
+        padding:0 8% 50px 8%;
+    }
+    .upload-section{
+        margin-bottom:50px;
+    }
+    .list-table-section{
+        margin:50px 8%;
+    }
+    .content-wrapper-2{
+        display:block;
+        width:60%;
+    }
+    .result-left-section{
+        width:100%;
+        height:520px;
+    }
+    .result-right-section{
+        display:flex;
+        margin:10px 0 0 0;
+        width:98%;
+        padding:10px 1%;
+    }
+    .result-image{
+        height:180px;
+    }
+    .result-right-top-section{
+        margin:0;
+        width:35%;
+    }
+    .result-right-bottom-section{
+        height:180px;
+        width:65%;
+    }
+}
+@media screen and (max-width: 500px) {
+    body{
+        min-width:320px;
+    }
+    .header-wrapper{
+        padding:15px 10px 15px 10px;
+    }
+    .banner-wrapper{
+        padding:0 10px 0 10px;
+    }
+    .content-wrapper{
+        padding:20px 0;
+    }
+    .logo-section{
+        float:none;
+        text-align:center;
+    }
+    .navigation-section{
+        float:none;
+        text-align:center;
+        width:300px;
+        margin:0 auto;
+    }
+    .nav-btn, .nav-logout-btn {
+        font-size:10pt;
+        padding: 5px 5px;
+        margin: 0;
+    }
+    .nav-user-name{
+        font-size:10pt;
+        padding: 5px 0 5px 5px;
+        margin: 0;
+    }
+    .index-content{
+        font-size:25pt;
+    }
+    .index-title{
+        font-size:18pt;
+    }
+    .upload-file-section{
+        padding:0 10px 30px 10px;
+    }
+    .upload-please{
+        font-size:30pt;
+    }
+    .upload-section{
+        width:300px;
+    }
+    .image-tn, .video-tn{
+        width:300px;
+        height:300px;
+    }
+    .image-file-container label,.video-file-container label{
+        font-size:10pt;
+        width:70px;
+    }
+    .image-file-container .img-filename,.video-file-container .vid-filename{
+        font-size:10pt;
+        width:210px;
+    }
+    .upload-submit-people{
+        font-size:12pt;
+        display:block;
+        margin:0 auto;
+    }
+    .upload-submit-btn{
+        font-size:12pt;
+        display:block;
+        margin:20px auto;
+    }
+    .content-wrapper-2{
+        width:90%;
+    }
+    .result-left-section{
+        height:300px;
+    }
+    .result-right-section{
+        flex-direction: column-reverse;
+        margin:10px 0 0 0;
+        width:98%;
+        padding:10px 1%;
+    }
+    .result-image{
+        height:200px;
+    }
+    .result-right-top-section{
+        width:80%;
+        margin:30px auto;
+    }
+    .result-right-bottom-section{
+        width:100%;
+        height:300px;
+    }
 }
