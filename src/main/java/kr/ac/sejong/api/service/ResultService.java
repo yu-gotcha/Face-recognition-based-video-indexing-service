@@ -31,6 +31,7 @@ public class ResultService {
 
         for(ResultSection i: result){
             Map<String, Object> map = new HashMap<String, Object>();
+            map.put("id", id);
             map.put("start", i.getStart());
             map.put("end", i.getEnd());
             map.put("path", i.getImgPath());
