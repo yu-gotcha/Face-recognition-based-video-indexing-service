@@ -70,7 +70,7 @@ public class FileUploadController {
         count=uploadImgRepository.findByImgUpUser(user).size();
 
         String imgOriginalFileName = imgFile.getOriginalFilename();
-        imgSavedFileName=Long.toString(user.getUserId())+"_"+Long.toString(count)+"_"+imgOriginalFileName;
+        imgSavedFileName=Long.toString(user.getUserId())+"_"+Long.toString(count);
         //File imgDest = new File("/usr/local/tomcat/file/image/"+imgSavedFileName);
         File imgDest = new File("C:/Users/MunsuYu/TimeAttack/TimeAttackFile/file/image/"+imgSavedFileName);
         imgFile.transferTo(imgDest);
@@ -79,7 +79,7 @@ public class FileUploadController {
         count=uploadVidRepository.findByVidUpUser(user).size();
 
         String vidOriginalFileName = vidFile.getOriginalFilename();
-        vidSavedFileName=Long.toString(user.getUserId())+"_"+Long.toString(count)+"_"+vidOriginalFileName;
+        vidSavedFileName=Long.toString(user.getUserId())+"_"+Long.toString(count);
         //File vidDest = new File("/usr/local/tomcat/file/video/"+vidSavedFileName);
         File vidDest = new File("C:/Users/MunsuYu/TimeAttack/TimeAttackFile/file/video/"+vidSavedFileName);
         vidFile.transferTo(vidDest);
