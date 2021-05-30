@@ -36,21 +36,23 @@
         <div class="content-wrapper-2">
             {{#file}}
             <div class="result-left-section">
-                <video class="result-video" id="uploaded-video" src="/TimeAttackFile/file/video/{{vidSavedName}}" controls type="video/quicktime"></video>
-<!--                <video class="result-video" id="uploaded-video" src="/img/선미동영상.mp4" controls type="video/quicktime"></video>-->
-<!--                <video class="result-video" id="uploaded-video" src="/img/샘플비디오.mp4" controls type="video/quicktime"></video>-->
+                <video class="result-video" id="uploaded-video" src="/TimeAttackFile/file/video/{{vidSavedName}}"
+                       controls type="video/quicktime"></video>
+                <!--                <video class="result-video" id="uploaded-video" src="/img/선미동영상.mp4" controls type="video/quicktime"></video>-->
+                <!--                <video class="result-video" id="uploaded-video" src="/img/샘플비디오.mp4" controls type="video/quicktime"></video>-->
             </div>
             <div class="result-right-section">
                 <div class="result-right-top-section">
                     <img class="result-image" src="/TimeAttackFile/file/image/{{imgSavedName}}">
-<!--                    <img class="result-image" src="/img/선미이미지.png">-->
-<!--                    <img class="result-image" src="/img/샘플이미지.jpg">-->
+                    <!--                    <img class="result-image" src="/img/선미이미지.png">-->
+                    <!--                    <img class="result-image" src="/img/샘플이미지.jpg">-->
                 </div>
                 <div class="result-right-bottom-section">
                     {{#resultList}}
                     <div class="result-table">
                         <p class="result-table-time">{{start}}-{{end}}</p>
-                        <img class="result-table-tn" src="/TimeAttackFile/result/{{id}}/{{path}}" onclick="Change_CurrentTime('{{start}}')">
+                        <img class="result-table-tn" src="/TimeAttackFile/result/{{id}}/{{path}}"
+                             onclick="Change_CurrentTime('{{start}}')">
                     </div>
                     {{/resultList}}
                 </div>
@@ -73,13 +75,14 @@
 </body>
 <script type="text/javascript" src="/js/script_theme.js"></script>
 <script>
-    //형태는 0:30-1:34를 따른다. 나중에 바뀌면 수정... ex)00:00:00 or 12345
+    //형태는 00:00:00
     function Change_CurrentTime(start) {
         const str = start;
         const strArr = str.split(':');
-        const strMinute = parseInt(strArr[0]);
-        const strSecond = parseInt(strArr[1]);
-        const TotalSecond = strMinute * 60 + strSecond;
+        const strHour = parseInt(strArr[0]);
+        const strMinute = parseInt(strArr[1]);
+        const strSecond = parseInt(strArr[2]);
+        const TotalSecond = strHour * 3600 + strMinute * 60 + strSecond;
         const vid = document.getElementById("uploaded-video");
         vid.currentTime = TotalSecond;
 
