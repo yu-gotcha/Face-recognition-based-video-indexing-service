@@ -105,10 +105,13 @@ public class FileUploadService {
 
     @Async
     public void runCMD(){
+        System.out.println("running....");
         Runtime runtime = Runtime.getRuntime();
         Process p;
         try{
-            p=runtime.exec("cmd /c cd C:/Users/MunsuYu/2021_Timeattack_Video-Processing && py main.py");
+            String cmd = "cmd /c cd C:/Users/MunsuYu/2021_Timeattack_Video-Processing && py main.py";
+            System.out.println(cmd);
+            p=runtime.exec(cmd);
             InputStream inputStream = p.getInputStream();
             InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
             System.out.println(inputStreamReader.getEncoding());

@@ -26,6 +26,8 @@ public class ResultService {
         List<Map<String, Object>> resultList = new ArrayList<Map<String, Object>>();
         //List<ResultSection> result = resultSectionRepository.findByUpload(id);
         List<ResultSection> result = resultSectionRepository.findByUpload(upload);
+        System.out.println("----------------------------------");
+        System.out.println(result.size());
 
         count=result.size();
 
@@ -33,10 +35,12 @@ public class ResultService {
             Map<String, Object> map = new HashMap<String, Object>();
             map.put("id", id);
             map.put("start", i.getStart());
+            System.out.println(i.getStart());
             map.put("end", i.getEnd());
             map.put("path", i.getImgPath());
             resultList.add(map);
         }
+        System.out.println("----------------------------------");
 
         return resultList;
     }
