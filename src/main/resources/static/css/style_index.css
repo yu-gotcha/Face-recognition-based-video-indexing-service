@@ -1,7 +1,7 @@
 .index-left-section{
     border:3px solid var(--line-color-6);
     margin:100px 0 100px 0; /*margin-top으로 왼쪽구역 높이조절*/
-    width:40%;
+    width:45%;
 }
 .index-content{
     border:3px solid var(--line-color-7);
@@ -9,15 +9,15 @@
     margin-top:0;
     margin-bottom:20px;
     font-family: 'BBTreeGB';
-    color:var(--index-text-color);
-    font-size:50pt;
+    color:var(--index-content-color);
+    font-size:44pt;
 }
 .index-title{
     border:3px solid var(--line-color-8);
     margin-top:0;
     font-family: 'BBTreeGB';
     padding:5px;
-    color:var(--index-text-color);
+    color:var(--index-title-color);
     font-size:20pt;
 }
 .index-start-btn{
@@ -37,7 +37,7 @@
 }
 .index-right-section{
     border:3px solid var(--line-color-9);
-    width:55%;
+    width:calc(55% - 50px);
     margin-left:50px;
 }
 .index-image{

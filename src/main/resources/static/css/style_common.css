@@ -11,11 +11,13 @@
     font-style: normal;
 }
 @font-face {
-    font-family: 'TmoneyRoundWindRegular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindRegular.woff') format('woff');
-    font-weight: normal;
+    font-family: 'NanumBarunGothic';
     font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
 }
+
 body.theme1 {
     --body-color-1:#363D47;
     --body-color-2:none;
@@ -27,7 +29,8 @@ body.theme1 {
     --nav-btn-color-3-text:#23a3a7;
     --nav-btn-color-3-text-hover:white;
     --nav-btn-color-3-back-hover:#23a3a7;
-    --index-text-color:#FFE268;
+    --index-title-color:#FFE268;
+    --index-content-color:#FFE268;
     --index-start-btn-color-text:#363D47;
     --index-start-btn-color-back:#23a3a7;
     --index-start-btn-color-text-hover:white;
@@ -60,7 +63,8 @@ body.theme2 {
     --nav-btn-color-3-text:white;
     --nav-btn-color-3-text-hover:#326EBD;
     --nav-btn-color-3-back-hover:white;
-    --index-text-color:white;
+    --index-title-color:white;
+    --index-content-color:white;
     --index-start-btn-color-text:#326EBD;
     --index-start-btn-color-back:white;
     --index-start-btn-color-text-hover:black;
@@ -95,7 +99,8 @@ body.theme3{
     --nav-btn-color-3-text:#FF7800;
     --nav-btn-color-3-text-hover:white;
     --nav-btn-color-3-back-hover:#FF7800;
-    --index-text-color:black;
+    --index-title-color:black;
+    --index-content-color:black;
     --index-start-btn-color-text:white;
     --index-start-btn-color-back:#FF7800;
     --index-start-btn-color-text-hover:black;
@@ -159,7 +164,7 @@ body{
 }
 .banner-wrapper{
     border:3px solid var(--line-color-1);
-    padding:130px 15% 0 15%;
+    padding:170px 10% 0 15%;
     display:flex;
 }
 .content-wrapper{
@@ -259,6 +264,33 @@ body{
         width:85%;
         margin:25px auto;
     }
+    .manual-section-0{
+        margin:0 8% 100px 8%;
+        display:block;
+        height:750px;
+    }
+    .manual-section-1{
+        margin:0 8% 100px 8%;
+        display:block;
+        height:750px;
+    }
+    .manual-text{
+        width:100%;
+        padding-top:10px;
+        padding-left:0;
+        height:calc(25% - 10px);
+        text-align:center;
+    }
+    .manual-text-title{
+        margin:15px 0;
+    }
+    .manual-text-content{
+        margin:0;
+    }
+    .manual-img{
+        height:75%;
+        width:100%;
+    }
     .upload-file-section{
         display:block;
         padding:0 8% 50px 8%;
@@ -309,11 +341,12 @@ body{
         padding:0 10px 0 10px;
     }
     .content-wrapper{
-        padding:20px 0;
+        padding:10px 0;
     }
     .logo-section{
         float:none;
         text-align:center;
+        margin-bottom:5px;
     }
     .navigation-section{
         float:none;
@@ -331,14 +364,52 @@ body{
         padding: 5px 0 5px 5px;
         margin: 0;
     }
+    .login-box-body, .join-box-body {
+        transform:scale(0.8);
+    }
+    .login-box-body{
+        width:270px;
+    }
+    .join-box-body{
+        width:310px;
+    }
+    .join-form, .join-explain{
+        margin-left:15px;
+        margin-right:15px;
+    }
     .index-content{
-        font-size:25pt;
+        width:300px;
+        margin:5px auto;
+        font-size:26pt;
     }
     .index-title{
-        font-size:18pt;
+        width:300px;
+        margin:0 auto 30px auto;
+        font-size:11pt;
+    }
+    .manual-section-0{
+        margin:10px 10px 40px 10px;
+        height:450px;
+    }
+    .manual-section-1{
+        margin:10px 10px 40px 10px;
+        height:450px;
+    }
+    .manual-text{
+        padding-top:10px;
+        height:calc(35% - 10px);
+    }
+    .manual-text-title{
+        font-size:22pt;
+    }
+    .manual-text-content{
+        font-size:10pt;
+    }
+    .manual-img{
+        height:65%;
     }
     .upload-file-section{
-        padding:0 10px 30px 10px;
+        padding:5px 10px 30px 10px;
     }
     .upload-please{
         font-size:30pt;
@@ -368,8 +439,78 @@ body{
         display:block;
         margin:20px auto;
     }
+    .list-table-section{
+        background:none;
+        margin:20px auto;
+        width:300px;
+    }
+    .list-table-thumbnail-section{
+        width:calc(100% - 10px);
+        margin:0 5px;
+    }
+    table tr:first-child th:first-child {
+        border-top-left-radius: 0;
+    }
+    table tr:first-child th:last-child {
+        border-top-right-radius: 0;
+    }
+    table tr:last-child td:first-child {
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+    }
+    table tr:last-child td:last-child {
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    td:first-child:before{
+        border-top-left-radius:10px;
+    }
+    td:last-child:before{
+        border-bottom-left-radius:10px;
+    }
+    thead {
+        display:none;
+    }
+    tr {
+        display:block;
+        margin-bottom:70px;
+        border-top:none;
+    }
+    th, td {
+        display:block;
+        position:relative;
+        padding:5px 0 5px 20%;
+        border-bottom:1px solid #D6D6D6;
+        background:white;
+    }
+    td:before {
+        display:block;
+        position:absolute;
+        left:0;
+        top:0;
+        width:20%;
+        padding:5px 0;
+        text-align:center;
+        background:var(--list-th-color-back);
+        font-family: 'SLEIGothicTTF';
+        color:var(--list-th-color-text);
+        font-weight: normal;
+        height:calc(100% - 10px);
+        border-bottom:1px solid #D6D6D6;
+    }
+
+    td:nth-child(1):before {content:'No.';}
+    td:nth-child(2):before {content:'이미지';}
+    td:nth-child(3):before {content:'동영상';}
+    td:nth-child(4):before {content:'업로드';}
+    td:nth-child(5):before {content:'프로세스';}
+    td:nth-child(6):before {content:'썸네일';}
+    td:nth-child(7):before {content:'결과';}
+
     .content-wrapper-2{
         width:90%;
+        margin-top:15px;
     }
     .result-left-section{
         height:300px;

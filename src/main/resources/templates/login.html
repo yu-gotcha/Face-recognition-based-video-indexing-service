@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="/css/style_common.css"/>
@@ -20,29 +20,32 @@
 {{#error}}
 <script>
     alert('존재하지 않는 아이디이거나, 잘못된 비밀번호입니다.');
-    document.location.href="remove_login_error";
+    document.location.href = "remove_login_error";
 </script>
 {{/error}}
 
-<form action="login" method="post">
-    <div class="login-box-body">
-        <div class="login-logo-section">
-            <a href="index" class="login-logo">Time Attack</a>
+<div class="box-wrapper">
+    <form action="login" method="post">
+        <div class="login-box-body">
+            <div class="login-logo-section">
+                <a href="index" class="login-logo">Time Attack</a>
+            </div>
+            <!-- <p class="login-box-msg">서비스를 이용하시려면 로그인하여 주십시오.</p>-->
+            <div class="login-form">
+                <input type="text" class="login-input" name="loginId" id="loginId" placeholder="ID">
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            </div>
+            <div class="login-form">
+                <input type="password" class="login-input" name="loginPw" id="loginPw" placeholder="PW">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <button type="submit" class="login-btn">로그인</button>
+            <br>
+            <span class="login-no-account">계정이 없으신가요?</span>
+            <input type="button" class="login-join-href" value="회원가입" onClick="location.href='join'"/>
         </div>
-        <!-- <p class="login-box-msg">서비스를 이용하시려면 로그인하여 주십시오.</p>-->
-        <div class="login-form">
-            <input type="text" class="login-input" name="loginId" id="loginId" placeholder="ID">
-            <span class="glyphicon glyphicon-user form-control-feedback"></span>
-        </div>
-        <div class="login-form">
-            <input type="password" class="login-input" name="loginPw" id="loginPw" placeholder="PW">
-            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-        </div>
-        <button type="submit" class="login-btn">로그인</button><br>
-        <span class="login-no-account">계정이 없으신가요?</span>
-        <input type="button" class="login-join-href" value="회원가입" onClick="location.href='join'"/>
-    </div>
-</form>
+    </form>
+</div>
 <div style="position:fixed;left:0;top:95%;">
     색깔
     <button class="theme-1">1번</button>
@@ -53,6 +56,7 @@
     테두리
     <button class="line-check">on/off</button>
 </div>
+
 {{/userdata}}
 </body>
 <script type="text/javascript" src="/js/script_theme.js"></script>

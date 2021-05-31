@@ -1,13 +1,16 @@
-/*로그인 화면*/
-.login-box-body {
+.box-wrapper{
+    border:3px solid var(--line-color-0);
     position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}/*로그인 화면*/
+.login-box-body {
+    border:3px solid var(--line-color-1);
     width:300px;
     height:400px;
     padding: 30px 20px;
     background-color:#FFFFFF;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
     border-radius: 15px;
     text-align:center;
 }
@@ -74,14 +77,11 @@
 }
 /*회원가입 화면*/
 .join-box-body{
-    position:absolute;
-    width:380px;
-    height:550px;
+    border:3px solid var(--line-color-2);
+    width:350px;
+    height:520px;
     padding: 30px 20px;
     background-color:#FFFFFF;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
     border-radius: 15px;
 }
 .join-logo-section{
@@ -120,9 +120,7 @@
     position:absolute;
     left:50%;
     transform: translateX(-50%);
-    margin-top:20px;
-    margin-bottom: 40px;
-    width:200px;
+    width:220px;
     height:40px;
     background: var(--login-and-joint-btn-color-back);
     color:var(--login-and-join-btn-color-text);

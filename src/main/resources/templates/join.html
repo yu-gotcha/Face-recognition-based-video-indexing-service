@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="/css/style_common.css"/>
@@ -23,35 +23,37 @@
 </script>
 {{/error}}
 
-<form action="/join" method="post" name="loginForm" , id="loginForm">
-    <div class="join-box-body">
-        <div class="join-logo-section">
-            <a href="index" class="join-logo">Time Attack</a>
+<div class="box-wrapper">
+    <form action="/join" method="post" name="loginForm" , id="loginForm">
+        <div class="join-box-body">
+            <div class="join-logo-section">
+                <a href="index" class="join-logo">Time Attack</a>
+            </div>
+            <div class="form-group-has-feedback">
+                <div class="join-form">
+                    <input type="text" class="join-input" name="userName" id="userName" placeholder="Name"><br>
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                </div>
+                <p id="nameError" class="join-explain" display='none'>*2~5자 공백 없이 입력해 주세요.</p>
+                <div class="join-form">
+                    <input type="text" class="join-input" name="loginId" id="loginId" placeholder="ID"><br>
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                </div>
+                <p id="idError" class="join-explain" display='none'>*6~12자 공백 없이 영문, 숫자를 사용하세요.</p>
+                <div class="join-form">
+                    <input type="password" class="join-input" name="loginPw" id="loginPw" placeholder="PW"><br>
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                </div>
+                <p id="pwError" class="join-explain" display='none'>*6~20자 공백 없이 영문, 숫자를 사용하세요</p>
+            </div>
+            <div class="row">
+                <div class="col-xs-4" style="padding-top: 10px;">
+                    <button type="button" class="join-btn" onclick="checkForm()">회원가입</button>
+                </div>
+            </div>
         </div>
-        <div class="form-group-has-feedback">
-            <div class="join-form">
-                <input type="text" class="join-input" name="userName" id="userName" placeholder="Name"><br>
-                <span class="glyphicon glyphicon-user form-control-feedback"></span>
-            </div>
-            <p id="nameError" class="join-explain" display='none'>*2~5자 공백 없이 입력해 주세요.</p>
-            <div class="join-form">
-                <input type="text" class="join-input" name="loginId" id="loginId" placeholder="ID"><br>
-                <span class="glyphicon glyphicon-user form-control-feedback"></span>
-            </div>
-            <p id="idError" class="join-explain" display='none'>*6~12자 공백 없이 영문, 숫자를 사용하세요.</p>
-            <div class="join-form">
-                <input type="password" class="join-input" name="loginPw" id="loginPw" placeholder="PW"><br>
-                <span class="glyphicon glyphicon-user form-control-feedback"></span>
-            </div>
-            <p id="pwError" class="join-explain" display='none'>*6~20자 공백 없이 영문, 숫자를 사용하세요</p>
-        </div>
-        <div class="row">
-            <div class="col-xs-4" style="padding-top: 10px;">
-                <button type="button" class="join-btn" onclick="checkForm()">회원가입</button>
-            </div>
-        </div>
-    </div>
-</form>
+    </form>
+</div>
 <div style="position:fixed;left:0;top:95%;">
     색깔
     <button class="theme-1">1번</button>
