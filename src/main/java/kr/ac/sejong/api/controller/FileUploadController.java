@@ -60,7 +60,7 @@ public class FileUploadController {
 
     //transfer를 쓰지 않고 bytes로 소켓으로 던지는 것이 필요함함
    public String upload(@RequestPart MultipartFile imgFile,MultipartFile vidFile, int faceCount, HttpSession session) throws Exception{
-        String imgSavedFileName, vidSavedFileName;
+        String imgSavedFileName, vidSavedFileName, extension[];
         User user;
         long count;
 
@@ -70,7 +70,8 @@ public class FileUploadController {
         count=uploadImgRepository.findByImgUpUser(user).size();
 
         String imgOriginalFileName = imgFile.getOriginalFilename();
-        imgSavedFileName=Long.toString(user.getUserId())+"_"+Long.toString(count);
+        extension = imgOriginalFileName.split("\\.");
+        imgSavedFileName=Long.toString(user.getUserId()) + "_" + Long.toString(count) + "." + extension[1];
         //File imgDest = new File("/usr/local/tomcat/file/image/"+imgSavedFileName);
         File imgDest = new File("C:/Users/MunsuYu/TimeAttack/TimeAttackFile/file/image/"+imgSavedFileName);
         imgFile.transferTo(imgDest);
@@ -79,7 +80,8 @@ public class FileUploadController {
         count=uploadVidRepository.findByVidUpUser(user).size();
 
         String vidOriginalFileName = vidFile.getOriginalFilename();
-        vidSavedFileName=Long.toString(user.getUserId())+"_"+Long.toString(count);
+        extension = vidOriginalFileName.split("\\.");
+        vidSavedFileName=Long.toString(user.getUserId())+"_"+Long.toString(count) + "." + extension[1];
         //File vidDest = new File("/usr/local/tomcat/file/video/"+vidSavedFileName);
         File vidDest = new File("C:/Users/MunsuYu/TimeAttack/TimeAttackFile/file/video/"+vidSavedFileName);
         vidFile.transferTo(vidDest);
