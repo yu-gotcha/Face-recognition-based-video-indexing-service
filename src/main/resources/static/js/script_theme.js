@@ -25,8 +25,11 @@ const currentLine = localStorage.getItem("border");
 if (currentLine == "1") {
     document.body.classList.add("line1");
 }
-else{
-    document.body.classList.add("line0");
+const stt_btn = document.querySelector(".setting-tool-toggle");
+const currentTool = localStorage.getItem("tool");
+
+if (currentTool == "1") {
+    document.body.classList.add("tool1");
 }
 
 btn1.addEventListener("click", function() {
@@ -59,4 +62,13 @@ line_btn.addEventListener("click", function() {
         line = "1";
     }
     localStorage.setItem("border", line);
+});
+stt_btn.addEventListener("click", function() {
+    document.body.classList.toggle("tool1");
+
+    let tool = "0";
+    if (document.body.classList.contains("tool1")) {
+        tool = "1";
+    }
+    localStorage.setItem("tool", tool);
 });

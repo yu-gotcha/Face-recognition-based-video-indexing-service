@@ -123,6 +123,7 @@ body.theme3{
     --login-and-join-btn-color-back-hover:#FF7800;
 }
 body{
+    --tool:hidden;
     --line-color-0:none;
     --line-color-1:none;
     --line-color-2:none;
@@ -133,6 +134,9 @@ body{
     --line-color-7:none;
     --line-color-8:none;
     --line-color-9:none;
+}
+body.tool1{
+    --tool:visible;
 }
 body.line1{
     --line-color-0:red;
@@ -147,8 +151,8 @@ body.line1{
     --line-color-9:saddlebrown;
 }
 /*-------------------------------------------------------------*/
-html {
-
+.setting-tool{
+    visibility:var(--tool);
 }
 body{
     background: var(--body-color-1);

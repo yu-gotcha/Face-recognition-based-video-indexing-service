@@ -70,14 +70,17 @@
         </form>
     </div>
     <div style="position:fixed;left:0;top:95%;">
-        색깔
-        <button class="theme-1">1번</button>
-        <button class="theme-2">2번</button>
-        <button class="theme-3">3번</button>
-        <input type="button" onclick="get_storage();" value="겟"/>
-        <input type="button" onclick="clear_storage();" value="클리어"/>
-        테두리
-        <button class="line-check">on/off</button>
+        <button class="setting-tool-toggle" style="border:none; background:none; cursor:pointer; color:rgba(0,0,0,0);">공간</button>
+        <div class="setting-tool" style="display:inline;">
+            색깔
+            <button class="theme-1">1번</button>
+            <button class="theme-2">2번</button>
+            <button class="theme-3">3번</button>
+<!--            <input type="button" onclick="get_storage();" value="겟"/>-->
+<!--            <input type="button" onclick="clear_storage();" value="클리어"/>-->
+            테두리
+            <button class="line-check">on/off</button>
+        </div>
     </div>
 </div>
 {{/userdata}}
