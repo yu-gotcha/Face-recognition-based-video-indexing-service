@@ -8,15 +8,12 @@ import kr.ac.sejong.api.repository.UploadImgRepository;
 import kr.ac.sejong.api.repository.UploadVidRepository;
 import kr.ac.sejong.api.service.FileUploadService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
 import java.io.File;
-import java.io.OutputStream;
-import java.net.Socket;
 
 @Controller
 @RequestMapping(value = "")
@@ -37,29 +34,7 @@ public class FileUploadController {
 
 
     @PostMapping( value = "/upload" )
-    /*
-    public String upload(@RequestPart MultipartFile file, HttpSession session) throws Exception{
-        String savedFileName;
-        User user;
-        long count;
-
-        user=(User)session.getAttribute("userdata");
-        count=uploadImgRepository.findByImgUpUser(user).size();
-
-        String originalFileName = file.getOriginalFilename();
-        savedFileName=Long.toString(user.getUserId())+"_"+Long.toString(count)+"_"+originalFileName;
-        File dest = new File("C:/Image/"+savedFileName);
-        file.transferTo(dest);
-
-
-        fileUploadService.saveImg(file.getOriginalFilename(), savedFileName, dest.toString(), user);
-
-        return "redirect:/upload";
-    }
-    */
-
-    //transfer를 쓰지 않고 bytes로 소켓으로 던지는 것이 필요함함
-   public String upload(@RequestPart MultipartFile imgFile,MultipartFile vidFile, int faceCount, HttpSession session) throws Exception{
+    public String upload(@RequestPart MultipartFile imgFile,MultipartFile vidFile, int faceCount, HttpSession session) throws Exception{
         String imgSavedFileName, vidSavedFileName, extension[];
         User user;
         long count;
