@@ -15,6 +15,8 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 
+//TODO 로직 분리하기
+
 @Controller
 @RequestMapping(value = "")
 public class FileUploadController {
@@ -61,10 +63,12 @@ public class FileUploadController {
         File vidDest = new File("C:/Users/MunsuYu/TimeAttack/TimeAttackFile/file/video/"+vidSavedFileName);
         vidFile.transferTo(vidDest);
 
+        long upId;
 
         try{
-            fileUploadService.saveUpload(imgOriginalFileName,imgSavedFileName, imgDest.toString(), vidOriginalFileName, vidSavedFileName, vidDest.toString(), faceCount, user);
+            upId = fileUploadService.saveUpload(imgOriginalFileName,imgSavedFileName, imgDest.toString(), vidOriginalFileName, vidSavedFileName, vidDest.toString(), faceCount, user);
             //fileUploadService.runCMD();
+            fileUploadService.sendUploadIdToRun(upId);
         }catch (Exception e){
             System.out.println(e);
             return "redirect:/upload";

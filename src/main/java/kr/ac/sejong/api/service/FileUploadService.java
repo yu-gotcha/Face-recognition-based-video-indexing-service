@@ -10,13 +10,7 @@ import kr.ac.sejong.api.repository.UploadVidRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestPart;
-import org.springframework.web.multipart.MultipartFile;
-
-import javax.persistence.EntityManager;
-import javax.servlet.http.HttpSession;
 import java.io.*;
-import java.net.Socket;
 import java.util.List;
 
 @Service
@@ -26,6 +20,8 @@ public class FileUploadService {
     private final UploadRepository uploadRepository;
     public UploadImg uploadImg =new UploadImg();
     public UploadVid uploadVid = new UploadVid();
+
+    private SocketService socketService;
 
     @Autowired
     public FileUploadService(UploadImgRepository uploadImgRepository,UploadVidRepository uploadVidRepository, UploadRepository uploadRepository) {
@@ -72,7 +68,7 @@ public class FileUploadService {
         return true;
     }
 
-    public Boolean saveUpload(String imgFileName, String imgSavedName, String imgPath, String vidFileName, String vidSavedName, String vidPath, int faceCount, User user){
+    public long saveUpload(String imgFileName, String imgSavedName, String imgPath, String vidFileName, String vidSavedName, String vidPath, int faceCount, User user){
         saveImg(imgFileName, imgSavedName, imgPath, user);
         saveVid(vidFileName, vidSavedName, vidPath, user);
         System.out.println("Img:"+uploadImg);
@@ -86,21 +82,16 @@ public class FileUploadService {
         upload.setUser(user);
         upload.setUploading(1);
         upload.setProcessing(0);
-        System.out.println("upload:"+upload);
 
+        long upId;
         try{
-            uploadRepository.save(upload);
+            upId = uploadRepository.save(upload).getUpId();
         }catch(Exception e){
             System.out.println(e);
-            return false;
+            return -1;
         }
 
-        System.out.println("--------------------------------------------");
-        List<Upload> uploadList2=user.getUploadList();
-
-        System.out.println(uploadList2.size());
-        System.out.println("--------------------------------------------");
-        return true;
+        return upId;
     }
 
     @Async
@@ -126,36 +117,19 @@ public class FileUploadService {
         }
     }
 
-    /*
-    public String fileTransfer(@RequestPart MultipartFile imgFile, MultipartFile vidFile, HttpSession session) throws Exception{
-        User user;
-        byte[] vidBytes, imgBytes=imgFile.getBytes();
 
-        user=(User)session.getAttribute("userdata");
+    @Async
+    public void sendUploadIdToRun(long uploadId) throws Exception {
+        if(socketService.connect("127.0.0.1", 9999)) {
+            if(socketService.sendMessage(String.valueOf(uploadId))) {
+                long receiveId = Long.parseLong(socketService.receiveMessage());
 
-        imgBytes=imgFile.getBytes();
-        long imgLength = imgFile.getSize();
-        long count=uploadImgRepository.findByImgUpUser(user).size();
+                if(uploadId != receiveId) throw new Exception("Running id is not same. Please check it.");
+            }
 
-        String originalFileName = imgFile.getOriginalFilename();
-        String savedFileName=Long.toString(user.getUserId())+"_"+Long.toString(count)+"_"+originalFileName;
-
-        Socket socket=null;
-        OutputStream out;
-
-
-        try{
-            socket = new Socket("127.0.0.1", 9999);
-            System.out.println("Server Start!");
-
-            out=socket.getOutputStream();
-            out.write(imgBytes);
-            out.flush();
-
+            else throw new Exception("Send Message Error");
         }
 
-
-        return "none";
+        else throw new Exception("Socket Connection Error");
     }
-    */
 }
