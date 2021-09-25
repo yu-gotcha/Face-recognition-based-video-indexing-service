@@ -29,9 +29,21 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-mustache'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'mysql:mysql-connector-java'
+    implementation 'io.grpc:grpc-netty:1.38.0'
+    implementation 'io.grpc:grpc-protobuf:1.38.0'
+    implementation 'io.grpc:grpc-stub:1.38.0'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs 'time-attack-grpc/build/generated/source/proto/main/grpc'
+            srcDirs 'time-attack-grpc/build/generated/source/proto/main/java'
+        }
+    }
 }
 
 test {
