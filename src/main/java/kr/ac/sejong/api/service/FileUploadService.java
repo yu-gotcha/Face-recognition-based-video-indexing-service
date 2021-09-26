@@ -1,5 +1,8 @@
 package kr.ac.sejong.api.service;
 
+import grpc.UploadNoticeServiceGrpc;
+import grpc.UploadNoticeServiceOuterClass;
+import io.grpc.ManagedChannel;
 import kr.ac.sejong.api.domain.Upload;
 import kr.ac.sejong.api.domain.UploadImg;
 import kr.ac.sejong.api.domain.UploadVid;
@@ -8,26 +11,29 @@ import kr.ac.sejong.api.repository.UploadImgRepository;
 import kr.ac.sejong.api.repository.UploadRepository;
 import kr.ac.sejong.api.repository.UploadVidRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import java.io.*;
-import java.util.List;
 
 @Service
 public class FileUploadService {
     private final UploadImgRepository uploadImgRepository;
     private final UploadVidRepository uploadVidRepository;
     private final UploadRepository uploadRepository;
+    @Qualifier(value = "processing")
+    private final ManagedChannel processingChannel;
     public UploadImg uploadImg =new UploadImg();
     public UploadVid uploadVid = new UploadVid();
 
     private SocketService socketService;
 
     @Autowired
-    public FileUploadService(UploadImgRepository uploadImgRepository,UploadVidRepository uploadVidRepository, UploadRepository uploadRepository) {
+    public FileUploadService(UploadImgRepository uploadImgRepository, UploadVidRepository uploadVidRepository, UploadRepository uploadRepository, ManagedChannel processingChannel) {
         this.uploadImgRepository = uploadImgRepository;
         this.uploadVidRepository = uploadVidRepository;
         this.uploadRepository = uploadRepository;
+        this.processingChannel = processingChannel;
     }
 
     public Boolean saveImg(String fileName, String fileSavedName, String filePath, User user){
@@ -131,5 +137,17 @@ public class FileUploadService {
         }
 
         else throw new Exception("Socket Connection Error");
+    }
+
+    @Async
+    public void notifyUploaded(long uploadId) throws Exception {
+        UploadNoticeServiceGrpc.UploadNoticeServiceBlockingStub stub = UploadNoticeServiceGrpc.newBlockingStub(processingChannel);
+
+        UploadNoticeServiceOuterClass.ProcessingResponse response = stub.doProcessUploadedImageAndVideo(UploadNoticeServiceOuterClass
+                .ProcessingRequest.newBuilder().setUploadId(uploadId).build());
+
+        if(response.getResult().equals(UploadNoticeServiceOuterClass.ProcessingResponse.Result.ERROR)) throw new Exception("ERROR");
+        else if(response.getResult().equals(UploadNoticeServiceOuterClass.ProcessingResponse.Result.OK) && response.getUploadId() != uploadId)
+            throw new Exception("Running id is not same. Please check it.");
     }
 }
