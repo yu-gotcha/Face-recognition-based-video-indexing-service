@@ -1,4 +1,4 @@
-package kr.ac.sejong.api.Config;
+package kr.ac.sejong.api.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.AsyncConfigurerSupport;
